@@ -1,0 +1,97 @@
+.inf-l {
+  position: relative;
+    width: 200px;
+    height: 200px;
+    left: 135px;
+    top:130px ;
+    border: 10px solid rgb(187, 4, 4);
+    border-bottom-left-radius: 140px;
+    border-top-left-radius: 140px;
+    border-bottom-right-radius: 140px;
+    border-width: 5px;
+    transform: rotate(45deg);
+  }
+  .inf-r {
+    position: relative;
+    top: -80px;
+    left: 424px;
+    width: 200px;
+    height: 200px;
+    border: 10px solid rgb(187, 4, 4);
+    border-bottom-left-radius: 140px;
+    border-top-left-radius: 140px;
+    border-bottom-right-radius: 140px;
+    border-width: 5px;
+    transform: rotate(-135deg);
+  }
+  .btm2 {
+    position: relative;
+    margin-bottom: -710px;
+    left: 283px;
+    top: -10px;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(187, 4, 4);
+    transform: rotate(-135deg);
+  }
+  .left2 {
+      position: relative;
+      top: 430px;
+      left: 213px;
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      background-color: rgb(187, 4, 4);
+  }
+  .right2 {
+      position: relative;
+      top: 228px;
+      left: 355px;
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      background-color: rgb(187, 4, 4);
+  }
+  .btm1 {
+    position: relative;
+    left: 183px;
+    top: -40px;
+    width: 400px;
+    height: 400px;
+    border-style: solid;
+    border-right: transparent;
+    border-bottom: transparent;
+    border-color: rgb(187, 4, 4);
+    border-width: 3px;
+    transform: rotate(-135deg);
+  }
+  .left1 {
+      position: relative;
+      top: -620px;
+      left: 20px;
+      width: 400px;
+      height: 400px;
+      border-style: solid;
+      border-right: transparent;
+      border-bottom: transparent;
+      border-left: transparent;
+      border-radius: 100%;
+      border-width: 10px;
+      border-color: rgb(187, 4, 4);
+      transform: rotate(-50deg);
+  }
+  .right1 {
+      position: relative;
+      top: -1030px;
+      left: 355px;
+      width: 400px;
+      height: 400px;
+      border-radius: 100%;
+      border-style: solid;
+      border-left: transparent;
+      border-bottom: transparent;
+      border-right: transparent;
+      border-width: 10px;
+      border-color: rgb(187, 4, 4);
+      transform: rotate(50deg);
+  }
