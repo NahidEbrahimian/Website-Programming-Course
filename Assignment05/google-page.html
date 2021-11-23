@@ -1,182 +1,52 @@
-<html  dir="rtl">
+<html  dir="ltr">
+  <head>
+      <title>google-page</title>
+      <meta name="description" content="">
+      <meta name="author" content="ناهید سیدابراهیمیان">
+      <meta name="keywords" content="">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link type="text/css" rel="stylesheet" href="style.css">
+  </head>
 
-<head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <body>
+        <div class="header">
+            <a href="" >Gmail</a>
+            <a href="">Images</a>
+            <a href="" id="google-app" class="material-icons" title="Google apps" >apps</a>
+            <a href="" id="signin">Sign in</a>
+        </div>
 
+        <!-- <div id="google-logo">
+            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+        </div> -->
 
-    <style>
-        .sec1
-        {
-            padding-right: 7px;
-            padding: 12px;
-            padding-top: 0px;
-            font-family:sans-serif;
-            font-size: 13px;
-            position: relative;
-        }
+        <div class="google-logo">
+            <div><span id="G">G</span>
+              <span id="o-r">o</span>
+              <span id="o-y">o</span>
+              <span id="G">g</span>
+              <span id="l">l</span></div>
+              <div id="e"><span>e</span></div>
+        </div>
 
-        a
-        {
-            padding: 5px;
-            color: rgba(83, 81, 81, 0.87);
-        }
+        <div class="search">  
+          <form>
+            <input type="text" id="form-search" placeholder="Search Google or type URL">
+            <br><br>
+            <input  type="submit" id = "submit" value="I'm Feeling Lucky">
+            <input  type="submit" id = "submit" value="Google Search">
+          </form>
+        </div> 
 
-        a:link
-        {
-            text-decoration: none;
-        }
-
-        a:hover
-        {
-            text-decoration: underline;
-        }
-
-        #google-app
-        {
-            border-radius: 100px;
-        }
-        #google-app:hover
-        {
-            background-color: rgb(231, 229, 229);
-            text-decoration: none;
-        }
-
-        #signin
-        {
-            padding: 7px;
-            padding-left: 24px;
-            padding-right: 24px;
-            padding-top: 8px;
-            padding-bottom: 8px;
-            font-size: 14px;
-            background-color: #3a7cd3;
-            border-radius: 4px;
-            color: white;
-            border: none;
-            margin-left: 10px;
-            border: 2px solid transparent;
-            text-decoration: none;
-        }
-
-        #signin:hover
-        {
-            background-color: #1a73e8e8;
-        }
-        #google-logo
-         {
-            margin: auto;
-            margin-top: 180px;
-            margin-right: 30;
-            position: relative;
-        }
-
-        #google-logo > img
-        {
-            display: block;
-            margin: auto;
-            width: 272;
-            height: 92;
-        }
-
-          #form-search { 
-            width: 550px;
-            margin-top: 40px;
-            border-radius: 35px;
-            border-color: rgb(240, 240, 240);
-            border-style: solid;
-            border-width: 1px;
-            height: 45px;
-          }
-
-          .search #form-search {
-            padding: 0 8px;
-            text-align: left;
-            font-size: 15px;
-          }
-          .search {
-            text-align: center;
-          }
-          .buttons{
-            align-items: center;
-            align-content: center;
-            margin-right:550px
-          }
-          #google-search{
-            background-color: rgb(240, 243, 245);
-            border-style: solid;
-            border-width: 1px;
-            border-color: rgb(245, 244, 243);
-            color:rgb(95, 95, 95);
-            padding: 5px;
-            padding-right: 10px;
-            padding-left: 10px
-          }
-          #feeling-lucky{
-            background-color: rgb(240, 243, 245);
-            border-style: solid;
-            border-width: 1px;
-            border-color: rgb(245, 244, 243);
-            color:rgb(95, 95, 95);
-            padding-right: 10px;
-            padding-left: 10px;
-            padding-top: 5px;
-            padding-bottom: 5px;
-          }
-
-          .footer{
-            position: fixed;
-            bottom: 0px;
-            width: 100%;
-            background-color: rgb(241, 240, 240);
-            padding: 10px;
-            color: rgb(116, 116, 116);
-            
-          }
-          span{
-              font-size: 13;
-              padding: 8px;
-              font-family:sans-serif;
-          }
-          #P{
-              padding-left: 800px;
-          }
-
-    </style>
-</head>
-
-<body>
-      <div class="sec1">
-          <a href="" >Gmail</a>
-          <a href="">Images</a>
-          <a href="" id="google-app" class="material-icons" title="Google apps" >apps</a>
-          <a href="" id="signin">Sign in</a>
-      </div>
-
-      <div id="google-logo">
-          <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
-      </div>
-
-      <div class="search">  
-        <form>
-          <input type="text" id="form-search" placeholder="Search Google or type URL">
-        </form>
-      </div> 
-
-      <div class = "buttons">  
-        <input  id="feeling-lucky" type="submit" value="I'm Feeling Lucky">
-        <input  id="google-search" type="submit" value="Google Search">
-      </div>
-
-      <div class="footer">
-            <span>About</span>
-            <span>Advetising</span>
-            <span> Business</span>
-            <span>How Search Works</span>
-            <span id="p">Privacy</span>
-            <span>Terms</span>
-            <span>Settings</span>
-      </div>
-</body>
-
+        <div class="footer">
+              <span>About</span>
+              <span>Advetising</span>
+              <span> Business</span>
+              <span>How Search Works</span>
+              <span id="p">Privacy</span>
+              <span>Terms</span>
+              <span>Settings</span>
+        </div>
+  </body>
 </html>

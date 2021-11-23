@@ -1,0 +1,146 @@
+.header
+{
+    padding-left: 1020px;
+    font-family:sans-serif;
+    font-size: 13px;
+}
+
+a
+{
+    padding: 5px;
+    color: rgba(83, 81, 81, 0.87);
+}
+
+a:link
+{
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+#google-app
+{
+    border-radius: 100px;
+}
+
+#google-app:hover
+{
+    background-color: rgb(231, 229, 229);
+    text-decoration: none;
+}
+
+#signin
+{
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 14px;
+    background-color: #3a7cd3;
+    border-radius: 4px;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    border: 2px solid transparent;
+    text-decoration: none;
+}
+
+#signin:hover
+{
+    background-color: #1a73e8e8;
+}
+
+.google-logo
+ {
+    width: 500px;
+    height: 92px;
+    margin: auto;
+    margin-top: 180px;
+    margin-left: 480px;
+    position: relative;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+ }
+.google-logo span
+{
+  font-size: 90px;
+  padding: 0px;
+}
+#G
+{
+  color: blue;
+}
+#o-r
+{
+  color: red;
+}
+#o-y
+{
+  color: yellow;
+}
+#l
+{
+  color: green;
+}
+#e
+{
+  color: red;
+  transform: rotate(-25deg);
+}
+.search
+{
+  text-align: center;
+}
+#form-search 
+{ 
+  width: 550px;
+  height: 45px;
+  margin-top: 40px;
+  border-radius: 35px;
+  border-color: rgb(240, 240, 240);
+  border-style: solid;
+  border-width: 1px;
+  text-align: left;
+  font-size: 15px;
+  padding: 0 8px;
+}
+#submit
+{
+  width: auto;
+  height: 30px;
+  background-color: rgb(240, 243, 245);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  border-color: rgb(245, 244, 243);
+  color:rgb(95, 95, 95);
+  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px
+}
+#submit:hover
+{
+  border-color: rgb(156, 156, 156);
+}
+.footer
+{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgb(241, 240, 240);
+  padding: 10px;
+  color: rgb(116, 116, 116);
+}
+.footer span
+{
+    font-size: 13;
+    padding: 8px;
+    font-family:sans-serif;
+}
+#P
+{
+    padding-left: 750px;
+}
