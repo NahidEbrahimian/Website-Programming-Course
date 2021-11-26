@@ -25,7 +25,7 @@
     text-decoration: none;
 }
 .header-r{
-    margin-left: 755px;
+    margin-left: 765px;
 }
 .header-r span{
     color: white;
@@ -38,12 +38,23 @@
     text-align: left;
     font-size: 13px;
 }
-#slide{
-    width: 100%;
-    height: 800px;
-    /* background-color: brown; */
-    margin-left: 0px;
-    margin-top: 0px;
+#slider{
+    position: relative;
+}
+#slider button{
+    border-radius: 100%;
+    border-style: none;
+    position: absolute;
+    top: 47%;
+    padding: 5px;
+    width: 30px;
+    opacity: 0.7;
+}
+#slider #left{
+    left: 10px;
+}
+#slider #right{
+    right: 10px;
 }
 .our-team{
     width: 100%;
@@ -83,10 +94,11 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    padding-top: 35px;
-    /* padding-bottom: 45px; */
+    padding-top: 55px;
+    padding-bottom: 5px;
     padding-left: 7px;
     padding-right: 7px;
+
 }
 .our-work .col1{
     width: 25%;
@@ -95,6 +107,7 @@
 }
 .our-work .col1 .col2{
     background-color: white;
+    box-shadow: 0 0 10px #fc7c31;
 }
 .our-work .col1 img{
     width: 100%;
@@ -116,6 +129,9 @@
 }
 .our-work .col1 .col2 div{
     padding: 10px;
+    border-top-style: solid;
+    color: rgb(192, 61, 61);
+    border-width: 1px;
 }
 .our-work .col1 .col2 div ul{
     list-style-type: none;
