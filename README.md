@@ -73,4 +73,6 @@
 
 ### Assignment07
 
-![screencapture-file-11-26-13_49_07](https://user-images.githubusercontent.com/82975802/143590792-56010830-ee34-4a02-9ab1-1439ff4ac4a5.png)
+![screencapture](https://user-images.githubusercontent.com/82975802/143592647-4dcc0f47-c36d-413b-8f59-1d08968f55da.png)
+
+
