@@ -1,0 +1,34 @@
+.header-external{
+    padding: 5px;
+}
+
+ .header-internal{
+    /* position: absolute; */
+    text-align: right;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+
+.left-header{
+    text-align: left;
+    padding: 3px;
+    direction: rtl;
+}
+.left-header a button{
+    direction: rtl;
+    border-style: none;
+    padding: 5px;
+}
+.left-header button span{
+    /* margin-bottom: 10px; */
+    text-align: center;
+}
+.left-header .join{
+    background-color: rgb(252, 0, 176);
+    border-style: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+.left-header .join span{
+    color: white;
+}
