@@ -1,0 +1,73 @@
+<html>
+
+    <head>
+        <meta charset="utf8">
+        <meta name="description" content="جلسه یازدهم">
+        <meta name="keywords" content="">
+        <meta name="auther" content="">
+        <meta name="viewport" content="">
+        <link type="text/css" rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div>
+            <div id="ears"></div>
+            <div id="head">
+                <span id="left-eye" class="eye"></span>
+                <span id="right-eye" class="eye"></span>
+            </div>
+            <div id="body"></div>
+            <div id="left-hand" class="hand"></div>
+            <div id="right-hand" class="hand"></div>
+            <div id="left-foot" class="foot"></div>
+            <div id="right-foot" class="foot"></div>
+        </div>
+
+        <div class="android">
+            <div id="A-left" class="char"></div>
+            <div id="A-right" class="char"></div>
+            <div id="N" class="char"></div>
+            <div id="D" class="char"></div>
+            <div id="R-top" class="char"></div>
+            <div id="R-bottom" class="char"></div>
+            <div id="O" class="char"></div>
+            <div id="I" class="char"></div>
+            <div id="D-last" class="char"></div>
+        </div>
+        
+        <script>
+            var head = document.getElementById("head");
+            var body = document.getElementById("body");
+            var left_hand = document.getElementById("left-hand");
+            var right_hand = document.getElementById("right-hand");
+            var left_eye = document.getElementById("left-eye");
+            var right_eye = document.getElementById("right-eye");
+
+            head.onclick = function(){
+                left_eye.style.width = "13px";
+                left_eye.style.height = "13px";
+                right_eye.style.width = "13px";
+                right_eye.style.height = "13px";}   
+
+            body.onclick = function(){
+                left_eye.style.width = "20px";
+                left_eye.style.height = "5px";
+                right_eye.style.width = "20px";
+                right_eye.style.height = "5px";}
+
+            left_hand.onclick = function(){
+                left_hand.style.transformOrigin = "top center";
+                left_hand.style.transform = "rotate(140deg)";
+                left_hand.style.transition = "1s";
+                setTimeout(function(){
+                    left_hand.style.transform = "rotate(0deg)"; }, 4000); }
+
+            right_hand.onclick = function(){
+                right_hand.style.transformOrigin = "top center";
+                right_hand.style.transform = "rotate(-140deg)";
+                right_hand.style.transition = "1s";
+                setTimeout(function(){
+                    right_hand.style.transform = "rotate(0deg)";} , 4000); }
+        </script>
+    </body>
+</html>
