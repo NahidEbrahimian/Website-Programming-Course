@@ -2,6 +2,5 @@
 
 - Logo Android
 
-https://user-images.githubusercontent.com/82975802/145690773-07b5ea18-e33a-436c-8c60-f868e5160459.mp4
-
+https://user-images.githubusercontent.com/82975802/145718327-3b103caa-2916-4737-ac10-c88f3fced402.mp4
 
