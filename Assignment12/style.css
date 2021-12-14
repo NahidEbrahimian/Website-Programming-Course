@@ -1,0 +1,59 @@
+#bordear{
+    width: 220px;
+    height: 300px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 13px;
+    border-color: rgb(163, 162, 160);
+    padding: 10px 5px 10px 5px;
+    margin : 180 550;
+    background-color: rgb(228, 228, 228);
+}
+#tb1{
+    width: 100%;
+    height: 50px;
+    padding: 3px;
+    margin-bottom: 10px;
+    border-radius: 13px;
+    border-style: solid;
+    border-color: rgb(160, 158, 154);
+    box-shadow: 2px 2px 3px rgba(87, 85, 85, 0.4), -2px -2px 3px rgba(87, 85, 85, 0.4);
+    text-align: right;
+}
+.rows{
+    width: 100%;
+    margin-bottom: 10px;
+    height: 40px;
+}
+.btns{
+    width: 23.5%;
+    height: 100%;
+    border-radius: 13px;
+    border-style: solid;
+    border-color: rgb(160, 158, 154);
+    font-size: 15px;
+    box-shadow: 2px 2px 3px rgba(87, 85, 85, 0.4), -2px -2px 3px rgba(87, 85, 85, 0.4);
+
+    
+}
+.btns-row1{
+    width: 23.5%;
+    height: 100%;
+    border-radius: 13px;
+    border-style: solid;
+    border-color: rgb(160, 158, 154);
+    box-shadow: 2px 2px 3px rgba(87, 85, 85, 0.4), -2px -2px 3px rgba(87, 85, 85, 0.4);
+    font-size: 15px;
+}
+.btn-row1{
+    width: 49%;
+    height: 100%;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(160, 158, 154);
+    box-shadow: 2px 2px 3px rgba(87, 85, 85, 0.4), -2px -2px 3px rgba(87, 85, 85, 0.4);
+    font-size: 15px;
+}
+ .ops{
+     color: rgb(238, 146, 9);
+ }

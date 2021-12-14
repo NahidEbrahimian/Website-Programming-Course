@@ -1,0 +1,199 @@
+<html>
+    <head>
+        <meta charset="utf8">
+        <meta name="description" content="جلسه دوازدهم">
+        <meta name="keywords" content="">
+        <meta name="auther" content="">
+        <meta name="viewport" content="">
+        <link type="text/css" rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div id="bordear">
+            <form>
+                <input type="text" id="tb1">
+                <div class="rows">
+                    <button type="button" id="AC" class="btns ops">AC</button>
+                    <button type="button" id="sum-sub" class="btns ops">+/-</button>
+                    <button type="button" id="per" class="btns ops">%</button>
+                    <button type="button" id="div" class="btns ops">÷</button>
+                    
+                </div>
+                <div class="rows">
+                    <button type="button" id="num-7" class="btns">7</button>
+                    <button type="button" id="num-8" class="btns">8</button>
+                    <button type="button" id="num-9" class="btns">9</button>
+                    <button type="button" id="mul" class="btns ops">x</button>
+                </div>
+                <div class="rows">
+                    <button type="button" id="num-4" class="btns">4</button>
+                    <button type="button" id="num-5" class="btns">5</button>
+                    <button type="button" id="num-6" class="btns">6</button>
+                    <button type="button" id="sub" class="btns ops">-</button>
+                </div>
+                <div class="rows">
+                    <button type="button" id="num-1" class="btns">1</button>
+                    <button type="button" id="num-2" class="btns">2</button>
+                    <button type="button" id="num-3" class="btns">3</button>
+                    <button type="button" id="sum" class="btns ops">+</button>
+                </div>
+                <div class="rows">
+                    <button type="button" id="num-0" class="btn-row1">0</button>
+                    <button type="button" id="dot-op" class="btns-row1 ops">.</button>
+                    <button type="button" id="equal" class="btns-row1 ops">=</button>
+                </div>
+            </form>
+        </div>
+
+        <script>
+            var num1 = document.getElementById("num-1");
+            var num2 = document.getElementById("num-2");
+            var num3 = document.getElementById("num-3");
+            var num4 = document.getElementById("num-4");
+            var num5 = document.getElementById("num-5");
+            var num6 = document.getElementById("num-6");
+            var num7 = document.getElementById("num-7");
+            var num8 = document.getElementById("num-8");
+            var num9 = document.getElementById("num-9");
+            var num0 = document.getElementById("num-0");
+
+            var sum = document.getElementById("sum");
+            var sub = document.getElementById("sub");
+            var mul = document.getElementById("mul");
+            var div = document.getElementById("div");
+            var AC = document.getElementById("AC");
+            var sum_sub = document.getElementById("sum-sub");
+            var per = document.getElementById("per");
+            var dot_op = document.getElementById("dot-op");
+
+            var equal = document.getElementById("equal");
+            var a, b, c, op, flg;
+
+            num1.onclick = function(){
+                tb1.value += 1 ;
+            }
+            num2.onclick = function(){
+                tb1.value += 2 ;
+            }
+            num3.onclick = function(){
+                tb1.value += 3;
+            }
+            num4.onclick = function(){
+                tb1.value += 4;
+            }
+            num5.onclick = function(){
+                tb1.value += 5;
+            }
+            num6.onclick = function(){
+                tb1.value += 6;
+            }
+            num7.onclick = function(){
+                tb1.value += 7;
+            }
+            num8.onclick = function(){
+                tb1.value += 8;
+            }
+            num9.onclick = function(){
+                tb1.value += 9;
+            }
+            num0.onclick = function(){
+                tb1.value += 0;
+            }
+
+            sum.onclick = function(){
+                op = "+";
+                if (flg == 1){
+                    a = parseFloat(tb1.value);
+                }
+                else{
+                    a = parseInt(tb1.value);
+                }                
+                tb1.value = "";
+            }
+            sub.onclick = function(){
+                op = "-";
+                if (flg == 1){
+                    a = parseFloat(tb1.value);
+                }
+                else{
+                    a = parseInt(tb1.value);
+                }  
+                tb1.value = "";
+            }
+            mul.onclick = function(){
+                op = "x";
+                if (flg == 1){
+                    a = parseFloat(tb1.value);
+                }
+                else{
+                    a = parseInt(tb1.value);
+                }  
+                tb1.value = "";
+            }
+            div.onclick = function(){
+                op = "/";
+                if (flg == 1){
+                    a = parseFloat(tb1.value);
+                }
+                else{
+                    a = parseInt(tb1.value);
+                }  
+                tb1.value = "";
+            }
+            AC.onclick = function(){
+                tb1.value = "";
+            }
+            sum_sub.onclick = function(){
+                tb1.value = tb1.value * -1;
+            }
+            per.onclick = function(){
+                op = "%";
+                if (flg == 1){
+                    a = parseFloat(tb1.value);
+                }
+                else{
+                    a = parseInt(tb1.value);
+                }  
+                tb1.value = "";
+            }
+            dot_op.onclick = function(){
+                flg = 1;
+                tb1.value += "."
+            }
+            equal.onclick = function(){
+                if (flg == 1){
+                    b = parseFloat(tb1.value);
+                }
+                else{
+                    b = parseInt(tb1.value);
+                }  
+
+                if (op == "+"){
+                    c = a + b;
+                }
+
+                if (op == "-"){
+                    c = a - b;
+                }
+
+                if (op == "x"){
+                    c = a * b;
+                }
+
+                if (op == "/"){
+                    if (b == 0){
+                        c = "Can't divide by zero."
+                    }
+                    else{
+                        c = a / b;
+                    } 
+                }
+                if (op == "%"){
+                    c = a % b;
+                  }
+                tb1.value = c;
+            }
+        </script>
+
+    </body>
+</html>
