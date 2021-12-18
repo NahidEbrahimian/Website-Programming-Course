@@ -1,59 +1,79 @@
+.body{
+    background-color: rgb(240, 141, 123);
+    color: rgb(90, 0, 0);
+}
 #bordear{
-    width: 220px;
-    height: 300px;
+    width: 250px;
+    height: 350px;
     border-style: solid;
     border-width: 2px;
-    border-radius: 13px;
-    border-color: rgb(163, 162, 160);
-    padding: 10px 5px 10px 5px;
-    margin : 180 550;
-    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+    border-color: rgb(240, 141, 123);
+    padding: 20px 17px 20px 20px;
+    margin : 180 530;
+    box-shadow:  -11px -11px 20px rgb(204, 120, 105, 7),
+                 11px 11px 22px rgb(255, 162, 141, 0.7);
 }
 #tb1{
     width: 100%;
-    height: 50px;
-    padding: 3px;
+    height: 60px;
+    padding: 10px;
     margin-bottom: 10px;
     border-radius: 13px;
     border-style: solid;
-    border-color: rgb(160, 158, 154);
-    box-shadow: 2px 2px 3px rgba(87, 85, 85, 0.4), -2px -2px 3px rgba(87, 85, 85, 0.4);
-    text-align: right;
+    border-color: rgb(240, 141, 123);
+    background-color: rgb(240, 141, 123);;
+    box-shadow:  -11px -11px 20px rgb(204, 120, 105, .7),
+                 11px 11px 22px #ffa28d;
+    font-size: 20;
 }
 .rows{
     width: 100%;
     margin-bottom: 10px;
-    height: 40px;
+    height: 45px;
 }
 .btns{
     width: 23.5%;
     height: 100%;
-    border-radius: 13px;
     border-style: solid;
-    border-color: rgb(160, 158, 154);
+    border-color: rgb(240, 141, 123);
+    border-radius: 13px;
+    box-shadow:  -11px -11px 20px #cc7869,
+                 11px 11px 22px #ffa28d;
     font-size: 15px;
-    box-shadow: 2px 2px 3px rgba(87, 85, 85, 0.4), -2px -2px 3px rgba(87, 85, 85, 0.4);
-
-    
 }
 .btns-row1{
     width: 23.5%;
     height: 100%;
-    border-radius: 13px;
     border-style: solid;
-    border-color: rgb(160, 158, 154);
-    box-shadow: 2px 2px 3px rgba(87, 85, 85, 0.4), -2px -2px 3px rgba(87, 85, 85, 0.4);
+    border-color: rgb(240, 141, 123);
+    border-radius: 13px;
+    box-shadow:  -11px -11px 20px #cc7869,
+                 11px 11px 22px #ffa28d;
     font-size: 15px;
 }
 .btn-row1{
     width: 49%;
     height: 100%;
-    border-radius: 10px;
     border-style: solid;
-    border-color: rgb(160, 158, 154);
-    box-shadow: 2px 2px 3px rgba(87, 85, 85, 0.4), -2px -2px 3px rgba(87, 85, 85, 0.4);
-    font-size: 15px;
+    border-color: rgb(240, 141, 123);
+    border-radius: 13px;
+    box-shadow:  -11px -11px 20px #cc7869,
+                 11px 11px 22px #ffa28d;
 }
  .ops{
-     color: rgb(238, 146, 9);
+     color: rgb(238, 36, 9);
  }
+
+ button:hover {
+    box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.6),
+                -2px -2px 4px rgba(255, 255, 255, .4),
+                2px 2px 2px rgba(255, 255, 255, .05),
+                2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  button:active {
+    box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7),
+                inset -2px -2px 4px rgba(255, 255, 255, .5),
+                inset 2px 2px 2px rgba(255, 255, 255, .075),
+                inset 2px 2px 4px rgba(0, 0, 0, .15);
+  }
