@@ -91,6 +91,7 @@ function check_game(){
             o_winner = 1;
         }
     }
+    
     if(flags[0][0] == "X" && flags[1][1] == "X" && flags[2][2] == "X"){
         score_x_counter++;
         score_x.innerHTML = score_x_counter;
