@@ -64,3 +64,32 @@ table{
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     border: none;}
+
+#new-game{
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    position: absolute;
+    /* display: non e; */
+    background: rgba(3, 155, 41, 0.829);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: none;
+    font-size: 15px;
+    color: blanchedalmond;
+    margin-left: 580px;
+}
+/* #players{
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    position: absolute;
+    /* display: non e; */
+    /* background: rgba(3, 155, 41, 0.829);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: none;
+    font-size: 15px;
+    color: blanchedalmond;
+    margin-left: 580px;
+} */
