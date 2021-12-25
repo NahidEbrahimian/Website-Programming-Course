@@ -1,9 +1,11 @@
 var cells = document.getElementsByClassName("cell");
 var score_x = document.getElementById("score-x");
 var score_o = document.getElementById("score-o");
+var score_draw = document.getElementById("score-Draw")
 
 var score_x_counter = 0;
 var score_o_counter = 0;
+var score_draw_counter = 0;
 
 var o_winner = 0;
 var x_winner = 0;
@@ -61,7 +63,7 @@ function show_index(x, y){
     }
 
     check_game();
-    if(x_winner == 1 || o_winner == 1){
+    if(x_winner == 1 || o_winner == 1 || Draw == 1){
         display_winner();
     }
     
@@ -114,6 +116,18 @@ function check_game(){
         score_x.innerHTML = score_x_counter;
         x_winner = 1;
     }
+    var num = 0;
+    for(let  i = 0; i < 3; i++){
+        for(let  j = 0; j < 3; j++){
+            if(flag[i][j] == "X" || flag[i][j] == "O"){
+                num++;
+            }
+        }
+        if(num == 9){
+            Draw = 1;
+            score_draw_counter++
+        }
+    }
 }
 
 function display_winner(){
@@ -124,7 +138,7 @@ function display_winner(){
             winner.innerHTML = "O Winner";
         }
         else{
-
+            winner.innerHTML = "Draw";
         }  
 }
 
@@ -135,6 +149,9 @@ function restart(){
             buttons[i][j].classList.remove("X");   
             buttons[i][j].classList.remove("O");       
             flags[i][j]=null;
+            winner.innerHTML = " ";
+            x_winner = 0;
+            o_winner = 0;
         }
     }
 }
