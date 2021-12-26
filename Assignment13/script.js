@@ -16,8 +16,6 @@ var winner_background = document.getElementById("display-winner");
 
 var new_game = document.getElementById("new_game");
 
-// var new_game = 0;
-
 // ui - front-end
 var buttons = [[cells[0], cells[1], cells[2]],
                 [cells[3], cells[4], cells[5]],
@@ -32,42 +30,51 @@ var ply = "X";
 
 
 function show_index(x, y){
-    if(flags[x][y] == null){
-        if(ply == "X"){
-        flags[x][y] = "X";
-        buttons[x][y].innerHTML = "X";
-        buttons[x][y].classList.add("X");
-        ply = "O";
-        }
+    if(document.getElementById('players1').checked != true && document.getElementById('players2').checked != true){
+        alert("Please select players")
+    }
 
-        else if(ply == "O"){
+    else{
+        if(x_winner != 1 && o_winner != 1 && Draw != 1){
             if(document.getElementById('players1').checked == true){
+                if(flags[x][y] == null){
+                    if(ply == "X"){
+                    flags[x][y] = "X";
+                    buttons[x][y].innerHTML = "X";
+                    buttons[x][y].classList.add("X");
+                    ply = "O";
+                    }
+            
+                    else if(ply == "O"){
+                            flags[x][y] = "O"
+                            buttons[x][y].innerHTML = "O";
+                            buttons[x][y].classList.add("O");
+                            ply = "X";
+                        }
+                }
+            }
+            else if(document.getElementById('players2').checked == true){
+
+                flags[x][y] = "X";
+                buttons[x][y].innerHTML = "X";
+                buttons[x][y].classList.add("X");
+                
+                while(flags[x][y] != null){
+                    x = Math.floor(Math.random() * 3);
+                    y = Math.floor(Math.random() * 3);
+                }
                 flags[x][y] = "O"
                 buttons[x][y].innerHTML = "O";
                 buttons[x][y].classList.add("O");
-                ply = "X";
             }
-            else{
-                var i =0;
-                var j =0;
-                while(flags[i][j] != null){
-                    var i = Math.floor(Math.random() * 3);
-                    var j = Math.floor(Math.random() * 3);
-                }
-                flags[i][i] = "O"
-                buttons[i][i].innerHTML = "O";
-                buttons[i][i].classList.add("O");
-                ply = "X";
-            }
+            check_game();
+        }
+        else{
+            alert("If you want to continue, Please press new game")
+        }
+            
         }
     }
-
-    check_game();
-    if(x_winner == 1 || o_winner == 1 || Draw == 1){
-        display_winner();
-    }
-    
-}
 
 function check_game(){
     for(let  i = 0; i < 3; i++){
@@ -119,14 +126,18 @@ function check_game(){
     var num = 0;
     for(let  i = 0; i < 3; i++){
         for(let  j = 0; j < 3; j++){
-            if(flag[i][j] == "X" || flag[i][j] == "O"){
+            if(flags[i][j] == "X" || flags[i][j] == "O"){
                 num++;
             }
         }
-        if(num == 9){
+        if(num == 9 && x_winner != 1 && o_winner != 1){
             Draw = 1;
             score_draw_counter++
+            score_draw.innerHTML = score_draw_counter;
         }
+    }
+    if(x_winner == 1 || o_winner == 1 || Draw == 1){
+        display_winner();
     }
 }
 
@@ -137,7 +148,7 @@ function display_winner(){
         else if(o_winner == 1){
             winner.innerHTML = "O Winner";
         }
-        else{
+        else if(Draw == 1){
             winner.innerHTML = "Draw";
         }  
 }
@@ -152,9 +163,9 @@ function restart(){
             winner.innerHTML = " ";
             x_winner = 0;
             o_winner = 0;
+            Draw = 0;
+            document.getElementById('players1').checked = 0;
+            document.getElementById('players2').checked = 0;
         }
     }
-}
-function check(){
-
 }

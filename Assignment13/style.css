@@ -1,5 +1,5 @@
 #main{
-    background-color: cornflowerblue;
+    background-color: rgb(237, 178, 100);
 }
 
 .cell{
@@ -51,20 +51,12 @@ table{
     color: darkblue;
 }
 #winner{
-    font-size: 70px;
+    font-size: 40px;
     color: rgb(11, 184, 11);
-    margin-left: 500px;
+    margin-left: 520px;
+    margin-bottom: 70px;
     position: absolute;
 }
-/* .winner{
-    position: absolute;
-    height: 200px;
-    width: 100%;
-    display: none;
-    background: rgba(3, 155, 41, 0.829);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    border: none;} */
 
 #new-game{
     width: 100px;
@@ -84,4 +76,8 @@ table{
     height: 40px;
     border-radius: 20px;
     margin-left: 450px;
+    margin-top: 30px;
+}
+#display-winner{
+    margin-top: 80px;
 }
