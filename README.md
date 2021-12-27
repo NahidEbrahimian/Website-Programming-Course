@@ -105,6 +105,5 @@ https://user-images.githubusercontent.com/82975802/145718327-3b103caa-2916-4737-
 
 - glass theme css
 
-![Capture](https://user-images.githubusercontent.com/82975802/147498510-88fba479-9fee-4b2f-9ea2-9b8953167a63.PNG)
-
+![Capture](https://user-images.githubusercontent.com/82975802/147499935-8a1eb8cd-7c6b-4004-8fc5-dade65c9e504.PNG)
 
