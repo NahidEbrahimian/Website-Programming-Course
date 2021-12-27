@@ -93,5 +93,18 @@ https://user-images.githubusercontent.com/82975802/145718327-3b103caa-2916-4737-
 
 - Calculator with neumorphic Design
 
+- Neumorphism css
+
 
 ![Capture6](https://user-images.githubusercontent.com/82975802/146650848-f442cf64-2487-40d1-ae43-45a236e0e424.PNG)
+
+
+#
+
+- Tic-Tac-Toe game
+
+-glass theme css
+
+![Capture](https://user-images.githubusercontent.com/82975802/147498510-88fba479-9fee-4b2f-9ea2-9b8953167a63.PNG)
+
+
