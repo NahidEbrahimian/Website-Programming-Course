@@ -1,0 +1,72 @@
+<html dir="rtl">
+    <head>
+        <meta charset="utf8">
+        <meta name="description" content="جلسه چهاردهم">
+        <meta name="keywords" content="">
+        <meta name="auther" content="0">
+        <meta name="viewport" content="">
+        <link type="text/css" rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div id="main">
+            <div id="title" onclick="registration_form()">
+                <div>
+                    <p>ثبت نام</p>
+                </div>
+            </div>
+    
+            <div id="main_form">
+                <form id="form">
+                        <span id="register">ثبت نام</span>
+                        <input type="checkbox" onclick="darkMode()" id="dark-mode"><span id="dark">حالت تاریک</span>
+                        <hr>
+    
+                        <div>
+                            <p class="font-p">نام</p>
+                            <input class="inputs" type="tex" placeholder="Enter Name">
+                        </div>
+    
+                        <div>
+                            <p class="font-p">ایمیل</p>
+                            <input class="inputs" type="tex" placeholder="Enter Email">    
+                        </div>
+    
+                        <p style="font-size: 12px; text-align: center;">ایمیل شما به کاربران نمایش داده نمی شود</p>
+    
+                        <div>
+                            <p class="font-p">کلمه عبور</p>
+                            <input class="inputs" type="tex" placeholder="Password">
+                        </div>
+    
+                        <div id="spouse">
+                            <input type="radio"name="select" onclick="single()"><span id="check" >مجرد</span>
+                            <br>
+                            <input type="radio" onclick="married()" name="select"><span id="check" >متاهل</span>    
+                        </div>
+    
+                        <div id="spouse-name">
+                            <p class="font-p" >نام همسر</p>
+                            <input class="inputs" type="tex" placeholder="spouse name">  
+                            <!-- <br><br> -->
+                        </div>
+                        
+                        <input type="checkbox" id="checkbox-child" onclick="child()"><span id="check" >دارای فرزند</span>
+                        <div id="check-child">
+                            <span>فرزندان</span>
+                            <button class="childs" id="add" type="button" onclick="add_child()">+</button>
+                            <button class="childs" id="delet" type="button" onclick="delete_child()">-</button>
+                            <ul id="child-list"></ul>                        
+                        </div>
+    
+                        <div>
+                            <button id="submit">ثبت نام</button>
+                        </div>    
+                </form>
+            </div>
+    
+        </div>
+    </body>
+
+    <script src="javascript.js"></script>
+</html>
