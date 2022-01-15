@@ -3,9 +3,25 @@ body{
 }
 #search{
     width: 600px;
+    background-color: rgb(230, 230, 230);
 }
 .carousel-indicators button{
     width: 10px !important;
     height: 10px !important;
     border-radius: 100% !important;
+}
+.border{
+    border-radius: 15px !important;
+}
+.border1{
+    border-radius: 25px !important;
+}
+.border2{
+    border-radius: 10px;
+}
+.border3{
+    border-radius: 8px;
+}
+#green-bg{
+    background-color: rgb(90, 172, 9);
 }
