@@ -8,7 +8,7 @@
 
     <body>
         <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light pb-0">
                 <div class="container-fluid" style="width: 100%">
                   <a class="navbar-brand" href="#">
                     <img src="img/logo.svg" alt="" height="24">
@@ -18,19 +18,19 @@
                     <span class="navbar-toggler-icon"></span>
                   </button>
 
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <div class="collapse navbar-collapse mt-1" id="navbarSupportedContent">
                     <form class="d-flex">
-                      <input class="form-control me-1 border-0 border3" id="search" type="search" placeholder="جستجو در دیجی کالا ..." aria-label="Search">
+                      <input class="form-control me-1 border-0 border3 font_menu" id="search" type="search" placeholder="جستجو در دیجی کالا ..." aria-label="Search">
                       <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
                     </form>
                   </div>
 
                   <!-- Button trigger modal -->
-                <button type="button" class="btn btn-danger border3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <button type="button" class="btn btn-outline-secondary border3 font_menu" id="loggin" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     ورود به حساب کاربری
                     <i class="fas fa-shopping-cart"></i>
                 </button>
-                
+
                 <!-- Modal -->
                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -50,6 +50,41 @@
                     </div>
                 </div>
                 </div>
+            </nav>
+            <nav class="navbar navbar-expand-lg  navbar-light bg-light pt-0">
+              <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item font_menu">
+                              <a class="nav-link " aria-current="page" href=""> <i class="bi bi-justify"></i> دسته بندی کالاها </a>
+                          </li>
+                          <li class="nav-item font_menu">
+                              <a class="nav-link" href=""> <i class="bi bi-basket"></i> سوپر مارکت </a>
+                          </li>
+                          <li class="nav-item font_menu">
+                              <a class="nav-link" href=""> <i class="bi bi-percent"></i>تخفیف ها و پیشنهادها </a>
+                          </li>
+                          <li class="nav-item font_menu">
+                              <a class="nav-link" href="">دیجی کالای من </a>
+                          </li>
+                          <li class="nav-item font_menu">
+                              <a class="nav-link" href="">دیجی پلاس </a>
+                          </li>
+                          <li class="nav-item font_menu">
+                              <a class="nav-link" href="">دیجی کلاب </a>
+                          </li>
+                          <li class="nav-item font_menu">
+                              <a class="nav-link" href="#">دیجی پی </a>
+                          </li>
+                          <li class="nav-item font_menu">
+                            <a class="nav-link" href="">سوالی دارید؟ </a>
+                          </li>
+                          <li class="nav-item font_menu">
+                            <a class="nav-link" href="">فروشنده شوید  </a>
+                          </li>
+                      </ul>
+                  </div>  
+              </div>
             </nav>
 
             <div class="container-fluid mt-3 py-0">
