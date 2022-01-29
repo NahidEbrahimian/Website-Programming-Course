@@ -1,22 +1,9 @@
-.body-color{
-    background-color: rgb(230, 230, 230);
-}
 #search{
-    width: 300px;
+    width: 500px;
     height: 40px;
-    background-color: rgb(165, 164, 164);
-    color: white;
-}
-.carousel-indicators button{
-    width: 10px !important;
-    height: 10px !important;
-    border-radius: 100% !important;
-}
-.border{
-    border-radius: 15px !important;
-}
-.border1{
-    border-radius: 25px !important;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    
 }
 .border2{
     border-radius: 10px;
@@ -24,21 +11,23 @@
 .border3{
     border-radius: 8px;
 }
-#green-bg{
-    background-color: rgb(90, 172, 9);
-}
 .font_menu{
     font-size: 14px;
-}
-#loggin{
-    height: 47px;
 }
 .font-text{
     font-size: 12px;
 }
-.border-color{
-    border-color: blanchedalmond;
-}
 .font-text2{
     font-size: 13px;
 }
+#select{
+    height: 40px;
+    width: 150px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+.cut-text { 
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
