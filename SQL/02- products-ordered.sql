@@ -1,0 +1,1 @@
+SELECT * FROM products WHERE COUNT > 0 ORDER BY (price);

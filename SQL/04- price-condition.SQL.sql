@@ -1,0 +1,1 @@
+SELECT * FROM products WHERE price > 30000 OR price < 20000;
