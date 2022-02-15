@@ -1,0 +1,94 @@
+h1{
+    position: absolute;
+    left: 510px;
+    top: 100px;
+    color: rgb(187, 4, 4);
+}
+.heart-btm {
+    position: absolute;
+    left: 565;
+    top: 315px;
+    width: 230px;
+    height: 230px;
+    border-style: solid;
+    border-right: transparent;
+    border-bottom: transparent;
+    border-color: rgb(187, 4, 4);
+    border-width: 3px;
+    transform: rotate(-135deg);
+  }
+.heart-left {
+    position: absolute;
+    top: 225px;
+    left: 480px;
+    width: 230px;
+    height: 230px;
+    border-style: solid;
+    border-right: transparent;
+    border-bottom: transparent;
+    border-left: transparent;
+    border-radius: 100%;
+    border-width: 10px;
+    border-color: rgb(187, 4, 4);
+    transform: rotate(-50deg);
+}
+.heart-right {
+    position: absolute;
+    top: 225px;
+    left: 650px;
+    width: 230px;
+    height: 230px;
+    border-radius: 100%;
+    border-style: solid;
+    border-left: transparent;
+    border-bottom: transparent;
+    border-right: transparent;
+    border-width: 10px;
+    border-color: rgb(187, 4, 4);
+    transform: rotate(50deg);
+}
+.heart
+{
+    position: absolute;
+    top: 300;
+    right: 0;
+    bottom: 0;
+    left: 555;
+    background-color: rgb(187, 4, 4);
+    height: 250px;
+    width: 250px;
+    animation-iteration-count: infinite;
+    animation-name: heart-beat;
+    animation-duration: 1s;
+    transform: rotate(-45deg);
+}
+.heart:after
+{
+    background-color: rgb(187, 4, 4);
+    width: 250px;
+    height: 250px;
+    top: 1px;
+    left: 108px;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+}
+.heart:before{
+    background-color: rgb(187, 4, 4);
+    width: 250px;
+    height: 250px;
+    top: -114px;
+    left: 0px;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+}
+@keyframes heart-beat
+{
+    0%{
+        transform: scale(1) rotate(-45deg);
+    }
+    50%{
+        transform: scale(0.6) rotate(-45deg);
+    }
+}
