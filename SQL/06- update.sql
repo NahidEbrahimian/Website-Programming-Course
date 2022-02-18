@@ -1,1 +1,1 @@
-UPDATE products SET price=price*1.2;
+UPDATE products SET price=price*0.8;
