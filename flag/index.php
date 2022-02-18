@@ -10,7 +10,7 @@
     <body>
         <table>
             <div style="background-color: rgb(58, 20, 161); width: 120px; height: 77px; position: absolute;">
-                <?php for($i=0; $i<50; $i++): ?>
+                <?php for($i = 0; $i < 50; $i++): ?>
                         <span style="font-size: 12px; color: white; position: absolute;
                         top: <?php print(rand(1, 60)); ?>; left: <?php print(rand(1, 100)); ?>;"
                         class="material-icons">star</span> 
