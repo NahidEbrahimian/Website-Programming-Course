@@ -1,13 +1,18 @@
 <?php 
     include "database.php";
 
-    // یک جدولی که یک رکورد دارد
-    $porsesh = $db->query("SELECT * FROM quistion WHERE id = 1");
+    $num_quiz = $_GET["x"];
+    
+    $porsesh = $db->query("SELECT * FROM quistion WHERE id = $num_quiz"); // یک جدولی که یک رکورد دارد
     $porsesh = $porsesh->fetch_assoc(); // یک رکورد
 
-    $pasokh_ha = $db->query("SELECT * FROM answers WHERE quistion_id = 1");
+    $pasokh_ha = $db->query("SELECT * FROM answers WHERE quistion_id = $num_quiz");
 
+    $num_quizes = $db->query("SELECT * FROM quistion");
+    $num_quizes = $num_quizes->num_rows;
 
+    session_start();
+    $_SESSION["start_time"] = microtime(true);
 ?>
 
 <html lang="fa" dir="rtl">
@@ -22,12 +27,11 @@
         <title>وبسایت آزمونک</title>
     </head>
     
-    <body style="background-color: gray">
+    <body style="background-color: gray" class="xyz" onload="timer('0.5')">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2 mt-2 rounded">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
-                        <!-- <img src="images/logo3.png" alt="" width="30" height="24"> -->
                         آزمونک
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,24 +54,32 @@
                     <div class="card-header">
                          سوال 
                          <?php echo $porsesh["id"]; ?>
-                         از 24
+                         از
+                         <?php echo $num_quizes; ?>
+
+                         <button type="button" class="btn btn-white rounded-circle btn-xl float-end">
+                            <span id="time">
+
+                            </span>
+                         </button>                         
                     </div>
+
                     <div class="card-body">
                         <p>
                             <?php echo $porsesh["text"]; ?>
                         </p>
-                        <form action="">
-
+                        <form action="process.php" method="post">
+                            <input type="hidden" value="<?php echo $porsesh["id"]; ?>" name="quistion_id">
                             <?php foreach($pasokh_ha as $pasokh): ?>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    <?php echo $pasokh["text"]; ?>
-                                </label>
-                            </div>
+                                <div class="form-check">
+                                    <input class="form-check-input answers" type="radio" value="<?php echo $pasokh["id"]; ?>" name="asnwer">
+                                    <label class="form-check-label mb-1" for="flexRadioDefault1">
+                                        <?php echo $pasokh["text"]; ?>
+                                    </label>
+                                </div>
                             <?php endforeach; ?>
 
-                                <button type="submit" class="btn btn-primary">بعد</button>
+                            <button type="submit" class="btn btn-primary mt-3">بعدی</button>
                             
                         </form>
                     </div>
@@ -77,6 +89,7 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
         <script src="js/bootstrap.js"></script>
+        <script src="js/script.js"></script>
 
     </body>
 </html>
