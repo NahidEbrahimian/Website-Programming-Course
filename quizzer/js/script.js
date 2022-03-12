@@ -31,10 +31,10 @@ function remove_Answer()
     
 }
 
-function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
+function startTimer(quiz_time, display) {
+    var timer = quiz_time, minutes, seconds;
     var answers = document.getElementsByClassName("answers");
-    console.log(answers.length)
+
     setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
@@ -56,9 +56,8 @@ function startTimer(duration, display) {
 }
 
 function timer(time) {
-    console.log(time);
-    var fiveMinutes = 60 * time,
-        display = document.querySelector('#time');
+    var quiz_time = 60 * time;
+    var display = document.querySelector('#time');
     
-    startTimer(fiveMinutes, display);
-};
+    startTimer(quiz_time, display);
+}

@@ -2,7 +2,7 @@
     include "database.php";
 
     session_start();
-    $porsesh_ha = $db->query("SELECT * FROM quistion");
+    $porsesh_ha = $db->query("SELECT * FROM questions");
     $total = $porsesh_ha->num_rows;
 
     $_SESSION["user_score"] = 0;
@@ -59,7 +59,7 @@
                                 <?php echo $total / 2; ?>
                                 دقیقه
                             </p>
-                            <a href="quistion.php?x=1" class="btn btn-success">
+                            <a href="question.php?x=1" class="btn btn-success">
                                 شروع آزمون 
                             </a>
                         </div>

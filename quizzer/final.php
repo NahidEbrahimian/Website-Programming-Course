@@ -2,7 +2,7 @@
     include "database.php";
     session_start();
 
-    $num_quizes = $db->query("SELECT * FROM quistion");
+    $num_quizes = $db->query("SELECT * FROM questions");
     $num_quizes = $num_quizes->num_rows;
     $score = ($_SESSION["user_score"] / $num_quizes ) * 100;
 ?>
