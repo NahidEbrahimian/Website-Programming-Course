@@ -14,9 +14,9 @@
         </title>
     </head>
     
-    <body style="background-color: gray">
+    <body style="background-color: rgb(5, 39, 18)">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2 mt-2 rounded">
+            <nav style="background-color: rgb(226, 169, 13)" class="navbar navbar-expand-lg navbar-dark mb-2 mt-2 rounded">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
                         <!-- <img src="images/logo3.png" alt="" width="30" height="24"> -->

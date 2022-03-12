@@ -27,9 +27,9 @@
         <title>وبسایت آزمونک</title>
     </head>
     
-    <body style="background-color: gray" class="xyz" onload="timer('0.5')">
+    <body style="background-color: rgb(5, 39, 18)" onload="timer('0.5')">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2 mt-2 rounded">
+            <nav style="background-color: rgb(226, 169, 13)" class="navbar navbar-expand-lg navbar-dark mb-2 mt-2 rounded">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
                         آزمونک
@@ -77,7 +77,7 @@
                                 </div>
                             <?php endforeach; ?>
 
-                            <button type="submit" class="btn btn-primary mt-3">بعدی</button>
+                            <button type="submit" class="btn btn-success mt-3">بعدی</button>
                             
                         </form>
                     </div>
