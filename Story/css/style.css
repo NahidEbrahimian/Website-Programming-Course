@@ -1,0 +1,15 @@
+body{
+    background-image: linear-gradient(rgb(13, 85, 90), rgb(78, 236, 247));
+}
+
+nav{
+    background-color: rgba(3, 75, 29, 0.4);}
+
+.card
+{
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
