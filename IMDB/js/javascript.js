@@ -227,5 +227,4 @@ async function read_data(file)
     sec1();
     years();
 }
- 
 read_data("https://raw.githubusercontent.com/NahidEbrahimian/Website-Programming-Course/main/IMDB/data/moviedata.json");
