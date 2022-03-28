@@ -228,4 +228,4 @@ async function read_data(file)
     years();
 }
  
-read_data("https://github.com/NahidEbrahimian/Website-Programming-Course/blob/main/IMDB/data/moviedata.json");
+read_data("https://raw.githubusercontent.com/NahidEbrahimian/Website-Programming-Course/main/IMDB/data/moviedata.json");
