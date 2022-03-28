@@ -135,7 +135,7 @@ Source website: [digikala](https://www.digikala.com/)
 
 Preview: [github.io](https://nahidebrahimian.github.io/Website-Programming-Course/IMDB/)
 
-![Uploading screencapture-file-C-Users-NahidSeb-Web-18-imdb-Assignment18-Assignment18-IMDB-index-html-2022-03-28-20_33_33.png…]()
+![screencapture-file-C-Users-NahidSeb-Web-18-imdb-Assignment18-Assignment18-IMDB-index-html-2022-03-28-20_33_33](https://user-images.githubusercontent.com/82975802/160449054-4a1747f5-d6e2-4d7c-813d-1dd07f4f1289.png)
 
 #
 
