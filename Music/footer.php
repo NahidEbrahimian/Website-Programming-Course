@@ -1,9 +1,10 @@
-<div  class="text-center mt-4" style="position: relative; bottom: 0; width: 100%;">
+<div  class="text-center mt-4 text-white" style="position: relative; margin-bottom: 80px; margin-top: 10px; width: 100%;">
 <hr >
 <p>
-    تمامی حقوق
-    <?php echo date("Y"); ?> &copy; 
-    برای سایت محفوظ است.
+    <!-- Music-Website -->
+    <?php echo date("Y"); ?>&copy;
+    <!-- <span>by Music Website</span> -->
+    Copyright
 </p>
 </div>
 

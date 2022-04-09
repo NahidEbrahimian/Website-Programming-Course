@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+
+<?php
+session_start();
+?>
+
 <html lang="fa" dir="rtl">
 
 <head>
@@ -9,34 +14,35 @@
     <meta name="auther" content="0">
     <link type="text/css" rel="stylesheet" href="css/bootstrap.rtl.css">
     <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link href="css/all.css" type="text/css" rel="stylesheet">
     <title>موزیک</title>
 </head>
 
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">موزیک</a>
+<body class="bg-black">
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark mb-2 mt-2 rounded">
+            <a class="navbar-brand text-white" href="index.php"><b>موزیک</b></a>
+            <a class="nav-link  text-white" href="index.php">صفحه اصلی <span class="sr-only"></span></a>
+            <a class="nav-link justify-content-start text-white" href="artists.php">خواننده ها</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.php">صفحه اصلی <span class="sr-only"></span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">تک آهنگ</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link justify-content-start" href="artists.php">هنرمندان</a>
-                    </li>
-                </ul>
-                <div class="collapse navbar-collapse pb-3" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-                    <form class="d-flex">
-                        <button class="btn btn-outline-success mt-3 me-2 " type="submit">جستجو</button>
-                        <input class="form-control mt-3" type="search" placeholder="جستجو" aria-label="Search">
-                    </form>
-                </div>
+                <ul class="navbar-nav me-auto  mb-lg-0"></ul>
+                <?php if ($_SESSION["login_status"] != null && $_SESSION["login_status"] == true) : ?>
+                    <a class="nav-link text-white" href="admin_logout.php">
+                        <i class="fas fa-user"></i> خروج از حساب کاربری</a>
+                <?php else : ?>
+                    <a class="nav-link text-white" href="admin_login.php">
+                        <i class="fas fa-user"></i> حساب کاربری</a>
+                <?php endif; ?>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
+
+    <div class="container">
+        <hr class="text-white mb-4">
+    </div>

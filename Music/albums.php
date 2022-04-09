@@ -8,8 +8,8 @@ $albums = $db->query("SELECT * FROM albums WHERE artist_id	= $artist_id");
 
 <div class="container">
     <div class="row mt-3">
-        <h2>آلبوم ها</h2>
-        <hr>
+        <h2 class="text-white">آلبوم ها</h2>
+        <hr class="text-white">
         <?php if ($albums->num_rows == 0) : ?>
             <div class="alert alert-dark" role="alert">
                 هنوز آلبوم های این خواننده به سایت اضافه نشده است!
