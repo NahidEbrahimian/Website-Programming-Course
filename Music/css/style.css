@@ -1,23 +1,10 @@
-/* body{
-    background-image: linear-gradient(rgb(13, 85, 90), rgb(78, 236, 247));
-}
 
-nav{
-    background-color: rgba(3, 75, 29, 0.4);}
-
-.card
-{
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-} */
 .zoom:hover {
-    -ms-transform: scale(1.2); /* IE 9 */
-    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    -ms-transform: scale(1.2); 
+    -webkit-transform: scale(1.1);
     transform: scale(1.1); 
-    transition: transform .7s ease;
+    transition: all .7s ease;
+    overflow: hidden;
   }
   
   .footer {
