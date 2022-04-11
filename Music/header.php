@@ -1,8 +1,9 @@
-<!DOCTYPE html>
-
 <?php
-session_start();
+    session_start();
+    $_SESSION["login_status"] = false;
 ?>
+
+<!DOCTYPE html>
 
 <html lang="fa" dir="rtl">
 

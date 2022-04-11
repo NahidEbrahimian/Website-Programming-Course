@@ -8,6 +8,7 @@ if(!isset($_SESSION))
 }
 
 $musics = $db->query("SELECT * FROM musics");
+$idx = 1;
 ?>
 
 <?php if ($_SESSION["login_status"] != null && $_SESSION["login_status"] == true) : ?>
@@ -41,7 +42,9 @@ $musics = $db->query("SELECT * FROM musics");
                         <?php foreach ($musics as $music) : ?>
                             <tr>
                                 <th scope="row">
-                                    <?php echo $music["id"]; ?>
+                                    <?php echo $idx; 
+                                        $idx++;
+                                    ?>
                                 </th>
                                 <td>
                                     <img src="<?php echo $music["image"]; ?>" class="img-fluid" width="100px" alt="">
@@ -50,7 +53,7 @@ $musics = $db->query("SELECT * FROM musics");
                                     <?php echo $music["name"]; ?>
                                 </td>
                                 <td>
-                                    <a href="" class="btn btn-sm btn-info">
+                                    <a href="admin_edit_music.php?music-id=<?php echo $music["id"]; ?>" class="btn btn-sm btn-info">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <a href="admin_remove_music.php?music-id=<?php echo $music["id"]; ?>" class="btn btn-sm btn-danger">

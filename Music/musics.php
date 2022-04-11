@@ -21,19 +21,19 @@ $artist = $db->query("SELECT * FROM artists WHERE id = $artist_id")->fetch_assoc
             </div>
  
         <?php else : ?>
-            <div class="col-3 rounded-2">
+            <div class="col-lg-3 col-md-4 col-sm-6 rounded-2 mb-3">
                 <div class="list-group">
                     <?php foreach ($musics as $music) : ?>
                         <button class="list-group-item list-group-item-action" onclick="play_music('<?php echo $music["mp3"]; ?>')">
                             <div class="row">
-                                <div class="col-8">
+                                <div class="col-lg-8 col-md-8 col-sm-6">
                                     <h6>
                                         <?php echo $artist["name"]; ?>
                                     </h6>
                                     <?php echo $music["name"]; ?>
                                 </div>
 
-                                <div class="col-4">
+                                <div class="col-lg-4 col-md-4 col-sm-6">
                                     <img src="<?php echo $music["image"]; ?>" class="img-thumbnail" alt="Card image cap">
                                 </div>
                             </div>
@@ -41,15 +41,14 @@ $artist = $db->query("SELECT * FROM artists WHERE id = $artist_id")->fetch_assoc
                     <?php endforeach; ?>
                     </div>
             </div>
-        <?php endif; ?>
-
-            <div class="col-9 rounded-2">
+            <div class="col-lg-9 col-md-8 col-sm-6 rounded-2">
                 <center>
                     <img src="<?php echo $album["image"]; ?>" class="img-fluid" alt="Card image cap">
                     <br>
                     <audio id="music-player" src="" controls class="mt-3"></audio>
                 </center>
             </div>
+        <?php endif; ?>
     </div>
 </div>
 

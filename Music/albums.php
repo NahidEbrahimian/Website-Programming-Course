@@ -17,7 +17,7 @@ $albums = $db->query("SELECT * FROM albums WHERE artist_id	= $artist_id");
 
         <?php else : ?>
             <?php foreach ($albums as $album) : ?>
-                <div class="col-3 rounded-2">
+                <div class="col-lg-3 col-md-4 col-sm-6 rounded-2">
                     <a href="musics.php?album_id=<?php echo $album["id"]; ?>" class="my-card text-decoration-none text-dark">
                         <div class="card mt-3 zoom ">
                             <img class="card-img-top" src="<?php echo $album["image"]; ?>" alt="Card image cap">

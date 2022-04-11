@@ -1,10 +1,10 @@
 <?php
 include "header.php";
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-}
-?>
+// if(!isset($_SESSION)) 
+// { 
+//     session_start(); 
+// }
+// ?>
 
 <?php if($_SESSION["login_status"] != null && $_SESSION["login_status"] == true): ?>
     <div class="container">

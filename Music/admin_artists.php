@@ -2,12 +2,13 @@
 include "header.php";
 include "database.php";
 
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-}
+// if(!isset($_SESSION)) 
+// { 
+//     session_start(); 
+// }
 
 $artists = $db->query("SELECT * FROM artists");
+$idx = 1;
 ?>
 
 <?php if ($_SESSION["login_status"] != null && $_SESSION["login_status"] == true) : ?>
@@ -41,7 +42,9 @@ $artists = $db->query("SELECT * FROM artists");
                         <?php foreach ($artists as $artist) : ?>
                             <tr>
                                 <th scope="row">
-                                    <?php echo $artist["id"]; ?>
+                                    <?php echo $idx; 
+                                    $idx++;
+                                    ?>
                                 </th>
                                 <td>
                                     <img src="<?php echo $artist["image"]; ?>" class="img-fluid" width="100px" alt="">
@@ -50,7 +53,7 @@ $artists = $db->query("SELECT * FROM artists");
                                     <?php echo $artist["name"]; ?>
                                 </td>
                                 <td>
-                                    <a href="" class="btn btn-sm btn-info">
+                                    <a href="admin_edit_artist.php?artist-id=<?php echo $artist["id"]; ?>" class="btn btn-sm btn-info">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <a href="admin_remove_artist.php?artist-id=<?php echo $artist["id"]; ?>" class="btn btn-sm btn-danger">

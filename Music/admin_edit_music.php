@@ -2,17 +2,24 @@
 include "header.php";
 include "database.php";
 
-// if (!isset($_SESSION)) {
-//     session_start();
+// if(!isset($_SESSION)) 
+// { 
+//     session_start(); 
 // }
 
-$artists = $db->query("SELECT * FROM artists");
+$music_id = $_GET["music-id"];
+$music = $db->query("SELECT * FROM musics WHERE id = $music_id")->fetch_assoc();
+
+$album_id = $music["album_id"];
+$album = $db->query("SELECT * FROM albums WHERE id = $album_id")->fetch_assoc();
+
+$albums = $db->query("SELECT * FROM albums")
 ?>
 
 <?php if ($_SESSION["login_status"] != null && $_SESSION["login_status"] == true) : ?>
     <div class="container">
         <h3 class="text-light mb-4">
-            افزودن آلبوم جدید
+            ویرایش آهنگ
         </h3>
         <hr class="bg-light mb-5">
         <div class="row mt-3 justify-content-center">
@@ -21,28 +28,29 @@ $artists = $db->query("SELECT * FROM artists");
             </div>
 
             <div class="col-lg-9 col-md-6 col-sm-6">
-                <form method="post" action="admin_add_album_proccess.php" enctype="multipart/form-data">
+                <form method="post" action="admin_edit_music_proccess.php" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col">
-                            <input type="text" name="name" class="form-control" placeholder="نام آلبوم" aria-label="First name">
+                            <label for="files" class="btn">نام آهنگ</label>
+                            <input type="text" value="<?php echo $music["name"]; ?>" name="name" class="form-control" placeholder="نام خواننده" aria-label="First name">
                         </div>
                         <div class="col">
+                            <label for="files" class="btn">افزودن تصویر</label>
                             <input type="file" name="image" class="form-control" aria-label="Last name">
                         </div>
                     </div>
-
                     <div class="row mt-3">
                         <div class="col">
-                            <select class="form-select w-100" aria-label="Default select example" name="artist-id">
-                            <?php foreach ($artists as $artist) : ?>
-                                    <option value="<?php echo $artist["id"]; ?>"><?php echo $artist["name"]; ?></option>
+                            <select class="form-select w-100" aria-label="Default select example" name="album-id">
+                                <option selected>نام آلبوم</option>
+                                <?php foreach ($albums as $album) : ?>
+                                    <option value="<?php echo $album["id"]; ?>"><?php echo $album["name"]; ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
                     </div>
-
-
                     <button type="submit" class="btn btn-primary mt-3">ذخیره</button>
+                    <input type="hidden" value="<?php echo $music["id"]; ?>" name="id">
                 </form>
             </div>
         </div>

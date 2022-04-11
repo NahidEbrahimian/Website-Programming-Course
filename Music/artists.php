@@ -9,7 +9,7 @@ $artists = $db->query("SELECT * FROM artists");
         <h2 class="text-white">خواننده ها</h2>
         <hr class="text-white">
         <?php foreach ($artists as $artist) : ?>
-            <div class="col-3 rounded">
+            <div class="col-lg-3 col-md-4 col-sm-6 rounded">
                 <a href="albums.php?artist_id=<?php echo $artist["id"]; ?>" class="my-card text-decoration-none text-dark">
                     <div class="card mt-3 zoom">
                         <img style="height:250px;" class="card-img-top" src="<?php echo $artist["image"]; ?>" alt="Card image cap">

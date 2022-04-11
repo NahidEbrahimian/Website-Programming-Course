@@ -2,7 +2,7 @@
 include "database.php";
 
 $name = $_POST["name"];
-$album_id = $_POST["id"];
+$album_id = $_POST["album-id"];
 
 // if($_FILES["image"]["size"] > 5000000)
 // {

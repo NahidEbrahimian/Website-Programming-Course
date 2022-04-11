@@ -2,7 +2,7 @@
 include "database.php";
 
 $name = $_POST["name"];
-$artist_id = $_POST["id"];
+$artist_id = $_POST["artist-id"];
 
 if($_FILES["image"]["size"] > 5000000)
 {
@@ -12,7 +12,7 @@ if($_FILES["image"]["size"] > 5000000)
 else
 {
 $image_name = "images/albums/" . $_FILES["image"]["name"];
-$db->query("INSERT INTO albums (name, image, artist_id) VALUES ('$name', '$image_name', '$artist_id)");
+$db->query("INSERT INTO albums (name, image, artist_id) VALUES ('$name', '$image_name', $artist_id)");
 
 move_uploaded_file($_FILES["image"]["tmp_name"] ,$image_name);
 header("Location: admin_albums.php");

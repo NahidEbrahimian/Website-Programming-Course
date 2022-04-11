@@ -9,7 +9,7 @@ $Popular_artists = $db->query("SELECT * FROM artists WHERE id = 1 OR id = 2 OR i
 
 <div class="container mt-3">
     <div class="row">
-        <div class="col-6">
+        <div class="col-lg-12 col-md-6 col-sm-6">
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators ">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -34,7 +34,7 @@ $Popular_artists = $db->query("SELECT * FROM artists WHERE id = 1 OR id = 2 OR i
             </div>
         </div>
 
-        <div class="col-6">
+        <!-- <div class="col-6">
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators ">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -58,14 +58,14 @@ $Popular_artists = $db->query("SELECT * FROM artists WHERE id = 1 OR id = 2 OR i
                 </button>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="row mt-5">
         <h3 class="text-white"> جدیدترین آلبوم ها</h3>
         <hr class="text-white mt-2">
         <?php foreach ($Neueste_albums as $Neueste_album) : ?>
             <div class="col-lg-2 col-md-4 col-sm-12 rounded">
-                <a href="musics.php?album_id=<?php echo $Neueste_album["id"]; ?>" class="my-card text-decoration-none text-dark">
+                <a  href="musics.php?album_id=<?php echo $Neueste_album["id"]; ?>" class="my-card text-decoration-none text-dark">
                     <div class="card mt-3 zoom">
                         <img style="height:150px;" class="card-img-top" src="<?php echo $Neueste_album["image"]; ?>" alt="Card image cap">
                         <div class="card-body">
@@ -96,7 +96,7 @@ $Popular_artists = $db->query("SELECT * FROM artists WHERE id = 1 OR id = 2 OR i
         <hr class="text-white mt-2">
         <?php foreach ($Popular_artists as $Popular_artist) : ?>
             <div class="col-lg-4 col-md-4 col-sm-12 rounded text-center text-white mt-5 zoom">
-                <a href="musics.php?album_id=<?php echo $Popular_artist["id"]; ?>" class="my-card text-decoration-none text-white">
+                <a href="albums.php?artist_id=<?php echo $Popular_artist["id"]; ?>" class="my-card text-decoration-none text-white">
                     <img style="width: 250px; height: 250px; border-radius: 100%; border-white;" class="card-img-top" src="<?php echo $Popular_artist["image"]; ?>" alt="Card image cap">
                     <h6 class="card-title text-center mt-2"><?php echo $Popular_artist["name"]; ?></h6>
                 </a>
