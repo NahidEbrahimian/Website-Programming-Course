@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $_SESSION["login_status"] = false;
+    // $_SESSION["login_status"] = false;
 ?>
 
 <!DOCTYPE html>
