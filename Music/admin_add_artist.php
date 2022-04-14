@@ -24,10 +24,11 @@ $artists = $db->query("SELECT * FROM artists");
             <div class="col-lg-9 col-md-6 col-sm-6">                
                 <form method="post" action="admin_add_artist_proccess.php" enctype="multipart/form-data">
                     <div class="row">
-                        <div class="col">
+                        <div class="col"><label for="files" class="btn">نام خواننده</label>
                             <input type="text" name="name" class="form-control" placeholder="نام خواننده" aria-label="First name">
                         </div>
                         <div class="col">
+                            <label for="files" class="btn">افزودن تصویر </label>
                             <input type="file" name="image" class="form-control" aria-label="Last name">
                         </div>
                     </div>

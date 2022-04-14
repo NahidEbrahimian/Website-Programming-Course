@@ -17,47 +17,45 @@ $artist = $db->query("SELECT * FROM artists WHERE id = $artist_id")->fetch_assoc
         <hr class="text-white">
         <?php if ($musics->num_rows == 0) : ?>
             <div class="alert alert-dark" role="alert">
-                هنوز آهنگ های این آلبوم به سایت اضافه نشده است!               
+                هنوز آهنگ های این آلبوم به سایت اضافه نشده است!
             </div>
- 
-        <?php else : ?>
-            <div class="col-lg-3 col-md-4 col-sm-6 rounded-2 mb-3">
-                <div class="list-group">
-                    <?php foreach ($musics as $music) : ?>
-                        <button class="list-group-item list-group-item-action" onclick="play_music('<?php echo $music["mp3"]; ?>')">
-                            <div class="row">
-                                <div class="col-lg-8 col-md-8 col-sm-6">
-                                    <h6>
-                                        <?php echo $artist["name"]; ?>
-                                    </h6>
-                                    <?php echo $music["name"]; ?>
-                                </div>
 
-                                <div class="col-lg-4 col-md-4 col-sm-6">
-                                    <img src="<?php echo $music["image"]; ?>" class="img-thumbnail" alt="Card image cap">
+        <?php else : ?>
+            <div class="col-lg-3 col-md-12 col-sm-12 mb-3">
+                <?php foreach ($musics as $music) : ?>
+                    <a href="#" class="text-decoration-none link-dark">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex mt-1 align-items-center" onclick="play_music('<?php echo $music["mp3"]; ?>','<?php echo $music["image"]; ?>')">
+                                <div class="col col-lg col-lg col-md col-sm">
+                                    <h6 class="text-nowrap"><?php echo $artist["name"]; ?></h6>
+                                    <p class="text-nowrap"><?php echo $music["name"]; ?></p>
                                 </div>
-                            </div>
-                        </button>
-                    <?php endforeach; ?>
-                    </div>
+                                <span class="col col-lg col-md col-sm">
+                                    <img class="img-thumbnail float-end" width="70px" src="<?php echo $music["image"]; ?>">
+                                </span>
+                            </li>
+                        </ul>
+                    </a>
+
+                <?php endforeach; ?>
             </div>
-            <div class="col-lg-9 col-md-8 col-sm-6 rounded-2">
-                <center>
-                    <img src="<?php echo $album["image"]; ?>" class="img-fluid" alt="Card image cap">
-                    <br>
-                    <audio id="music-player" src="" controls class="mt-3"></audio>
-                </center>
+            <div class="col-lg-9 col-md-12 col-sm-12 d-flex flex-column justify-content-center align-items-center">
+                <img src="<?php echo $album["image"]; ?>"  id="music-image" class="img-fluid rounded-3" width="300px">
+                <br>
+                <audio src="" id="music-player" controls class="mt-3"></audio>
             </div>
         <?php endif; ?>
     </div>
 </div>
 
 <script>
-    function play_music(music_path)
-    {
+    function play_music(music_path, image_path) {
         var music_player = document.getElementById("music-player");
         music_player.setAttribute("src", music_path);
         music_player.play();
+
+        var music_image = document.getElementById("music-image");
+        music_image.setAttribute("src", image_path);
     }
 </script>
 

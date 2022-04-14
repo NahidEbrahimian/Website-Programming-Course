@@ -11,7 +11,7 @@ $music_id = $_GET["music-id"];
 $music = $db->query("SELECT * FROM musics WHERE id = $music_id")->fetch_assoc();
 
 $album_id = $music["album_id"];
-$album = $db->query("SELECT * FROM albums WHERE id = $album_id")->fetch_assoc();
+$primary_album = $db->query("SELECT * FROM albums WHERE id = $album_id")->fetch_assoc();
 
 $albums = $db->query("SELECT * FROM albums")
 ?>
@@ -38,11 +38,16 @@ $albums = $db->query("SELECT * FROM albums")
                             <label for="files" class="btn">افزودن تصویر</label>
                             <input type="file" name="image" class="form-control" aria-label="Last name">
                         </div>
+                        <div class="col">
+                            <label for="files" class="btn">افزودن فایل mp3</label>
+                            <input type="file" name="mp3" class="form-control" aria-label="Last name">
+                        </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col">
+                            <label for="files" class="btn">نام آلبوم</label>
                             <select class="form-select w-100" aria-label="Default select example" name="album-id">
-                                <option selected>نام آلبوم</option>
+                                <option selected><?php echo $primary_album["name"]; ?></option>
                                 <?php foreach ($albums as $album) : ?>
                                     <option value="<?php echo $album["id"]; ?>"><?php echo $album["name"]; ?></option>
                                 <?php endforeach; ?>
@@ -51,6 +56,7 @@ $albums = $db->query("SELECT * FROM albums")
                     </div>
                     <button type="submit" class="btn btn-primary mt-3">ذخیره</button>
                     <input type="hidden" value="<?php echo $music["id"]; ?>" name="id">
+                    <input type="hidden" value="<?php echo $primary_album["id"]; ?>" name ="primary_album_id">
                 </form>
             </div>
         </div>

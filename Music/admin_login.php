@@ -25,11 +25,9 @@ include "header.php";
                         </div>
                         <button type="submit" class="btn btn-primary">ورود</button>
                     </form>
-
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 <?php include "footer.php"; ?>

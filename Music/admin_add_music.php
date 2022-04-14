@@ -24,9 +24,11 @@ $albums = $db->query("SELECT * FROM albums");
                 <form method="post" action="admin_add_music_proccess.php" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col">
+                            <label for="files" class="btn">نام آهنگ</label>
                             <input type="text" name="name" class="form-control" placeholder="نام آهنگ" aria-label="First name">
                         </div>
                         <div class="col">
+                            <label for="files" class="btn">نام آلبوم</label>
                             <select class="form-select w-100" aria-label="Default select example" name="album-id">
                                 <?php foreach ($albums as $album) : ?>
                                     <option value="<?php echo $album["id"]; ?>"><?php echo $album["name"]; ?></option>

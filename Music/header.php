@@ -1,11 +1,14 @@
 <?php
-    session_start();
-    // $_SESSION["login_status"] = false;
+session_start();
+if (!isset($_SESSION['login_status']))
+{
+    $_SESSION["login_status"] = false;
+}
 ?>
 
 <!DOCTYPE html>
 
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" style="height: 100%;">
 
 <head>
     <meta charset="utf-8">
@@ -19,27 +22,40 @@
     <title>موزیک</title>
 </head>
 
-<body class="bg-black">
+<body class="bg-black" style="position: relative; min-height: 100%; padding-bottom: 12rem;">
 
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-dark mb-2 mt-2 rounded">
-            <a class="navbar-brand text-white" href="index.php"><b>موزیک</b></a>
-            <a class="nav-link  text-white" href="index.php">صفحه اصلی <span class="sr-only"></span></a>
-            <a class="nav-link justify-content-start text-white" href="artists.php">خواننده ها</a>
+        <nav class="navbar navbar-expand-lg navbar-dark mb-2 mt-2 rounded ">
+            <div class="container-fluid">
+                <a class="navbar-brand text-light" href="index.php"><b>موزیک</b></a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto  mb-lg-0"></ul>
-                <?php if ($_SESSION["login_status"] != null && $_SESSION["login_status"] == true) : ?>
-                    <a class="nav-link text-white" href="admin_logout.php">
-                        <i class="fas fa-user"></i> خروج از حساب کاربری</a>
-                <?php else : ?>
-                    <a class="nav-link text-white" href="admin_login.php">
-                        <i class="fas fa-user"></i> حساب کاربری</a>
-                <?php endif; ?>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-lg-auto me-lg-auto justify-content-center ">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.php">صفحه اصلی</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="artists.php">خواننده ها</a>
+                        </li>
+                    </ul>
+                    <?php if ($_SESSION["login_status"] != null && $_SESSION["login_status"] == true) : ?>
+                        <div class="text-start">
+                            <a a class="nav-link text-white" href="admin_logout.php">
+                                <i class="fas fa-user mx-1"></i> خروج از پنل مدیریت
+                            </a>
+                        </div>
+                    <?php else : ?>
+                        <div class="text-start">
+                            <a a class="nav-link text-white" href="admin_login.php">
+                                <i class="fas fa-user mx-1"></i>ورود 
+                            </a>
+                        </div>
+                    <?php endif; ?>
+                </div>
             </div>
         </nav>
     </div>

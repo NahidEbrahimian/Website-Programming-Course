@@ -20,7 +20,7 @@ $albums = $db->query("SELECT * FROM albums WHERE artist_id	= $artist_id");
                 <div class="col-lg-3 col-md-4 col-sm-6 rounded-2">
                     <a href="musics.php?album_id=<?php echo $album["id"]; ?>" class="my-card text-decoration-none text-dark">
                         <div class="card mt-3 zoom ">
-                            <img class="card-img-top" src="<?php echo $album["image"]; ?>" alt="Card image cap">
+                            <img style="height:250px;" class="card-img-top" src="<?php echo $album["image"]; ?>" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title text-center"><?php echo $album["name"]; ?></h5>
                             </div>

@@ -2,10 +2,10 @@
 include "header.php";
 include "database.php";
 
-if(!isset($_SESSION)) 
-{ 
-    session_start(); 
-}
+// if(!isset($_SESSION)) 
+// { 
+//     session_start(); 
+// }
 
 $musics = $db->query("SELECT * FROM musics");
 $idx = 1;

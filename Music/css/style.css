@@ -1,18 +1,9 @@
 
 .zoom:hover {
-    -ms-transform: scale(1.2); 
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1); 
+    -ms-transform: scale(1.05); 
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05); 
     transition: all .7s ease;
     overflow: hidden;
   }
   
-  .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: red;
-    color: white;
-    text-align: center;
-  }

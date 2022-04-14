@@ -11,9 +11,10 @@ $album_id = $_GET["album-id"];
 $album = $db->query("SELECT * FROM albums WHERE id = $album_id")->fetch_assoc();
 
 $artist_id = $album["artist_id"];
-$artist = $db->query("SELECT * FROM artists WHERE id = $artist_id")->fetch_assoc();
+$primary_artist = $db->query("SELECT * FROM artists WHERE id = $artist_id")->fetch_assoc();
 
 $artists = $db->query("SELECT * FROM artists")
+
 ?>
 
 <?php if ($_SESSION["login_status"] != null && $_SESSION["login_status"] == true) : ?>
@@ -41,16 +42,20 @@ $artists = $db->query("SELECT * FROM artists")
                     </div>
                     <div class="row mt-3">
                         <div class="col">
+                            <label for="files" class="btn">نام خواننده</label>
                             <select class="form-select w-100" aria-label="Default select example" name="artist-id">
-                                <option selected>نام خواننده</option>
+                                <option selected><?php echo $primary_artist["name"]; ?></option>
                                 <?php foreach ($artists as $artist) : ?>
-                                    <option value="<?php echo $artist["id"]; ?>"><?php echo $artist["name"]; ?></option>
+                                    <?php if($artist["id"] != $primary_artist["id"]): ?>
+                                        <option value="<?php echo $artist["id"]; ?>"><?php echo $artist["name"]; ?></option>
+                                    <?php endif ?>
                                 <?php endforeach; ?>
                             </select>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary mt-3">ذخیره</button>
                     <input type="hidden" value="<?php echo $album["id"]; ?>" name="id">
+                    <input type="hidden" value="<?php echo $primary_artist["id"]; ?>" name="primary_artist_id">
                 </form>
             </div>
         </div>
