@@ -16,7 +16,7 @@ include "../model/database.php";
                      ورود  
                 </div> -->
                 <div class="card-body">
-                    <form method="post" action="">
+                    <form method="post" action="user_login_process.php">
                         <div class="mb-3">
                             <label class="form-label">نام کاربری</label>
                             <input type="text" class="form-control" name="username">
@@ -43,7 +43,7 @@ include "../model/database.php";
 
                     <!-- Button trigger modal -->
                     <div class="text-center">
-                        <a href="registration_form.php">
+                        <a href="submition_form.php">
                             <button type="button" class="btn btn-success"">
                                 نام نویسی
                             </button>

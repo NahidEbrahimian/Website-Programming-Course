@@ -5839,6 +5839,7 @@ textarea.form-control-lg {
   top: 0;
   left: 0 /* rtl:ignore */;
   z-index: 1070;
+  inset: 0px 0px auto auto;
   display: block;
   max-width: 276px;
   font-family: var(--bs-font-sans-serif);
