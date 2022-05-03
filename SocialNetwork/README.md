@@ -2,5 +2,4 @@
 
 #
 
-![screencapture-ebrahimiannahid-000webhostapp-SocialNetwork-view-submition-form-php-2022-05-01-09_10_56](https://user-images.githubusercontent.com/82975802/166132501-ff72732b-b77c-4ef7-b294-762b595dde61.png)
-
+![screencapture-localhost-SocialNetwork2-view-submition-form-php-2022-05-03-19_22_45](https://user-images.githubusercontent.com/82975802/166477870-ff218641-caa6-456a-a6e1-9975d5d505b7.png)
