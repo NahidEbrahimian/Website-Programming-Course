@@ -1,10 +1,7 @@
 <?php
 include "header.php";
-include "../model/database.php";
-
-// $notes = $db->query("SELECT * FROM tasks");
-// $colors = $db->query("SELECT * FROM colors");
-
+include "navbar.php";
+include "model/database.php";
 ?>
 
 
@@ -12,40 +9,41 @@ include "../model/database.php";
     <div class="row mt-5 justify-content-center">
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card shadow border-0 rounded-3">
-                <!-- <div class="card-header">
-                     ورود  
-                </div> -->
+                <div class="card-header py-3">
+                     ورود به حساب کاربری  
+                </div>
                 <div class="card-body">
                     <form method="post" action="user_login_process.php">
-                        <div class="mb-3">
-                            <label class="form-label">نام کاربری</label>
-                            <input type="text" class="form-control" name="username">
+                        <div class="mb-4">
+                            <label class="form-label" style="font-size: 15px;">نام کاربری</label>
+                            <input type="text" class="form-control" name="username" placeholder="ایمیل یا شماره موبایل">
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">گذرواژه</label>
-                            <input type="password" class="form-control" name="password">
+                        <div class="mb-4">
+                            <label class="form-label" style="font-size: 15px;">گذرواژه</label>
+                            <input type="password" class="form-control" name="password" placeholder="****">
                         </div>
-                        <div class="form-check mb-3 text-right">
+                        <div class="form-check mb-4 text-right">
                             <input type="checkbox" class="form-check-input">
-                            <label class="form-check-label" for="exampleCheck1">مرا به خاطر بسپار</label>
+                            <label class="form-check-label" for="exampleCheck1" style="font-size: 14px;">مرا به خاطر بسپار</label>
                         </div>
 
-                        <div class="d-grid gap-2">
+                        <div class="d-grid gap-2 mb-3">
                             <button type="submit" class="btn btn-primary">ورود</button>
                         </div>
 
                     </form>
-                    <a href="">
-                        <p class="text-center fs-6 mt-2">فراموشی رمز عبور</p>
+                    <a href="" class="text-decoration-none">
+                        <p class="text-center mt-2" style="font-size: 14px;">فراموشی رمز عبور</p>
                     </a>
 
                     <hr class="text-dark mb-3">
 
+                    
                     <!-- Button trigger modal -->
                     <div class="text-center">
-                        <a href="submition_form.php">
-                            <button type="button" class="btn btn-success"">
-                                نام نویسی
+                        <a href="registration_form.php">
+                            <button type="button" class="btn btn-success" style="font-size: 15px;">
+                            افزودن حساب کاربری
                             </button>
                         </a>
                     </div>
@@ -58,8 +56,7 @@ include "../model/database.php";
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <div>
-                                        <h5 class="modal-title" id="exampleModalLabel">نام نویسی</h5>
-                                        <!-- <P class="text-secondary">سریع و راحت</P> -->
+                                        <h5 class="modal-title" id="exampleModalLabel">افزودن حساب کاربری </h5>
                                     </div>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
@@ -121,18 +118,6 @@ include "../model/database.php";
                                             </div>
                                         </div>
 
-
-                                        <!-- <div class="col-12">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text cursor-pointer" id="date1"  data-mdpersiandatetimepicker="" data-original-title=""  title="">اینجا کلیک کنید</span>
-                                                </div>
-                                                <input type="text" id="inputDate1" class="form-control" placeholder="تاریخ تولد" aria-label="date1" aria-describedby="date1">
-                                            </div> -->
-                                        <!-- <label for="inputAddress" class="form-label">Address</label>
-                                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"> -->
-                                        <!-- </div> -->
-
                                         <div class="row mt-3">
                                             <div class="col-12">
                                                 <label for="files" class="btn text-secondary fs-6">افزودن تصویر</label>
@@ -144,7 +129,6 @@ include "../model/database.php";
                                     </form>
                                 </div>
                                 <div class="modal-footer">
-                                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
                                     <button type="button" class="btn btn-primary">ذخیره</button>
                                 </div>
                             </div>

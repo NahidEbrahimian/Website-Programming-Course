@@ -8,9 +8,9 @@
 </p>
 </footer>
 
-<script src="js/bootstrap.js"></script>
-<script src="js/bootstrap.bundle.js"></script>
-<script src="dist/mds.bs.datetimepicker.js"></script>
+<script src="view/js/bootstrap.js"></script>
+<script src="view/js/bootstrap.bundle.js"></script>
+<script src="view/dist/mds.bs.datetimepicker.js"></script>
 
 
 <script>
