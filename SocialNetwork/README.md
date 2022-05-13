@@ -2,22 +2,26 @@
 
 ### Login page
 
-![screencapture-localhost-SocialNetwork2-index-php-2022-05-08-23_02_12](https://user-images.githubusercontent.com/82975802/167311208-d951c348-f9ac-4d07-b703-cc2359ef8a96.png)
+![screencapture-ebrahimiannahid-000webhostapp-SocialNetwork-index-php-2022-05-13-12_51_28](https://user-images.githubusercontent.com/82975802/168250335-c5ef86ea-f775-46f3-bcdc-af5fe5f5871c.png)
+
 
 ---
 
 ### Registration form
 
-![screencapture-localhost-SocialNetwork2-submition-form-php-2022-05-08-22_26_31](https://user-images.githubusercontent.com/82975802/167311235-93434572-c109-4da5-b97d-516399c69e59.png)
+![screencapture-ebrahimiannahid-000webhostapp-SocialNetwork-registration-form-php-2022-05-13-12_51_37](https://user-images.githubusercontent.com/82975802/168250374-2ca5ab9d-9a35-4039-80b4-8389e5788758.png)
+
 
 ---
 
 ### Home page
 
-![screencapture-localhost-SocialNetwork-home-php-2022-05-08-23_13_58](https://user-images.githubusercontent.com/82975802/167311252-409cb728-1789-4157-a957-2786567ed877.png)
+![screencapture-ebrahimiannahid-000webhostapp-SocialNetwork-home-php-2022-05-13-12_52_04](https://user-images.githubusercontent.com/82975802/168250441-0ca2b3a0-8556-44d8-a30d-2aac7f131f89.png)
+
 
 ---
 
 ### Personal profile page
 
-![screencapture-localhost-SocialNetwork2-personal-profile-php-2022-05-08-23_01_31](https://user-images.githubusercontent.com/82975802/167311278-239c6a2a-de0b-4b82-939a-9636648cf28f.png)
+![screencapture-ebrahimiannahid-000webhostapp-SocialNetwork-personal-profile-php-2022-05-13-12_52_25](https://user-images.githubusercontent.com/82975802/168250473-17dabeec-93d7-4ac0-8c24-88ff44bec01e.png)
+
