@@ -6,6 +6,30 @@ include "model/database.php";
 
 
 <div class="container">
+
+    <?php if(isset($_SESSION["message"])): ?>
+    
+    <div class="row justify-content-center mt-3">
+        <?php for($i=0, $len=count($_SESSION["message"]); $i<$len; $i++): ?> 
+        <div class="col-12">
+            <?php if($_SESSION["message_type"][$i] == "success"): ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?php echo $_SESSION["message"][$i]; ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php elseif($_SESSION["message_type"][$i] == "error"): ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <?php echo $_SESSION["message"][$i]; ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php endif ?>
+        </div>
+        <?php endfor; ?>
+    </div>
+    
+    <?php unset($_SESSION["message"]); ?>
+    <?php endif; ?>
+
     <div class="row mt-5 justify-content-center">
         <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card shadow border-0 rounded-3">
@@ -13,7 +37,7 @@ include "model/database.php";
                      ورود به حساب کاربری  
                 </div>
                 <div class="card-body">
-                    <form method="post" action="user_login_process.php">
+                    <form method="post" action="user_login">
                         <div class="mb-4">
                             <label class="form-label" style="font-size: 15px;">نام کاربری</label>
                             <input type="text" class="form-control" name="username" placeholder="ایمیل یا شماره موبایل">
@@ -38,12 +62,11 @@ include "model/database.php";
 
                     <hr class="text-dark mb-3">
 
-                    
                     <!-- Button trigger modal -->
                     <div class="text-center">
                         <a href="registration_form.php">
                             <button type="button" class="btn btn-success" style="font-size: 15px;">
-                            افزودن حساب کاربری
+                            عضویت
                             </button>
                         </a>
                     </div>
@@ -124,8 +147,6 @@ include "model/database.php";
                                                 <input type="file" name="image" class="form-control" aria-label="Last name">
                                             </div>
                                         </div>
-
-
                                     </form>
                                 </div>
                                 <div class="modal-footer">
@@ -139,7 +160,7 @@ include "model/database.php";
                 </div>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 
 
 </div>

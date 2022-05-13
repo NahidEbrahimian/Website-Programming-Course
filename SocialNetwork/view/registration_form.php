@@ -1,18 +1,45 @@
 <?php
 include "header.php";
+include "view/navbar.php";
 include "model/database.php";
 ?>
 
 
 <div class="container">
+
+<?php if(isset($_SESSION["message"])): ?>
+    
+
+    <div class="row justify-content-center mt-5">
+    <?php for($i=0, $len=count($_SESSION["message"]); $i<$len; $i++): ?> 
+        <div class="col-12">
+            <?php if($_SESSION["message_type"][$i] == "success"): ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?php echo $_SESSION["message"][$i]; ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php elseif($_SESSION["message_type"][$i] == "error"): ?>
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <?php echo $_SESSION["message"][$i]; ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <?php endif ?>
+        </div>
+        <?php endfor; ?>
+    </div>
+    
+    <?php unset($_SESSION["message"]); ?>
+    <?php endif; ?>
+
+
     <div class="row mt-5 justify-content-center">
         <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="card shadow border-0 rounded-3">
                 <div class="card-header">
-                    <h5> نام نویسی </h5> 
+                    <h5> عضویت </h5> 
                 </div>
                 <div class="card-body">
-                    <form method="post" action="controller/user_registration_process.php">
+                    <form method="post" action="user_registration_process">
 
                         <div class="row">
                             <div class="col-md-6 col-sm-12 mt-3">
@@ -77,8 +104,15 @@ include "model/database.php";
                                 <div class="input-group">
                                 <span id="dtp1" class="input-group-text cursor-pointer" data-mds-dtp-guid="d6322030-c6e3-4324-a7b6-b280f644a32e" data-bs-original-title="" title="" data-mds-dtp-group="group1" data-from-date="true"> <i class="far fa-calendar-alt" style="color: #57606f;"></i> </span>
                                 <input type="text" name="date-of-birth" data-name="dtp1-text" class="form-control" placeholder="تاریخ تولد">
-    
+
+                                </div>
                             </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <label class="exampleFormControlTexterea1 text-secondary" class="form-label"> بیوگرافی</label>
+                                <textarea name="bio" rows="3" type="text" class="form-control mt-2" id="exampleFormControlTexterea1"></textarea>
                             </div>
                         </div>
 

@@ -12,7 +12,6 @@
 <script src="view/js/bootstrap.bundle.js"></script>
 <script src="view/dist/mds.bs.datetimepicker.js"></script>
 
-
 <script>
     const dtp1Instance = new mds.MdsPersianDateTimePicker(document.getElementById('dtp1'), {
         targetTextSelector: '[data-name="dtp1-text"]',
