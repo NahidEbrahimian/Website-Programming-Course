@@ -2,68 +2,70 @@
 
     session_start();
     $request = $_SERVER["REQUEST_URI"];
+    $request = str_replace("/SocialNetwork", "", $request);
     // echo $request;
-    // die;
+    // die();
 
     switch ($request)
     {
-        case("/SocialNetwork/"):
-            require __DIR__ . "/view/index.php";
+        case("/"):
+            require "controller/index.php";
             break;
 
-        case ("/SocialNetwork/registration_form.php"):
-            require __DIR__ . "/view/registration_form.php";
+        case ("/registration_form.php"):
+            require "controller/registration_form.php";
             break;
 
-        case ("/SocialNetwork/user_registration_process"):
-            require __DIR__ . "/controller/user_registration_process.php";
+        case ("/user_registration_process"):
+            require "controller/user_registration_process.php";
             break;
 
-        case ("/SocialNetwork/home.php"):
+        case ("/home.php"):
             if(isset($_SESSION["login_status"]))
             {
                 if($_SESSION["login_status"] == true)
                 {
-                    require __DIR__ . "/view/home.php";
+                    require "controller/home.php";
                     break;
                 }
                 else
                 {
-                    require __DIR__ . "/view/index.php";
+                    require "controller/index.php";
                     break;        
                 }
             }
+            else
+            {
+                require "controller/index.php";
+                break;     
+            }
 
-        case("/SocialNetwork/index.php"):
-            require __DIR__ . "/view/index.php";
+        case("/index.php"):
+            require "controller/index.php";
             break;
             
-        case("/SocialNetwork/login.php"):
-            require __DIR__ . "/view/index.php";
+        case("/login.php"):
+            require "controller/index.php";
             break;
 
-        case("/SocialNetwork/personal_profile.php"):
-            require __DIR__ . "/view/personal_profile.php";
+        case("/personal_profile.php"):
+            require "controller/personal_profile.php";
             break;
 
-        case("/SocialNetwork/user_login"):
-            require __DIR__ . "/controller/user_login_process.php";
+        case("/user_login"):
+            require "controller/user_login_process.php";
             break;
 
-        case("/SocialNetwork/test"):
-            require __DIR__ . "/view/test.php";
+        case("/logout"):
+            require "controller/logout.php";
             break;
 
-        case("/SocialNetwork/logout"):
-            require __DIR__ . "/controller/logout.php";
-            break;
-
-        case("/SocialNetwork/add_post_proccess.php"):
-            require __DIR__ . "/controller/add_post_proccess.php";
+        case("/add_post_proccess.php"):
+            require "controller/add_post_proccess.php";
             break;            
 
         default:
-            require __DIR__ . "/view/404.php";
+            require "controller/404.php";
             break;
     }
 
