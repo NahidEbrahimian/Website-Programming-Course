@@ -10,6 +10,9 @@ if(isset($_POST["password"]))
 }
 else
 {
+    $messages[] = "پر کردن فیلد  گذرواژه اجباری است.";
+    $message_type[] = "error";
+    $flag = 0;
     $password = "";
 }
 
@@ -26,24 +29,44 @@ if(isset($_POST["first-name"]))
 {
     $first_name = $_POST["first-name"];
 }
+else
+{
+    $messages[] = "پر کردن فیلد نام اجباری است.";
+    $message_type[] = "error";
+    $flag = 0;
+}
 
 if(isset($_POST["last-name"]))
 {
     $last_name = $_POST["last-name"];
 }
-
+else
+{
+    $messages[] = "پر کردن فیلد نام خانوادگی اجباری است.";
+    $message_type[] = "error";
+    $flag = 0;
+}
 if(isset($_POST["account-name"]))
 {
     $user_name = $_POST["account-name"];
 }
 else
 {
+    $messages[] = "پر کردن فیلد نام کاربری اجباری است.";
+    $message_type[] = "error";
+    $flag = 0;
     $user_name = "";
     $flag_user = 0;
 }
 if(isset($_POST["email"]))
 {
     $email = $_POST["email"];
+}
+else
+{
+    $messages[] = "پر کردن فیلد ایمیل اجباری است.";
+    $message_type[] = "error";
+    $flag = 0;
 }
 
 if(isset($_POST["mobile-number"]))
@@ -53,13 +76,19 @@ if(isset($_POST["mobile-number"]))
 
 if(isset($_POST['gender']))
 {
-$form_check_value = $_POST['gender'];
+    $form_check_value = $_POST['gender'];
 
 }
 
 if(isset($_POST["date-of-birth"]))
 {
     $birthday = $_POST["date-of-birth"];
+}
+else
+{
+    $messages[] = "پر کردن فیلد تاریخ تولد اجباری است.";
+    $message_type[] = "error";
+    $flag = 0;
 }
 
 
@@ -80,6 +109,12 @@ if(isset($_POST['gender']))
         $gender = 1;
     }
 }
+else
+{
+    $messages[] = "لطفا جنسیت را انتخاب کنید.";
+    $message_type[] = "error";
+    $flag = 0;
+}
 
 $user_count = $db->query("SELECT * FROM users WHERE user_name = '$user_name'")->num_rows;
 $flag = 1;
@@ -95,62 +130,14 @@ if($password !== $confirm_password)
 
 if(strlen($user_name) < 4)
 {
-    if($flag_user == 1)
-    {
     $messages[] = "نام کاربری نامعتبر";
     $message_type[] = "error";
     $flag = 0;
-    }
 }
 
 if($user_count > 0)
 {
     $messages[] = "نام کاربری شما تکراری است.";
-    $message_type[] = "error";
-    $flag = 0;
-}
-
-if(empty($mobile_number))
-{
-    $messages[] = "پر کردن فیلد شماره موبایل اجباری است.";
-    $message_type[] = "error";
-    $flag = 0;
-}
-
-if(empty($password))
-{
-    $messages[] = "پر کردن فیلد  گذرواژه اجباری است.";
-    $message_type[] = "error";
-    $flag = 0;
-}
-
-if(empty($first_name))
-{
-    $messages[] = "پر کردن فیلد نام اجباری است.";
-    $message_type[] = "error";
-    $flag = 0;
-}
-if(empty($last_name))
-{
-    $messages[] = "پر کردن فیلد نام خانوادگی اجباری است.";
-    $message_type[] = "error";
-    $flag = 0;
-}
-if(empty($user_name))
-{
-    $messages[] = "پر کردن فیلد نام کاربری اجباری است.";
-    $message_type[] = "error";
-    $flag = 0;
-}
-if(empty($email))
-{
-    $messages[] = "پر کردن فیلد ایمیل اجباری است.";
-    $message_type[] = "error";
-    $flag = 0;
-}
-if(empty($form_check_value))
-{
-    $messages[] = "لطفا جنسیت را انتخاب کنید.";
     $message_type[] = "error";
     $flag = 0;
 }
