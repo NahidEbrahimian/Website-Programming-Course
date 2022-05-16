@@ -1,5 +1,3 @@
-
-
 <footer  class="text-center mt-4 text-dark"  style="position: absolute; bottom: 80px; margin-top: 10px; width: 100%;">
 <hr>
 <p>
