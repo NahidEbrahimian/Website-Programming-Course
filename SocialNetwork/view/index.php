@@ -70,99 +70,10 @@ include "model/database.php";
                             </button>
                         </a>
                     </div>
-
-
-                    <!-- <form action="controller/user_submit_process.php" method="post"> -->
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <div>
-                                        <h5 class="modal-title" id="exampleModalLabel">افزودن حساب کاربری </h5>
-                                    </div>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-
-                                <div class="modal-body mt-3">
-                                    <form class="row g-3" action="../controller/user_submit_process.php" method="post">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label for="inputEmail4" class="form-label text-secondary fs-6">نام</label>
-                                                <input name="first-name" type="text" class="form-control" id="inputEmail4">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="inputPassword4" class="form-label text-secondary fs-6">نام خانوادگی</label>
-                                                <input name="last-name" type="text" class="form-control" id="inputPassword4">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mt-3">
-                                            <div class="col-md-6">
-                                                <label for="inputEmail4" class="form-label text-secondary fs-6">نام کاربری</label>
-                                                <input name="account-name" type="text" class="form-control" id="inputEmail4">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="inputPassword4" class="form-label text-secondary fs-6">شماره همراه</label>
-                                                <input name="mobile-number" type="text" class="form-control" id="inputPassword4">
-                                            </div>
-                                        </div>
-                                        <div class="row mt-3">
-                                            <div class="col-12">
-                                                <label for="inputEmail4" class="form-label text-secondary fs-6">آدرس ایمیل</label>
-                                                <input name="email" type="email" class="form-control" id="inputEmail4">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mt-3">
-                                            <div class="col-md-6">
-                                                <label for="inputPassword4" class="form-label text-secondary fs-6">گذرواژه</label>
-                                                <input name="password" type="password" class="form-control" id="inputEmail4">
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="inputPassword4" class="form-label text-secondary fs-6">وارد کردن مجدد گذرواژه</label>
-                                                <input name="confirm-password" type="password" class="form-control" id="inputPassword4">
-                                            </div>
-                                        </div>
-
-                                        <div class="row mt-3 px-4">
-                                            <label for="inputPassword4" class="form-label text-secondary fs-6">جنسیت</label>
-                                            <div class="col form-check">
-                                                <input name="gender" value="female" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                                <label class="form-check-label" for="flexRadioDefault1">
-                                                    زن
-                                                </label>
-                                            </div>
-                                            <div class="col form-check">
-                                                <input name="gender" value="male" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                                <label class="form-check-label" for="flexRadioDefault2">
-                                                    مرد
-                                                </label>
-                                            </div>
-                                        </div>
-
-                                        <div class="row mt-3">
-                                            <div class="col-12">
-                                                <label for="files" class="btn text-secondary fs-6">افزودن تصویر</label>
-                                                <input type="file" name="image" class="form-control" aria-label="Last name">
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary">ذخیره</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- </form> -->
-
                 </div>
             </div>
         </div>
-    <!-- </div> -->
-
-
+    </div>
 </div>
 
 

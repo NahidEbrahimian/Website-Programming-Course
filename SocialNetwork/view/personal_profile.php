@@ -53,7 +53,6 @@ include "view/navbar.php";
 
             <hr class="mt-4">
 
-
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-md-12 col-sm-12 text-center mt-0">
                     <div class="row">
@@ -75,26 +74,76 @@ include "view/navbar.php";
                     <div class="col-lg-4 col-md-6 col-sm-12 mt-4">
                         <div class="card shadow border-0 rounded-3">
                             <div class="card-body">
-                                <?php if (isset($post["media"])) : ?>
-                                    <img class="img-fluid rounded" src="<?php echo $post["media"]; ?>" alt="">
-                                <?php else : ?>
-                                    <img style="width: 500px;" src="view/images/posts/default.jpg" class="img-fluid rounded" alt="">
-                                <?php endif; ?>
-                                <!-- <img class="img-fluid rounded" src="<?php //echo $post["media"]; ?>" alt=""> -->
-                                <p class="py-2 mt-2">
-                                    <?php echo $post["caption"]; ?>
-                                </p>
-                                <p class="text-secondary mt-2 float-end">
-                                    <small>
-                                        <?php echo $post["time"]; ?>
-                                    </small>
-                                </p>
+                                <div class="row">
+                                    <?php if (isset($post["media"])) : ?>
+                                        <img class="img-fluid rounded" src="<?php echo $post["media"]; ?>" alt="">
+                                    <?php else : ?>
+                                        <img style="width: 500px;" src="view/images/posts/default.jpg" class="img-fluid rounded" alt="">
+                                    <?php endif; ?>
+                                    <!-- <img class="img-fluid rounded" src="<?php //echo $post["media"]; 
+                                                                                ?>" alt=""> -->
+                                    <p class="py-2 mt-2">
+                                        <?php echo $post["caption"]; ?>
+                                    </p>
+                                    <p class="text-secondary mt-2 float-end">
+                                        <small>
+                                            <?php echo $post["time"]; ?>
+                                        </small>
+                                    </p>
+                                </div>
                             </div>
 
                             <div class="card-footer">
-                                <button class="btn btn float-end" type="submit" form="new-post-form">
-                                    <span class="badge btn" style="color: #57606f; font-size: 14px;">7</span><i class="far fa-thumbs-up" style="color: #57606f;"></i>
-                                </button>
+                                <div class="row">
+                                    <div class="col-10" style="padding-left: 0px;">
+                                        <!-- <div class="col"> -->
+                                        <button class="btn float-end" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $post["id"]; ?>" aria-expanded="false" aria-controls="collapse<?php echo $post["id"]; ?>">
+                                            <!-- نمایش دیدگاه کاربران -->
+                                            <span class="badge btn" style="color: #57606f; font-size: 13px;">7</span><i class="far fa-comment fa-sm" style="color: #57606f;"></i>
+                                        </button>
+                                        <!-- </div> -->
+
+                                        <!-- <div class="col"> -->
+                                        <div class="collapse" id="collapse<?php echo $post["id"]; ?>">
+                                            <div class="list-group">
+
+                                                <?php foreach ($comments as $comment) : ?>
+                                                    <?php if ($post["id"] == $comment["post_id"]) : ?>
+                                                        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                                                            <div class="d-flex justify-content-between">
+                                                                <small class="mb-1"><?php echo $comment["text"]; ?></small>
+                                                                <small class="mb-1"><b>:<?php echo $comment["user_name"]; ?></b></small>
+                                                            </div>
+                                                        </a>
+                                                    <?php endif; ?>
+                                                <?php endforeach; ?>
+
+                                                <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                                                    <div class="d justify-content-between">
+                                                        <form class="row align-items-center">
+                                                            <div class="col">
+                                                                <input type="text" style="font-size: 13px; padding-left: 0px; padding-right: 0px;  height:33px;" class="form-control" id="autoSizingInput" placeholder="دیدگاه شما">
+                                                            </div>
+
+                                                            <div class="col-auto">
+                                                                <button type="submit" class="btn btn-info btn-sm" style="font-size: 13px;">ارسال</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                        <!-- </div> -->
+                                    </div>
+
+                                    <!-- Like -->
+                                    <div class="col-2" style="padding-left: 0px; padding-right: 0px;">
+                                        <button style="padding-right: 0px;" class="btn float-end" type="submit">
+                                            <span class="badge btn" style="color: #57606f; font-size: 12px;">7</span><i class="far fa-thumbs-up fa-sm" style="color: #57606f;"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
 
                         </div>

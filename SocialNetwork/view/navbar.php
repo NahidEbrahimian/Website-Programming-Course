@@ -6,7 +6,7 @@ if (!isset($_SESSION["login_status"])) {
 }
 ?>
 
-<div class="container-light bg-white pt-2 pb-1">
+<div class="container-light pt-2 pb-1">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark mb-2 rounded ">
             <div class="container-fluid">
@@ -39,7 +39,7 @@ if (!isset($_SESSION["login_status"])) {
                                             <img style="width: 30px;" src="view/images/users/default.jpg" class="img-fluid rounded-circle" alt="">
                                         <?php endif; ?>
                                     </span>
-                                    <span> <?php echo $_SESSION["user_name"]; ?> - پروفایل </span>
+                                    <span> <?php echo $_SESSION["user_name"]; ?> </span>
                                 </a>
                             </li>
                 </div>
@@ -54,9 +54,10 @@ if (!isset($_SESSION["login_status"])) {
                         <?php endif; ?>
             </div>
         </nav>
+        <hr class="text-dark mt-0">
     </div>
     
 </div>
 
-<hr class="text-dark mt-0">
+
 </div>
