@@ -16,12 +16,13 @@
 
 ### Home page
 
-![screencapture-ebrahimiannahid-000webhostapp-SocialNetwork-home-php-2022-05-16-16_18_53](https://user-images.githubusercontent.com/82975802/168586623-d7f42d46-0fc2-4b00-8da2-691fa97755cd.png)
+![screencapture-ebrahimiannahid-000webhostapp-SocialNetwork-home-php-2022-05-25-10_43_26](https://user-images.githubusercontent.com/82975802/170193898-7549a87b-1c71-4d97-a1b9-d24492fe1b21.png)
 
 
 ---
 
 ### Personal profile page
 
-![screencapture-ebrahimiannahid-000webhostapp-SocialNetwork-personal-profile-php-2022-05-13-12_52_25](https://user-images.githubusercontent.com/82975802/168250473-17dabeec-93d7-4ac0-8c24-88ff44bec01e.png)
+![screencapture-ebrahimiannahid-000webhostapp-SocialNetwork-personal-profile-php-2022-05-25-10_40_38](https://user-images.githubusercontent.com/82975802/170193927-bf9ab5a6-3061-4642-950f-45c2d3649e75.png)
+
 
