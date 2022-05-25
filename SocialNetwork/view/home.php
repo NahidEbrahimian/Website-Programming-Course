@@ -113,7 +113,7 @@ include "view/navbar.php";
                                 <!-- <div class="col"> -->
                                     <button class="btn float-end" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $post["post_id"]; ?>" aria-expanded="false" aria-controls="collapse<?php echo $post["post_id"]; ?>">
                                         <!-- نمایش دیدگاه کاربران -->
-                                        <span class="badge btn" style="color: #57606f; font-size: 13px;">7</span><i class="far fa-comment fa-sm" style="color: #57606f;"></i>
+                                        <span class="badge btn" style="color: #57606f; font-size: 13px;"><?php echo $post["num_comments"]["count"]; ?></span><i class="far fa-comment fa-sm" style="color: #57606f;"></i>
                                     </button>
                                 <!-- </div> -->
 
