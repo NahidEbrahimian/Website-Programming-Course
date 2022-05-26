@@ -5,7 +5,7 @@ include "controller/functions.php";
 $username = $_SESSION["user_name"];
 $user_id = $_SESSION["user_id"];
 
-$posts = $db->query("SELECT * FROM posts WHERE user_id = $user_id");
+$posts = $db->query("SELECT * FROM posts WHERE user_id = $user_id ORDER BY time DESC");
 $posts_count = $posts->num_rows;
 $user = $db->query("SELECT * FROM users WHERE id = $user_id")->fetch_assoc();
 
@@ -32,6 +32,5 @@ foreach($posts as $post)
     $posts_array[] = $post; // append in python
 }
 
-    
 require "view/personal_profile.php";
 ?>
