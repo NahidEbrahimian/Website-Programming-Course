@@ -13,16 +13,16 @@ function time2str($ts)
         $day_diff = floor($diff / 86400);
         if($day_diff == 0)
         {
-            if($diff < 60) return 'just now';
-            if($diff < 120) return '1 minute ago';
-            if($diff < 3600) return floor($diff / 60) . ' minutes ago';
-            if($diff < 7200) return '1 hour ago';
-            if($diff < 86400) return floor($diff / 3600) . ' hours ago';
+            if($diff < 60) return 'هم اکنون';
+            if($diff < 120) return '1 دقیقه پیش';
+            if($diff < 3600) return floor($diff / 60) . ' دقیقه پیش';
+            if($diff < 7200) return '1 ساعت پیش';
+            if($diff < 86400) return floor($diff / 3600) . ' ساعت پیش';
         }
-        if($day_diff == 1) return 'Yesterday';
-        if($day_diff < 7) return $day_diff . ' days ago';
-        if($day_diff < 31) return ceil($day_diff / 7) . ' weeks ago';
-        if($day_diff < 60) return 'last month';
+        if($day_diff == 1) return 'دیروز';
+        if($day_diff < 7) return $day_diff . ' روز پیش';
+        if($day_diff < 31) return ceil($day_diff / 7) . ' هفته پیش';
+        if($day_diff < 60) return 'ماه گذشته';
         return date('F Y', $ts);
     }
     else
