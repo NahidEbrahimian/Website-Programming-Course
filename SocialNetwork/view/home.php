@@ -1,14 +1,12 @@
 <?php
+
 include "view/header.php";
 include "view/navbar.php";
-
-// $current_time = new DateTime();
-// echo $current_time->format('Y-m-d H:i:s'); 
 
 ?>
 
 <?php if (isset($_SESSION["message"])) : ?>
-    <div class="row justify-content-center mt-5">
+    <div class="row justify-content-center mt-3">
         <div class="col-12">
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <?php echo $_SESSION["message"]; ?>
@@ -28,14 +26,14 @@ include "view/navbar.php";
                     افزودن پست جدید
                 </div>
                 <div class="card-body">
-                    <form method="post" action="add_post_proccess.php" id="new-post-form">
+                    <form method="post" action="add_post_proccess.php" id="new-post-form" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label class="exampleFormControlTexterea1" class="form-label"> کپشن</label>
                             <textarea name="text" rows="3" type="text" class="form-control mt-2" id="exampleFormControlTexterea1"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="formFile" class="form-label">افزودن عکس/ویدئو</label>
-                            <input name="media" type="file" class="form-control" id="formFile">
+                            <input type="file" name="media" class="form-control" aria-label="Last name">
                         </div>
                     </form>
                 </div>
@@ -56,27 +54,22 @@ include "view/navbar.php";
                 <div class="card shadow border-0 rounded-3">
                     <div class="card-header">
                         <div class="row mt-2">
-                            <div class="col-lg-2 col-md-3 col-sm-3">
-                            <img loading="lazy" style="width: 100px;" src="<?php 
-                                if (isset($post["image"]))
-                                {
-                                    echo $post["image"];
-                                }
-                                else
-                                {
-                                    if($post["gender"] == 1)
-                                    {
-                                        echo "view/images/users/man_user.png";
-                                    }
-                                    else
-                                    {
-                                        echo "view/images/users/woman_user.jpg";
-                                    }
-                                }
-                            ?>" class="img-fluid rounded-circle" alt="">
+                            <div class="col-lg-2 col-md-2 col-sm-2">
+
+                                <img loading="lazy" style="width: 100px;" src="<?php
+                                                                                if (isset($post["image"])) {
+                                                                                    echo $post["image"];
+                                                                                } else {
+                                                                                    if ($post["gender"] == 1) {
+                                                                                        echo "view/images/users/man_user.png";
+                                                                                    } else {
+                                                                                        echo "view/images/users/woman_user.jpg";
+                                                                                    }
+                                                                                }
+                                                                                ?>" class="img-fluid rounded-circle" alt="">
 
                             </div>
-                            <div class="col-lg-10 col-md-9 col-sm-9">
+                            <div class="col-lg-8 col-md-8 col-sm-8 mt-2" style="padding-right: 30px;">
                                 <p>
                                     <a href="#" class="text-decoration-none">
                                         <b style="font-size: 13px;" class="text-dark">
@@ -84,8 +77,8 @@ include "view/navbar.php";
                                         </b>
                                     </a>
                                 </p>
-                                <p class="text-secondary">
-                                    <small dir="ltr">
+                                <p class="text-secondary" style="font-size: 13px;">
+                                    <small>
                                         <?php echo time2str($post["time"]); ?>
                                     </small>
                                 </p>
@@ -96,7 +89,19 @@ include "view/navbar.php";
                     <div class="card-body">
                         <div class="row justify-content-center">
                             <?php if (isset($post["media"])) : ?>
-                                <img loading="lazy" class="img-fluid" src="<?php echo $post["media"]; ?>" alt="">
+
+                                <?php if ($post["media_type"] == "image") : ?>
+                                    <img style="width: 600px;" loading="lazy" class="img-fluid" src="<?php echo $post["media"]; ?>" alt="">
+                                <?php elseif ($post["media_type"] == "video") : ?>
+                                    <video width="600" controls>
+                                        <source src="<?php echo $post["media"]; ?>" type="video/mp4">
+                                    </video>
+                                <?php elseif ($post["media_type"] == "audio") : ?>
+                                    <audio controls>
+                                        <source src="<?php echo $post["media"]; ?>">
+                                    </audio>
+                                <?php endif; ?>
+
                             <?php else : ?>
                                 <img loading="lazy" style="width: 500px;" src="view/images/posts/default.jpg" class="img-fluid rounded" alt="">
                             <?php endif; ?>
@@ -110,52 +115,46 @@ include "view/navbar.php";
                     <div class="card-footer">
                         <div class="row">
                             <div class="col-10" style="padding-left: 0px;">
-                                <!-- <div class="col"> -->
-                                    <button class="btn float-end" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $post["post_id"]; ?>" aria-expanded="false" aria-controls="collapse<?php echo $post["post_id"]; ?>">
-                                        <!-- نمایش دیدگاه کاربران -->
-                                        <span class="badge btn" style="color: #57606f; font-size: 13px;"><?php echo $post["num_comments"]["count"]; ?></span><i class="far fa-comment fa-sm" style="color: #57606f;"></i>
-                                    </button>
-                                <!-- </div> -->
+                                <button class="btn float-end" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $post["post_id"]; ?>" aria-expanded="false" aria-controls="collapse<?php echo $post["post_id"]; ?>">
+                                    <!-- نمایش دیدگاه کاربران -->
+                                    <span class="badge btn" style="color: #57606f; font-size: 13px;"><?php echo $post["num_comments"]["count"]; ?></span><i class="far fa-comment fa-sm" style="color: #57606f;"></i>
+                                </button>
 
-                                <!-- <div class="col"> -->
-                                    <div class="collapse" id="collapse<?php echo $post["post_id"]; ?>">
-                                        <div class="list-group">
-
-                                            <?php foreach ($post["comments"] as $comment) : ?>
-                                                <?php if ($post["post_id"] == $comment["post_id"]) : ?>
-                                                    <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                                                        <div class="row d-flex justify-content-between">
-                                                            <div class="col-3 px-1">
-                                                                <small><?php echo time2str($comment["time"]); ?></small>
-                                                            </div>
-                                                            <div class="col-6 px-1">
-                                                                <small class="mb-1"><?php echo $comment["text"]; ?></small>
-                                                            </div>
-                                                            <div class="col-3 px-1">
-                                                                <small class="mb-1"><b>:<?php echo $comment["user_name"]; ?></b></small>
-                                                            </div>                                                           
+                                <div class="collapse" id="collapse<?php echo $post["post_id"]; ?>">
+                                    <div class="list-group">
+                                        <?php foreach ($post["comments"] as $comment) : ?>
+                                            <?php if ($post["post_id"] == $comment["post_id"]) : ?>
+                                                <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                                                    <div class="row d-flex justify-content-between">
+                                                        <div class="col-3 px-1">
+                                                            <span class="text-secondary" style="font-size: 13px;"><small><?php echo time2str($comment["time"]); ?></small></span>
                                                         </div>
-                                                    </a>
-                                                <?php endif; ?>
-                                            <?php endforeach; ?>
-
-                                            <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                                                <div class="d justify-content-between">
-                                                    <form class="row align-items-center">
-                                                        <div class="col">
-                                                            <input type="text" style="font-size: 13px; padding-left: 0px; padding-right: 0px;  height:33px;" class="form-control" id="autoSizingInput" placeholder="دیدگاه شما">
+                                                        <div class="col-6 px-1">
+                                                            <small class="mb-1"><?php echo $comment["text"]; ?></small>
                                                         </div>
-
-                                                        <div class="col-auto">
-                                                            <button type="submit" class="btn btn-info btn-sm" style="font-size: 13px;">ارسال</button>
+                                                        <div class="col-3 px-1">
+                                                            <small class="mb-1"><b>:<?php echo $comment["user_name"]; ?></b></small>
                                                         </div>
-                                                    </form>
-                                                </div>
-                                            </a>
+                                                    </div>
+                                                </a>
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
 
-                                        </div>
+                                        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                                            <div class="d justify-content-between">
+                                                <form class="row align-items-center">
+                                                    <div class="col">
+                                                        <input type="text" style="font-size: 13px; padding-left: 0px; padding-right: 0px;  height:33px;" class="form-control" id="autoSizingInput" placeholder="دیدگاه شما ...">
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <button type="submit" class="btn btn-info btn-sm" style="font-size: 13px;">ارسال</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </a>
+
                                     </div>
-                                <!-- </div> -->
+                                </div>
                             </div>
 
                             <!-- Like -->
