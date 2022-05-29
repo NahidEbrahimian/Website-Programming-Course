@@ -91,7 +91,7 @@ include "view/navbar.php";
                             <?php if (isset($post["media"])) : ?>
 
                                 <?php if ($post["media_type"] == "image") : ?>
-                                    <img style="width: 600px;" loading="lazy" class="img-fluid" src="<?php echo $post["media"]; ?>" alt="">
+                                    <img style="width: 600px; height: 350px;" loading="lazy" class="img-fluid" src="<?php echo $post["media"]; ?>" alt="">
                                 <?php elseif ($post["media_type"] == "video") : ?>
                                     <video width="600" controls>
                                         <source src="<?php echo $post["media"]; ?>" type="video/mp4">
@@ -103,7 +103,7 @@ include "view/navbar.php";
                                 <?php endif; ?>
 
                             <?php else : ?>
-                                <img loading="lazy" style="width: 500px;" src="view/images/posts/default.jpg" class="img-fluid rounded" alt="">
+                                <img loading="lazy" style="width: 500px; height: 350px;" src="view/images/posts/default.jpg" class="img-fluid rounded" alt="">
                             <?php endif; ?>
 
                             <p class="mt-3">
@@ -121,39 +121,39 @@ include "view/navbar.php";
                                 </button>
 
                                 <div class="collapse" id="collapse<?php echo $post["post_id"]; ?>">
-                                    <div class="list-group">
-                                        <?php foreach ($post["comments"] as $comment) : ?>
-                                            <?php if ($post["post_id"] == $comment["post_id"]) : ?>
-                                                <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                                                    <div class="row d-flex justify-content-between">
-                                                        <div class="col-3 px-1">
-                                                            <span class="text-secondary" style="font-size: 13px;"><small><?php echo time2str($comment["time"]); ?></small></span>
-                                                        </div>
-                                                        <div class="col-6 px-1">
-                                                            <small class="mb-1"><?php echo $comment["text"]; ?></small>
-                                                        </div>
-                                                        <div class="col-3 px-1">
-                                                            <small class="mb-1"><b>:<?php echo $comment["user_name"]; ?></b></small>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            <?php endif; ?>
-                                        <?php endforeach; ?>
-
-                                        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                                    <!-- send comment -->
+                                    <ul class="list-group" id="list-comments-<?php echo $post["post_id"]; ?>">
+                                        <li class="list-group-item list-group-item-action" aria-current="true">
                                             <div class="d justify-content-between">
-                                                <form class="row align-items-center">
+                                                <form id="form-comment-<?php echo $post["post_id"]; ?>" class="row align-items-center">
                                                     <div class="col">
-                                                        <input type="text" style="font-size: 13px; padding-left: 0px; padding-right: 0px;  height:33px;" class="form-control" id="autoSizingInput" placeholder="دیدگاه شما ...">
+                                                        <input name="text" type="text" style="font-size: 13px; padding-left: 0px; padding-right: 0px;  height:33px;" class="form-control" id="autoSizingInput" placeholder="دیدگاه شما ...">
+                                                        <input type="hidden" name="post_id" value="<?php echo $post["post_id"]; ?>">
                                                     </div>
                                                     <div class="col-auto">
-                                                        <button type="submit" class="btn btn-info btn-sm" style="font-size: 13px;">ارسال</button>
+                                                        <button type="button" onclick="send_comment(<?php echo $post['post_id']; ?>, '<?php echo $user_name; ?>' )" class="btn btn-info btn-sm" style="font-size: 13px;">ارسال</button>
                                                     </div>
                                                 </form>
                                             </div>
-                                        </a>
+                                        </li>
 
-                                    </div>
+                                        <!-- comments -->
+                                        <?php foreach ($post["comments"] as $comment) : ?>
+                                            <li class="list-group-item list-group-item-action" aria-current="true">
+                                                <div class="row d-flex justify-content-between">
+                                                    <div class="col-3 px-1">
+                                                        <span class="text-secondary" style="font-size: 13px;"><small><?php echo time2str($comment["time"]); ?></small></span>
+                                                    </div>
+                                                    <div class="col-6 px-1">
+                                                        <small class="mb-1"><?php echo $comment["text"]; ?></small>
+                                                    </div>
+                                                    <div class="col-3 px-1">
+                                                        <small class="mb-1"><b>:<?php echo $comment["user_name"]; ?></b></small>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
                                 </div>
                             </div>
 
@@ -170,5 +170,74 @@ include "view/navbar.php";
         <?php endforeach; ?>
     </div>
 </div>
+
+<script>
+    // fetch API
+    async function send_comment(post_id, user_name) {
+        console.log(user_name);
+        let form = document.getElementById("form-comment-" + post_id);
+        let form_data = new FormData(form);
+
+        let x = await fetch("send-comment", {
+            method: "post",
+            body: form_data
+        });
+        let y = await x.text();
+        // alert(y);
+
+        let list_comments = document.getElementById("list-comments-" + post_id);
+        let li = document.createElement("LI");
+        li.classList.add("list-group-item", "list-group-item-action");
+
+        let div_tag_row = document.createElement("DIV");
+        div_tag_row.classList.add("row", "d-flex", "justify-content-between");
+
+        // time
+        let div_tag_col1 = document.createElement("DIV");
+        div_tag_col1.classList.add("col-3", "px-1");
+
+        let span_tag1 = document.createElement("SPAN");
+        span_tag1.classList.add("text-secondary");
+
+        let smal_tag1 = document.createElement("SMAL");
+        smal_tag1.classList.add("mb-1");
+        smal_tag1.innerHTML = "هم اکنون".fontsize(2);
+
+
+        // text
+        let div_tag_col2 = document.createElement("DIV");
+        div_tag_col2.classList.add("col-3", "px-1");
+
+        let smal_tag2 = document.createElement("SMAL");
+        smal_tag2.classList.add("mb-1");
+        smal_tag2.innerHTML = form_data.get("text");
+
+
+        // user name
+        let div_tag_col3 = document.createElement("DIV");
+        div_tag_col3.classList.add("col-3", "px-1");
+
+        let smal_tag3 = document.createElement("SMAL");
+        smal_tag3.classList.add("mb-1");
+
+        let b_tag = document.createElement("B");
+        b_tag.innerHTML = ":"+user_name; 
+
+        
+
+        smal_tag3.appendChild(b_tag);
+        div_tag_col3.appendChild(smal_tag3);
+        div_tag_col2.appendChild(smal_tag2);
+        div_tag_col1.appendChild(span_tag1);
+        div_tag_col1.appendChild(smal_tag1);
+
+        div_tag_row.appendChild(div_tag_col1);
+        div_tag_row.appendChild(div_tag_col2);
+        div_tag_row.appendChild(div_tag_col3);
+
+        li.appendChild(div_tag_row);
+        list_comments.appendChild(li);
+    }
+</script>
 
 <?php include "view/footer.php"; ?>
