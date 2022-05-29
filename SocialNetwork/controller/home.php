@@ -3,6 +3,8 @@
     include "controller/functions.php";
     
     $user_id = $_SESSION["user_id"];
+    $user_name = $_SESSION["user_name"];
+
     $posts = $db->query("SELECT *, users.id AS user_id, 
                         posts.id AS post_id
                         FROM posts INNER JOIN users 
