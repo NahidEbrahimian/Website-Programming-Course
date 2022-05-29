@@ -5,6 +5,7 @@
     $request = str_replace("/SocialNetwork", "", $request);
     // echo $request;
     // die();
+    date_default_timezone_set("Asia/Tehran");
 
     switch ($request)
     {
@@ -39,6 +40,10 @@
                 require "controller/index.php";
                 break;     
             }
+
+        case("/send-comment"):
+            require "controller/send_comment.php";
+            break; 
 
         case("/index.php"):
             require "controller/index.php";
