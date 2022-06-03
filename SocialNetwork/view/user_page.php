@@ -5,13 +5,12 @@ include "view/navbar.php";
 
 <div class="container">
     <div class="row">
-        <!-- <div class="col-lg-6 col-md-8 col-sm-12 mb-1 mt-3"> -->
         <div class="col-lg-9 col-md-9 col-sm-12 mb-1 mt-3">
             <div class="row ">
                 <div class="col-lg-3 col-md-4 col-sm-4 mt-2">
                     <img loading="lazy" style="width: 150px;" src="<?php
                                                                     if (isset($user["image"])) {
-                                                                        echo $user["image"];
+                                                                        echo $user_image;
                                                                     } else {
                                                                         if ($user["gender"] == 1) {
                                                                             echo "view/images/users/man_user.png";
@@ -21,18 +20,21 @@ include "view/navbar.php";
                                                                     }
                                                                     ?>" class="img-fluid rounded-circle" alt="">
                 </div>
-                
+
                 <div class="col-lg-6 ml-3 mt-2" style="padding-right: 30px;">
                     <div class="row mb-2  ">
                         <div class="col-3 px-0">
                             <p>
-                                <b><?php echo $username; ?></b>
+                                <b><?php echo $username_follow; ?></b>
                             </p>
                         </div>
                         <div class="col-7 px-0">
-                            <button class="btn text-white float-end" type="submit" form="new-post-form" style="background-color: #57606f; font-size: 12px;">
-                                ویرایش پروفایل
-                            </button>
+                            <form id="form-follow-<?php echo $user_follow; ?>">
+                                <input type="hidden" name="user-follow" value="<?php echo $user_follow; ?>">
+                                <button id="user-follow-<?php echo $user_follow; ?>" onclick="user_follow(<?php echo $user_follow; ?>)" class="btn text-white float-end" type="submit" style="background-color: #57606f; font-size: 12px;">
+                                    <?php echo $post["follow"] == 0 ? "دنبال کردن" : "لغو دنبال کردن"; ?>
+                                </button>
+                            </form>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -50,7 +52,7 @@ include "view/navbar.php";
                     <div class="row mb-2">
                         <div class="col-6 px-0">
                             <p class="text-secondary mb-0">
-                                <small><?php echo $user["bio"]; ?></small>
+                                <small><?php echo $user_bio; ?></small>
                             </p>
                         </div>
                     </div>
@@ -80,31 +82,6 @@ include "view/navbar.php";
             <?php foreach ($posts_array as $post) : ?>
                 <div id="post-id-<?php echo $post["id"]; ?>" class="col-lg-6 col-md-8 col-sm-12 mt-4 mx-1">
                     <div class="card shadow border-0 rounded-3">
-                        <div class="card-header">
-                            <div class="row mt-2">
-                                <!-- حذف پست -->
-                                <div class="col-2 px-1" style="padding-left: 0px;">
-                                    <form id="form-post-<?php echo $post["id"]; ?>">
-                                        <input type="hidden" name="post_id" value="<?php echo $post["id"]; ?>">
-                                        <button class="btn float-start px-0" onclick="delete_post(<?php echo $post['id']; ?>)" type="button">
-                                            <span class="badge btn" style="color: #57606f; font-size: 11px;">
-                                                حذف 
-                                            </span>
-                                            <i class="fa-trash far fa-xs" style="color: #57606f;"></i>
-                                        </button>
-                                    </form>
-                                </div>
-                                <!-- ویرایش پست -->
-                                <div class="col-3 px-1" style="padding-right: 0px;">
-                                    <button class="btn float-start px-0" type="button">
-                                        <span class="badge btn" style="color: #57606f; font-size: 11px;">
-                                            ویرایش 
-                                        </span>
-                                        <i class="fas fa-edit fa-xs" style="color: #57606f;"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
                         <div class="card-body">
                             <div class="row justify-content-center">
                                 <?php if (isset($post["media"])) : ?>
@@ -148,8 +125,8 @@ include "view/navbar.php";
                                     </button>
 
                                     <div class="collapse" id="collapse<?php echo $post["id"]; ?>">
-                                        <!-- send comment -->
                                         <ul class="list-group" id="list-comments-<?php echo $post["id"]; ?>">
+                                            <!-- send comment -->
                                             <li class="list-group-item list-group-item-action" aria-current="true">
                                                 <div class="d justify-content-between">
                                                     <form id="form-comment-<?php echo $post["id"]; ?>" class="row align-items-center">
@@ -188,7 +165,7 @@ include "view/navbar.php";
                                                                         <input type="hidden" name="comment_id" value="<?php echo $comment["comment_id"]; ?>">
                                                                         <button onclick="delete_comment(<?php echo $comment['comment_id']; ?>)" class="btn px-0  float-end" type="button">
                                                                             <small>
-                                                                                <i class='fa-trash far fa-xs' style='color: #57606f;'></i>
+                                                                                <?php echo $comment["user_id"] ==  $user_id ? "<i class='fa-trash far fa-xs' style='color: #57606f;'></i>" : ""; ?>
                                                                             </small>
                                                                         </button>
                                                                     </form>
@@ -200,7 +177,6 @@ include "view/navbar.php";
                                             <?php endforeach; ?>
                                         </ul>
                                     </div>
-                                    <!-- </div> -->
                                 </div>
 
                                 <!-- Like -->

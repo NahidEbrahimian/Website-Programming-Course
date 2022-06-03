@@ -20,7 +20,7 @@ include "view/navbar.php";
 <div class="container">
     <!-- new post section -->
     <div class="row mt-4 mb-4 justify-content-center">
-        <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+        <div class="col-lg-6 col-md-8 col-sm-12 mb-4">
             <div class="card shadow border-0 rounded-3">
                 <div class="card-header py-3">
                     افزودن پست جدید
@@ -50,38 +50,24 @@ include "view/navbar.php";
 
     <div class="row justify-content-center">
         <?php foreach ($posts_array as $post) : ?>
-            <div class="col-lg-6 col-md-6 col-sm-12 mt-4 mx-1">
+            <div class="col-lg-6 col-md-8 col-sm-12 mt-4 mx-1">
                 <div class="card shadow border-0 rounded-3">
                     <div class="card-header">
                         <div class="row mt-2">
-                            <div class="col-lg-2 col-md-2 col-sm-2">
+                            <div class="col-2" style="padding-left: 0px;">
 
-                                <img loading="lazy" style="width: 100px;" src="<?php
-                                                                                if (isset($post["image"])) {
-                                                                                    echo $post["image"];
-                                                                                } else {
-                                                                                    if ($post["gender"] == 1) {
-                                                                                        echo "view/images/users/man_user.png";
-                                                                                    } else {
-                                                                                        echo "view/images/users/woman_user.jpg";
-                                                                                    }
-                                                                                }
-                                                                                ?>" class="img-fluid rounded-circle" alt="">
+                                <img loading="lazy" style="width: 50px;" src="<?php echo isset($post["image"]) ? $post["image"] : ($post["gender"] == 1 ? "view/images/users/man_user.png" : "view/images/users/woman_user.jpg");  ?>" class="img-fluid rounded-circle" alt="">
 
                             </div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 mt-2" style="padding-right: 30px;">
+                            <div class="col-10 mt-2" style="padding-right: 20px;">
                                 <p>
-                                    <a href="#" class="text-decoration-none">
+                                    <a href="user_page?user-id=<?php echo $post["user_id"]; ?>" class="text-decoration-none">
                                         <b style="font-size: 13px;" class="text-dark">
                                             <?php echo $post["user_name"]; ?>
                                         </b>
                                     </a>
                                 </p>
-                                <p class="text-secondary" style="font-size: 13px;">
-                                    <small>
-                                        <?php echo time2str($post["time"]); ?>
-                                    </small>
-                                </p>
+
                             </div>
                         </div>
                     </div>
@@ -109,15 +95,23 @@ include "view/navbar.php";
                             <p class="mt-3">
                                 <?php echo $post["caption"]; ?>
                             </p>
+                            <p class="text-secondary" style="font-size: small;">
+                                <small>
+                                    <?php echo time2str($post["time"]); ?>
+                                </small>
+                            </p>
                         </div>
                     </div>
 
                     <div class="card-footer">
                         <div class="row">
-                            <div class="col-10" style="padding-left: 0px;">
+                            <div class="col" style="padding-left: 0px;">
                                 <button class="btn float-end" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $post["post_id"]; ?>" aria-expanded="false" aria-controls="collapse<?php echo $post["post_id"]; ?>">
                                     <!-- نمایش دیدگاه کاربران -->
-                                    <span class="badge btn" style="color: #57606f; font-size: 13px;"><?php echo $post["num_comments"]["count"]; ?></span><i class="far fa-comment fa-sm" style="color: #57606f;"></i>
+                                    <span id="count-comments-<?php echo $post["post_id"]; ?>" class="badge btn" style="color: #57606f; font-size: 13px;">
+                                        <?php echo $post["num_comments"]["count"]; ?>
+                                    </span>
+                                    <i class="far fa-comment fa-lg" style="color: #57606f;"></i>
                                 </button>
 
                                 <div class="collapse" id="collapse<?php echo $post["post_id"]; ?>">
@@ -137,18 +131,36 @@ include "view/navbar.php";
                                             </div>
                                         </li>
 
-                                        <!-- comments -->
+                                        <!-- display comments -->
                                         <?php foreach ($post["comments"] as $comment) : ?>
-                                            <li class="list-group-item list-group-item-action" aria-current="true">
+                                            <li id="comment-id-<?php echo $comment["comment_id"]; ?>" class="list-group-item list-group-item-action" aria-current="true">
                                                 <div class="row d-flex justify-content-between">
-                                                    <div class="col-3 px-1">
-                                                        <span class="text-secondary" style="font-size: 13px;"><small><?php echo time2str($comment["time"]); ?></small></span>
+                                                    <div class="col-2 px-1 mt-1">
+                                                        <span class="text-secondary" style="font-size: small;"><small><?php echo time2str($comment["time"]); ?></small></span>
                                                     </div>
-                                                    <div class="col-6 px-1">
+                                                    <div class="col-6 px-1 mt-1">
                                                         <small class="mb-1"><?php echo $comment["text"]; ?></small>
                                                     </div>
                                                     <div class="col-3 px-1">
-                                                        <small class="mb-1"><b>:<?php echo $comment["user_name"]; ?></b></small>
+                                                        <div class="row">
+                                                            <div class="col px-0 mt-1">
+                                                                <small class="mb-">
+                                                                <a href="user_page?user-id=<?php echo $comment["user_id"]; ?>" class="text-decoration-none">
+                                                                    <b class="text-dark">:<?php echo $comment["user_name"]; ?></b>
+                                                                </a>
+                                                                </small>
+                                                            </div>
+                                                            <div class="col py-0 px-2">
+                                                                <form id="form-comment-id-<?php echo $comment['comment_id']; ?>">
+                                                                    <input type="hidden" name="comment_id" value="<?php echo $comment["comment_id"]; ?>">
+                                                                    <button onclick="delete_comment(<?php echo $comment['comment_id']; ?>)" class="btn px-0  float-end" type="button">
+                                                                        <small>
+                                                                            <?php echo $comment["user_id"] ==  $user_id ? "<i class='fa-trash far fa-xs' style='color: #57606f;'></i>" : ""; ?>
+                                                                        </small>                                   
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </li>
@@ -159,10 +171,17 @@ include "view/navbar.php";
 
                             <!-- Like -->
                             <div class="col-2" style="padding-left: 0px; padding-right: 0px;">
-                                <button style="padding-right: 0px;" class="btn float-end" type="submit">
-                                    <span class="badge btn" style="color: #57606f; font-size: 12px;"><?php echo $post["likes"]["count"]; ?></span><i class="far fa-thumbs-up fa-sm" style="color: #57606f;"></i>
-                                </button>
+                                <form id="form-like-<?php echo $post["post_id"]; ?>">
+                                    <input type="hidden" name="post_id" value="<?php echo $post["post_id"]; ?>">
+                                    <button onclick="send_like(<?php echo $post['post_id']; ?>)" style="padding-right: 0px;" class="btn float-end" type="button">
+                                        <span id="count-like-<?php echo $post["post_id"]; ?>" class="badge btn" style="color: #57606f; font-size: 12px;">
+                                            <?php echo $post["likes"]["count"]; ?>
+                                        </span>
+                                        <i id="btn-likes-<?php echo $post["post_id"]; ?>" class="<?php echo $post["like"] == 1 ? "fas" : "far"; ?> fa-heart fa-lg" style="color: <?php echo $post["like"]==1 ? "#DC143C;" :  "#57606f;"; ?>"></i>
+                                    </button>
+                                </form>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -170,74 +189,5 @@ include "view/navbar.php";
         <?php endforeach; ?>
     </div>
 </div>
-
-<script>
-    // fetch API
-    async function send_comment(post_id, user_name) {
-        console.log(user_name);
-        let form = document.getElementById("form-comment-" + post_id);
-        let form_data = new FormData(form);
-
-        let x = await fetch("send-comment", {
-            method: "post",
-            body: form_data
-        });
-        let y = await x.text();
-        // alert(y);
-
-        let list_comments = document.getElementById("list-comments-" + post_id);
-        let li = document.createElement("LI");
-        li.classList.add("list-group-item", "list-group-item-action");
-
-        let div_tag_row = document.createElement("DIV");
-        div_tag_row.classList.add("row", "d-flex", "justify-content-between");
-
-        // time
-        let div_tag_col1 = document.createElement("DIV");
-        div_tag_col1.classList.add("col-3", "px-1");
-
-        let span_tag1 = document.createElement("SPAN");
-        span_tag1.classList.add("text-secondary");
-
-        let smal_tag1 = document.createElement("SMAL");
-        smal_tag1.classList.add("mb-1");
-        smal_tag1.innerHTML = "هم اکنون".fontsize(2);
-
-
-        // text
-        let div_tag_col2 = document.createElement("DIV");
-        div_tag_col2.classList.add("col-3", "px-1");
-
-        let smal_tag2 = document.createElement("SMAL");
-        smal_tag2.classList.add("mb-1");
-        smal_tag2.innerHTML = form_data.get("text");
-
-
-        // user name
-        let div_tag_col3 = document.createElement("DIV");
-        div_tag_col3.classList.add("col-3", "px-1");
-
-        let smal_tag3 = document.createElement("SMAL");
-        smal_tag3.classList.add("mb-1");
-
-        let b_tag = document.createElement("B");
-        b_tag.innerHTML = ":"+user_name; 
-
-        
-
-        smal_tag3.appendChild(b_tag);
-        div_tag_col3.appendChild(smal_tag3);
-        div_tag_col2.appendChild(smal_tag2);
-        div_tag_col1.appendChild(span_tag1);
-        div_tag_col1.appendChild(smal_tag1);
-
-        div_tag_row.appendChild(div_tag_col1);
-        div_tag_row.appendChild(div_tag_col2);
-        div_tag_row.appendChild(div_tag_col3);
-
-        li.appendChild(div_tag_row);
-        list_comments.appendChild(li);
-    }
-</script>
 
 <?php include "view/footer.php"; ?>

@@ -6,6 +6,7 @@
 </p>
 </footer>
 
+<script src="view/js/script.js"></script>
 <script src="view/js/bootstrap.js"></script>
 <script src="view/js/bootstrap.bundle.js"></script>
 <script src="view/dist/mds.bs.datetimepicker.js"></script>
