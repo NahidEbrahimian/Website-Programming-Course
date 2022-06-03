@@ -3,9 +3,18 @@
     session_start();
     $request = $_SERVER["REQUEST_URI"];
     $request = str_replace("/SocialNetwork", "", $request);
-    // echo $request;
-    // die();
     date_default_timezone_set("Asia/Tehran");
+
+    # GET USER ID FOR WOLLOWING
+    if(isset($_GET["user-id"]))
+    {
+        $_SESSION["user-follow"] = $_GET["user-id"];
+        $user_follow = $_SESSION["user-follow"];
+    }
+    else
+    {
+        $user_follow = "";
+    }
 
     switch ($request)
     {
@@ -45,6 +54,30 @@
             require "controller/send_comment.php";
             break; 
 
+        case("/send-like"):
+            require "controller/send_like.php";
+            break; 
+
+        case("/delete-comment"):
+            require "controller/delete_comment.php";
+            break;
+
+        case("/delete-post"):
+            require "controller/delete_post.php";
+            break;
+        
+        case("/user_page?user-id=$user_follow"):
+            if($user_follow == $_SESSION["user_id"])
+            {
+                require "controller/personal_profile.php";
+                break;
+            }
+            else
+            {
+                require "controller/user_page.php";
+                break;
+            }
+
         case("/index.php"):
             require "controller/index.php";
             break;
@@ -61,6 +94,10 @@
             require "controller/user_login_process.php";
             break;
 
+        case("/follow-unfollow-user"):
+            require "controller/follow_unfollow_user.php";
+            break;
+            
         case("/logout"):
             require "controller/logout.php";
             break;
