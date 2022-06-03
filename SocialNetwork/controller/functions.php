@@ -14,14 +14,14 @@ function time2str($ts)
         if($day_diff == 0)
         {
             if($diff < 60) return 'هم اکنون';
-            if($diff < 120) return '1 دقیقه پیش';
-            if($diff < 3600) return floor($diff / 60) . ' دقیقه پیش';
-            if($diff < 7200) return '1 ساعت پیش';
-            if($diff < 86400) return floor($diff / 3600) . ' ساعت پیش';
+            if($diff < 120) return '1 دقیقه ';
+            if($diff < 3600) return floor($diff / 60) . ' دقیقه ';
+            if($diff < 7200) return '1 ساعت ';
+            if($diff < 86400) return floor($diff / 3600) . ' ساعت ';
         }
         if($day_diff == 1) return 'دیروز';
-        if($day_diff < 7) return $day_diff . ' روز پیش';
-        if($day_diff < 31) return ceil($day_diff / 7) . ' هفته پیش';
+        if($day_diff < 7) return $day_diff . ' روز ';
+        if($day_diff < 31) return ceil($day_diff / 7) . ' هفته ';
         if($day_diff < 60) return 'ماه گذشته';
         return date('F Y', $ts);
     }

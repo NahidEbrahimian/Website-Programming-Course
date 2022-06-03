@@ -18,7 +18,7 @@
     foreach($posts as $post)
     {
         $post_id = $post["post_id"];
-        $post["comments"] = $db->query("SELECT * FROM comments 
+        $post["comments"] = $db->query("SELECT *, comments.id AS comment_id FROM comments 
                                         INNER JOIN users 
                                         ON comments.user_id = users.id
                                         WHERE post_id = $post_id");
@@ -28,7 +28,22 @@
                                             ON comments.user_id = users.id
                                             WHERE post_id = $post_id")->fetch_assoc();;
                                             
+
+        # NUMBER OF LICKES
         $post["likes"] = $db->query("SELECT COUNT(*) AS count FROM likes WHERE post_id = $post_id")->fetch_assoc();
+
+
+        # CHECK IF POST IS LICKED OR NO
+        $count = $db->query("SELECT * FROM likes WHERE post_id = $post_id AND user_id = $user_id")->num_rows;
+        if($count == 1) //قبلا لایک نکرده پس اجاره داره لایک کنه
+        {
+            $post["like"] = 1;
+        }
+        else
+        {
+            $post["like"] = 0;
+        }
+
         $posts_array[] = $post; // append in python
     }
     

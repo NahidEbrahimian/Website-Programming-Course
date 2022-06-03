@@ -4,9 +4,21 @@ include "model/database.php";
 
 $text = $_POST["text"];
 $user_id = $_SESSION["user_id"];
-$flag = 0;
+$flag = 1;
 
-if (isset($_FILES["media"]["name"]))
+if (!isset($_FILES["media"]["name"]))
+{
+    $_SESSION["message"] = ".mp3 :فایل صوتی .mp4 :ویدئو .jpg:لطفا فایل با فرمت معتبر وارد کنید. تصویر";
+    $_SESSION["message_type"] = "error";
+    $flag = 0;
+}
+if($text == "")
+{
+    $_SESSION["message"] = "کپشن نمی تواند خالی باشد";
+    $_SESSION["message_type"] = "error";
+    $flag = 0;
+}
+if($flag == 1)
 {
     $media = "view/images/posts/" . $_FILES["media"]["name"];
     move_uploaded_file($_FILES["media"]["tmp_name"] ,$media);
@@ -35,23 +47,13 @@ if (isset($_FILES["media"]["name"]))
     }
     else
     {
-        $_SESSION["message"] = ".mp3 :فایل صوتی .mpg, mp4 :ویدئو .jpg, gif, png:لطفا فایل با فرمت معتبر وارد کنید. تصویر";
+        $_SESSION["message"] = ".mp3 :فایل صوتی .mp4 :ویدئو .jpg:لطفا فایل با فرمت معتبر وارد کنید. تصویر";
         $_SESSION["message_type"] = "error";
     }
     if($flag == 1)
     {
         $db->query("INSERT INTO posts (caption, user_id, media, media_type) VALUES('$text', '$user_id', '$media', '$media_type')");
     }
-}
-if (!isset($_FILES["media"]["name"]))
-{
-    $_SESSION["message"] = "لطفا فایل را بارگذاری نمایید.";
-    $_SESSION["message_type"] = "error";
-}
-if($text == "")
-{
-    $_SESSION["message"] = "کپشن نمی تواند خالی باشد";
-    $_SESSION["message_type"] = "error";
 }
 
 header("Location: home.php");
