@@ -9,11 +9,12 @@
     if(isset($_GET["user-id"]))
     {
         $_SESSION["user-follow"] = $_GET["user-id"];
-        $user_follow = $_SESSION["user-follow"];
+        $user_follow = $_GET["user-id"];
     }
     else
     {
         $user_follow = "";
+        $_SESSION["user-follow"] = "";
     }
 
     switch ($request)
@@ -77,6 +78,17 @@
                 require "controller/user_page.php";
                 break;
             }
+        // case("/user_page"):
+        //     // if($user_follow == $_SESSION["user_id"])
+        //     // {
+        //     //     require "controller/personal_profile.php";
+        //     //     break;
+        //     // }
+        //     // else
+        //     // {
+        //     require "controller/user_page.php";
+        //     break;
+        //     // }
 
         case("/index.php"):
             require "controller/index.php";
