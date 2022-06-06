@@ -62,7 +62,9 @@ include "view/navbar.php";
                             <div class="col-10 mt-2" style="padding-right: 20px;">
                                 <p>
                                     <a href="user_page?user-id=<?php echo $post["user_id"]; ?>" class="text-decoration-none">
-                                        <b style="font-size: 13px;" class="text-dark">
+                                    <!-- <a href="user_page" class="text-decoration-none"> -->
+    
+                                    <b style="font-size: 13px;" class="text-dark">
                                             <?php echo $post["user_name"]; ?>
                                         </b>
                                     </a>

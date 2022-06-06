@@ -31,7 +31,7 @@ include "view/navbar.php";
                         <div class="col-7 px-0">
                             <form id="form-follow-<?php echo $user_follow; ?>">
                                 <input type="hidden" name="user-follow" value="<?php echo $user_follow; ?>">
-                                <button id="user-follow-<?php echo $user_follow; ?>" onclick="user_follow(<?php echo $user_follow; ?>)" class="btn text-white float-end" type="submit" style="background-color: #57606f; font-size: 12px;">
+                                <button id="user-follow-<?php echo $user_follow; ?>" onclick="user_follow(<?php echo $user_follow; ?>)" class="btn text-white float-end" type="button" style="background-color: #57606f; font-size: 12px;">
                                     <?php echo $post["follow"] == 0 ? "دنبال کردن" : "لغو دنبال کردن"; ?>
                                 </button>
                             </form>
@@ -42,7 +42,7 @@ include "view/navbar.php";
                             <span class="text-secondary"><small>پست ها <b><?php echo $posts_count; ?></b></small></span>
                         </div>
                         <div class="col-4 px-0">
-                            <span class="text-secondary"><small>دنبال کنندگان <b><?php echo $post["followers"]["count"]; ?></b></small></span>
+                            <span class="text-secondary"><small>دنبال کنندگان <b id="followers-<?php echo $user_follow; ?>" ><?php echo $post["followers"]["count"]; ?></b></small></span>
                         </div>
                         <div class="col px-0">
                             <span class="text-secondary"><small>دنبال شوندگان <b><?php echo $post["followings"]["count"]; ?></b></small></span>
