@@ -1,5 +1,6 @@
 function user_follow(following_id){
     let btn = document.getElementById("user-follow-" + following_id);
+    let b_tag = document.getElementById("followers-" + following_id)
 
     let form = document.getElementById("form-follow-" + following_id);
     let form_data = new FormData(form);
@@ -11,10 +12,20 @@ function user_follow(following_id){
     }).then(
         result => result.text()
     ).then(result => {
+        console.log(result);
         if (result == 1) {
             btn.innerHTML = "لغو دنبال کردن"
+
+            let number = b_tag.innerHTML;
+            number++;
+            b_tag.innerHTML = number;
+
         } else if (result == 0) {
             btn.innerHTML = " دنبال کردن"
+
+            let number = b_tag.innerHTML;
+            number--;
+            b_tag.innerHTML = number;
         }
     }).catch(error => {
         console.log(error)
