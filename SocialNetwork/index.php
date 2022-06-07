@@ -35,6 +35,10 @@
             require "controller/search.php";
             break;
 
+        case ("/edit-post"):
+            require "controller/edit_post.php";
+            break;
+
         case ("/home.php"):
             if(isset($_SESSION["login_status"]))
             {
