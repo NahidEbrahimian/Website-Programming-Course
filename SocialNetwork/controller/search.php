@@ -1,8 +1,4 @@
 <?php
-// include "database.php";
-
-// $text = $_POST["text"];
-// $users = $db->query("SELECT * FROM users WHERE user_name LIKE '%$text%'")
 
     include "model/database.php";
     include "controller/functions.php";
@@ -10,14 +6,14 @@
     $user_id = $_SESSION["user_id"];
     $user_name = $_SESSION["user_name"];
 
+    $text = $_POST["text"];
     $posts = $db->query("SELECT *, users.id AS user_id, 
                         posts.id AS post_id
                         FROM posts INNER JOIN users 
                         ON posts.user_id = users.id
-                        WHERE posts.user_id IN (SELECT followings_id FROM follows WHERE followers_id = $user_id)
+                        WHERE caption LIKE '%$text%'
                         ORDER BY time DESC");
 
-WHERE caption LIKE '%$text%'
     $posts_array = array();
     
     foreach($posts as $post)
