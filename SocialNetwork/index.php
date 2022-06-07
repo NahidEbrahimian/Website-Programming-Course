@@ -31,6 +31,10 @@
             require "controller/user_registration_process.php";
             break;
 
+        case ("/search"):
+            require "controller/search.php";
+            break;
+
         case ("/home.php"):
             if(isset($_SESSION["login_status"]))
             {
