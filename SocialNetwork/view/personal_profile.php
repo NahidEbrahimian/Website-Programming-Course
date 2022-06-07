@@ -94,15 +94,40 @@ include "view/navbar.php";
                                         </button>
                                     </form>
                                 </div>
+
                                 <!-- ویرایش پست -->
+                                <!-- Button trigger modal -->
                                 <div class="col-3 px-1" style="padding-right: 0px;">
-                                    <button class="btn float-start px-0" type="button">
+                                    <button class="btn float-start px-0" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $post["id"]; ?>">
                                         <span class="badge btn" style="color: #57606f; font-size: 11px;">
                                             ویرایش 
                                         </span>
                                         <i class="fas fa-edit fa-xs" style="color: #57606f;"></i>
                                     </button>
                                 </div>
+
+                                <!-- Modal -->
+                                <form id="form-edit-post-<?php echo $post["id"]; ?>" method="post" action="edit-post" enctype="multipart/form-data">
+                                    <input type="hidden" name="post_id" value="<?php echo $post["id"]; ?>">
+
+                                    <div class="modal fade" id="exampleModal<?php echo $post["id"]; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h6 class="modal-title" id="exampleModalLabel">ویرایش پست</h6>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <textarea id="edited-caption-<?php echo $post['id']; ?>" name="text" class="form-control col-xs-12" rows="7" cols="50"><?php echo $post["caption"]; ?></textarea>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button form="form-edit-post-<?php echo $post["id"]; ?>" type="submit" class="btn btn-info">ذخیره تغییرات</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
                             </div>
                         </div>
                         <div class="card-body">
@@ -125,7 +150,7 @@ include "view/navbar.php";
                                     <img loading="lazy" style="width: 600px; height: 350px;" src="view/images/posts/default.jpg" class="img-fluid rounded" alt="">
                                 <?php endif; ?>
 
-                                <p class="py-2 mt-2">
+                                <p id="post-caption-<?php echo $post['id']; ?>" class="py-2 mt-2">
                                     <?php echo $post["caption"]; ?>
                                 </p>
                                 <p class="text-secondary" style="font-size: 14px;">

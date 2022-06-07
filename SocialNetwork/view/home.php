@@ -152,8 +152,8 @@ include "view/navbar.php";
                                                                 </a>
                                                                 </small>
                                                             </div>
-                                                            <div class="col py-0 px-2">
-                                                                <form id="form-comment-id-<?php echo $comment['comment_id']; ?>">
+                                                            <div class="col py-0 px-2"> 
+                                                                <form id="form-comment-id-<?php echo $comment["comment_id"]; ?>">
                                                                     <input type="hidden" name="comment_id" value="<?php echo $comment["comment_id"]; ?>">
                                                                     <button onclick="delete_comment(<?php echo $comment['comment_id']; ?>)" class="btn px-0  float-end" type="button">
                                                                         <small>
@@ -162,6 +162,7 @@ include "view/navbar.php";
                                                                     </button>
                                                                 </form>
                                                             </div>
+                                                            
                                                         </div>
                                                     </div>
                                                 </div>
