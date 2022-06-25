@@ -37,10 +37,10 @@
                     <hr>
                     <div class="row pb-2">
                         <div class="col d-grid gap-2">
-                            <button id="patient-btn" onclick="patient()" type="submit" class="btn btn-outline-dark " >بیمار</button>
+                            <button id="patient-btn" onclick="patient()" type="submit" class="btn btn-outline-aqua " >بیمار</button>
                         </div>
                         <div class="col d-grid gap-2">
-                            <button id="doctor-btn" onclick="doctor()" type="submit" class="btn btn-outline-dark">پزشک</button>
+                            <button id="doctor-btn" onclick="doctor()" type="submit" class="btn btn-outline-aqua">پزشک</button>
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                     <!-- Button trigger modal -->
                     <div class="text-center">
                         <a href="registration_form.php?user-register=1">
-                            <button type="button" class="btn" style="font-size: 15px; color: #900C3F; border-color: #900C3F;">
+                            <button type="button" class="btn" style="font-size: 15px; color: #00FFFF; border-color: #00FFFF;">
                             عضویت
                             </button>
                         </a>
@@ -114,7 +114,7 @@
                     <!-- Button trigger modal -->
                     <div class="text-center">
                         <a href="registration_form.php?user-register=2">
-                            <button type="button" class="btn" style="font-size: 15px; color: #900C3F; border-color: #900C3F;">
+                            <button type="button" class="btn" style="font-size: 15px; color: #00FFFF; border-color: #00FFFF;">
                             عضویت
                             </button>
                         </a>

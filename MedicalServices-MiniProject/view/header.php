@@ -16,5 +16,5 @@
     <title>  خدمات پزشکی  </title>
 </head>
 
-<body style="background-color: #f1f2f6; position: relative; min-height: 100%; padding-bottom: 12rem;">
+<body style="background-color: #f0ffff; position: relative; min-height: 100%; padding-bottom: 12rem;">
 

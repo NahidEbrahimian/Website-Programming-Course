@@ -53,21 +53,21 @@ if (!isset($_SESSION["login_status"])) {
                                 </a>
                             </li>
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-                            <li class="nav-item mx-4">
-                                <a a class="nav-link text-dark fs-6" href="logout">
-                                    <i class="fas fa-user mx-1"></i> خروج از حساب کاربری
-                                </a>
-                            </li>
-                        
+
                 </div>
 
                 </ul>
 
                 <div class="text-start">
-                    <form method="post" action="search" class="d-flex">
+                <!-- <li class="nav-item mx-4"> -->
+                                <a a class="nav-link text-dark fs-6" href="logout">
+                                    <i class="fas fa-user mx-1"></i> خروج از حساب کاربری
+                                </a>
+                            <!-- </li> -->
+                    <!-- <form method="post" action="search" class="d-flex">
                         <input name="text" class="form-control me-2 mt-1" type="search" placeholder="جستجو" aria-label="Search">
                         <button class="btn btn-outline-secondary mt-1" type="submit">جستجو</button>
-                    </form>
+                    </form> -->
                 </div>
                         <?php endif; ?>
             </div>

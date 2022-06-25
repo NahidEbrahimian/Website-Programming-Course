@@ -30,3 +30,34 @@ function display_specialty(selected_specialty)
     var select_tag = document.getElementById("select-tag-specialty");
     select_tag.innerHTML = selected_specialty.value;
 }
+
+function dispaly_tabel()
+{
+    var tabel = document.getElementById("tabel")
+    tabel.style.display = "block";
+}
+
+function appointment_reserve(date_time_id){
+    let span = document.getElementById("reserve-span-" + date_time_id);
+
+    let form = document.getElementById("form-reserve-" + date_time_id);
+    let form_data = new FormData(form);
+
+    fetch("appointment-reserve", {
+        method: "post",
+        body: form_data
+
+    }).then(
+        result => result.text()
+    ).then(result => {
+        if (result == 1) {
+            span.innerHTML = "لغو رزرو";
+            span.style.color = "red";
+        } else if (result == 0) {
+            span.innerHTML = "رزرو نوبت";
+            span.style.color = "green";
+        }
+    }).catch(error => {
+        console.log(error)
+    });
+}
