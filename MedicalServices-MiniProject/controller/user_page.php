@@ -48,13 +48,13 @@
         // $posts_array[] = $post; // append in python
     // }
     
-    // if($user == "patient")
-    // {
-    require "view/user_page.php";
-    // }
+    if($user_login == "patient" || $user_login == "doctor")
+    {
+        require "view/user_page.php";
+    }
 
-    // else
-    // {
-    //     require "view/doctor_page.php";
-    // }
+    else
+    {
+        require "view/index.php";
+    }
 ?>

@@ -43,7 +43,8 @@ if($user_count == 1)
     $_SESSION["user_name"] = $user["first_name"] . " " . $user["last_name"];
     $_SESSION["user_id"] = $user["id"];
     $_SESSION["user-login"] = $user_login;
-
+    $_SESSION["user"] = $user;
+    
     header("Location: user_page.php");    
 }
 

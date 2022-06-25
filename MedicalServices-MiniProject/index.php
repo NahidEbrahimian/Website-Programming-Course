@@ -66,7 +66,15 @@
         case("/add_post_proccess.php"):
             require "controller/add_post_proccess.php";
             break;  
+
+        case("/appointment-reserve"):
+            require "controller/appointment_reserve.php";
+            break;
                   
+        case("/add-service"):
+            require "controller/add_reserve.php";
+            break;
+        
         default:
             require "controller/404.php";
             break;
