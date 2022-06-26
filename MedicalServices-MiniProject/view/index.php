@@ -37,10 +37,10 @@
                     <hr>
                     <div class="row pb-2">
                         <div class="col d-grid gap-2">
-                            <button id="patient-btn" onclick="patient()" type="submit" class="btn btn-outline-aqua " >بیمار</button>
+                            <button style="border-color:aqua;" id="patient-btn" onclick="patient()" type="submit" class="btn" >بیمار</button>
                         </div>
                         <div class="col d-grid gap-2">
-                            <button id="doctor-btn" onclick="doctor()" type="submit" class="btn btn-outline-aqua">پزشک</button>
+                            <button style="border-color:aqua; " id="doctor-btn" onclick="doctor()" type="submit" class="btn btn-outline-aqua">پزشک</button>
                         </div>
                     </div>
                 </div>

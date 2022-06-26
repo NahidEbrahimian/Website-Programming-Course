@@ -43,19 +43,19 @@ if (!isset($_SESSION["login_status"])) {
                                 <a class="text-dark nav-link active fs-6" aria-current="page" href="personal_profile.php">
                                     <span>
                                         <?php if (isset($user["image"])) : ?>
-                                            <img style="width: 30px;" src="<?php echo $user["image"]; ?>" class="img-fluid rounded-circle" alt="">
+                                            <?php if ($user["image"] != "") : ?>
+                                                <img style="width: 30px;" src="<?php echo $user["image"]; ?>" class="img-fluid rounded-circle" alt="">
+                                            <?php endif; ?>
                                         <?php else : ?>
                                             <img style="width: 30px;" src="view/images/users/<?php echo $user["gender"]==0 ? "woman_user.jpg" : "man_user.png"; ?>" 
                                             class="img-fluid rounded-circle" alt="">
                                         <?php endif; ?>
                                     </span>
-                                    <span> <?php echo $_SESSION["user-login"]=="doctor" ? "دکتر" . " " . $_SESSION["user_name"] . "-" . $specialty["specialty"] : $_SESSION["user_name"]; ?> </span>
+                                    <span> <?php echo $_SESSION["user-login"]=="doctor" ? "دکتر" . " " . $_SESSION["user_name"] : $_SESSION["user_name"]; ?> </span>
                                 </a>
                             </li>
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-
                 </div>
-
                 </ul>
 
                 <div class="text-start">

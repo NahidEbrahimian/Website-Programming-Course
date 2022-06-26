@@ -99,18 +99,15 @@ $idx = 1;
                 <?php include "view/side.php"; ?>
             </div>
             <div class="col-lg-9 col-md-12 col-sm-12">
-                <div class="card">
+                <!-- Add new service -->
+                <div style="display: None;" id="display-add-service" class="card">
                     <div class="card-header">
                          افزودن خدمات جدید
                     </div>
                     <div class="card-body">
                         <form action="add-service" method="post">
-                            <div>
                                 <label class="form-label text-secondary mt-4" style="font-size: 15px;">توضیحات</label>
                                 <input type="text" class="form-control" name="text">
-                            </div>
-
-                            <div id="answers">
                                 <div class="row">
                                     <div class="my-2 col-lg-6 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-right">
                                         <label class="form-label text-secondary mt-4" style="font-size: 15px;">تاریخ </label>
@@ -139,79 +136,87 @@ $idx = 1;
                                         <input type="number" class="form-control" name="visite-time" value="10" min="10" step="5">
                                     </div>
                                 </div>
-                            </div>
-                            <div class=" d-grid gap-2">
-                                <button type="submit" class="btn btn-success mt-3 float-end">ذخیره</button>
-                            <div class=" d-grid gap-2">
+                            <button style="width: 100%;" type="submit" class="btn btn-success mt-3">ذخیره</button>
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <?php if (isset($_SESSION["display"])) : ?>
-            <?php if ($_SESSION["display"] == true) : ?>
-                <div class="row justify-content-center mt-5">
+                <!-- Display reserved appointment -->
+                <div style="display: <?php if(isset($display_reserved_appointment)): echo $display_reserved_appointment=="true" ? "block" : "None"; else: echo "None"; endif; ?>" id="display-reserved-appointment">
                     <div class="col">
-                        <!-- <a href="admin_add_music.php" class="btn btn-success btn-lg">
-                        <i class="fas fa-plus"></i>
-                    </a>
-                    <br>
-                    <br> -->
-
-                        <!-- style="display: Block;"  -->
-                        <table id="tabel" class="table table-striped table-dark">
+                        <table id="tabel" class="table table-striped">
                             <thead>
-                                <tr>
+                                <tr class="text-center">
                                     <th scope="col">#</th>
-                                    <!-- <th scope="col">تصویر</th> -->
-                                    <th scope="col">نام پزشک </th>
-                                    <th scope="col"> تخصص </th>
                                     <th scope="col">توضیحات</th>
-                                    <th scope="col">وضعیت</th>
+                                    <th scope="col">تاریخ</th>
+                                    <th scope="col">ساعت</th>
                                 </tr>
                             </thead>
 
                             <tbody>
-                                <?php foreach ($specialties_array as $specialty) : ?>
-                                    <tr>
+                                <?php foreach ($reserved_appointment_array as $reserved_appointment) : ?>
+                                    <tr class="text-center">
                                         <th scope="row">
                                             <?php echo $idx;
                                             $idx++;
                                             ?>
                                         </th>
                                         <td>
-                                            <!-- <img src="<?php echo $music["image"]; ?>" class="img-fluid" width="100px" alt=""> -->
-                                            <?php echo $specialty["doctor"]["first_name"] . " " . $specialty["doctor"]["last_name"]; ?>
+                                            <?php echo $reserved_appointment["text"]; ?>
                                         </td>
                                         <td>
-                                            <?php echo $specialty["specialty"]; ?>
+                                            <?php echo $reserved_appointment["date"]; ?>
                                         </td>
                                         <td>
-                                            <?php echo $specialty["text"]; ?>
+                                            <?php echo $reserved_appointment["time"]; ?>
                                         </td>
-                                        <td>
-                                            رزرو
-                                        </td>
-                                        <!-- <td>
-                                        <a href="admin_edit_music.php?music-id=<?php echo $music["id"]; ?>" class="btn btn-sm btn-info">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                        <a href="admin_remove_music.php?music-id=<?php echo $music["id"]; ?>" class="btn btn-sm btn-danger">
-                                            <i class="fas fa-trash"></i>
-                                        </a>
-                                    </td> -->
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
-                        <!-- </div> -->
                     </div>
                 </div>
-            <?php endif; ?>
-        <?php endif; ?>
 
+                <!-- Display servicess -->
+                <div style="display: <?php if(isset($display_servicess)): echo $display_servicess=="true" ? "block" : "None"; else: echo "None"; endif; ?>" id="display-servicess">
+                    <div class="col">
+                        <table id="tabel" class="table table-striped">
+                            <thead>
+                                <tr class="text-center">
+                                    <th scope="col">#</th>
+                                    <th scope="col">توضیحات</th>
+                                    <th scope="col">تاریخ</th>
+                                    <th scope="col">ساعت</th>
+                                </tr>
+                            </thead>
 
+                            <tbody>
+                                <?php foreach ($rservicess_array as $rservice) : ?>
+                                    <tr class="text-center">
+                                        <th scope="row">
+                                            <?php echo $idx;
+                                            $idx++;
+                                            ?>
+                                        </th>
+                                        <td>
+                                            <?php echo $rservice["text"]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $rservice["date"]; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $rservice["time"]; ?>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     <?php endif; ?>
 </div>
 
