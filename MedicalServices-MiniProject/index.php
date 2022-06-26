@@ -72,9 +72,17 @@
             break;
                   
         case("/add-service"):
-            require "controller/add_reserve.php";
+            require "controller/add_service.php";
             break;
-        
+   
+       case("/display-servicess"):
+            require "controller/display_servicess.php";
+            break;
+            
+        case("/reserved-appointment"):
+            require "controller/reserved_appointment.php";
+            break;
+                    
         default:
             require "controller/404.php";
             break;
