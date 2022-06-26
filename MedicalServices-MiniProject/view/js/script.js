@@ -33,7 +33,7 @@ function display_specialty(selected_specialty)
 
 function dispaly_tabel()
 {
-    var tabel = document.getElementById("tabel")
+    var tabel = document.getElementById("tabel");
     tabel.style.display = "block";
 }
 
@@ -60,4 +60,15 @@ function appointment_reserve(date_time_id){
     }).catch(error => {
         console.log(error)
     });
+}
+
+function display_add_servicess(){
+    var display_services = document.getElementById("display-add-service");
+    var display_reserved_appointment = document.getElementById("display-reserved-appointment");
+    var display_servicess = document.getElementById("display-servicess");
+    display_services.style.display = "block";
+    display_reserved_appointment.style.display = "None";
+    display_servicess.style.display = "None";
+
+    return false;
 }
