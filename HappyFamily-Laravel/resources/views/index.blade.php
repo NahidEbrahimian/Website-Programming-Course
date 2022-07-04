@@ -27,19 +27,19 @@
             <div class="row mt=5">
                 <div class="col=12">
                     <ul class="list-group">
-                        <?php foreach($messages as $message): ?>
+                        @foreach($messages as $message)
                             <li class="list-group-item d-flex justify-content-between align-items-start">
                                 <div class="ms-2 me-auto">
                                 <div class="fw-bold">
-                                    <?php echo $message["name"]; ?>
+                                    {{ $message->name; }}
                                 </div>
-                                <?php echo $message["text"]; ?>
+                                    {{ $message->text; }}
                                 </div>
                                 <span class="badge bg-primary rounded-pill">
-                                    <?php echo $message["created_at"]; ?>
+                                    {{ $message->created_at; }}
                                 </span>
                             </li>
-                        <?php endforeach; ?>
+                        @endforeach
                     </ul>
                 </div>
             </div>
