@@ -28,6 +28,8 @@ class QuizController extends Controller
         $correct_choice_id = Answer::where('question_id', '=', $question_id)
                                         ->where('is_true', '=', 1)->first()->id;
 
+        $count_qestion = Question::count(); 
+
         if($user_choice_id == $correct_choice_id)
         {
             $user_score = Session::get("user_score");
@@ -39,6 +41,16 @@ class QuizController extends Controller
         $quiz_index++;
         $quiz_index = Session::put("quiz_index", $quiz_index);
 
-        return redirect("/qestion/$question_id");
+        if($question_id > $count_qestion)
+        {
+        //    header("Location: final.php");
+           return redirect("/final");
+        }
+        else
+        {
+            return redirect("/qestion/$question_id");
+        }
+
+        // return redirect("/qestion/$question_id");
     }
 }

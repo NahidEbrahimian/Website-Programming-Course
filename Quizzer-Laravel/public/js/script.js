@@ -2,10 +2,9 @@
 function add_Answer()
 {
     var answer_div_tag = document.getElementById("answers");
-    
-    var label_tag = document.createElement("LABEL");
-    label_tag.classList.add("form-label");
-    label_tag.innerHTML = "پاسخ";
+
+    var li_tag = document.createElement("LI");
+    var ol_tag = document.getElementById("ol-tag");
 
     var input_tag = document.createElement("INPUT");
     input_tag.classList.add("form-control");
@@ -15,20 +14,21 @@ function add_Answer()
     var div_tag = document.createElement("DIV");
     div_tag.classList.add("mb-3");
 
-    div_tag.appendChild(label_tag);
-    div_tag.appendChild(input_tag);
-    answer_div_tag.appendChild(div_tag);
+    li_tag.appendChild(input_tag);
+    div_tag.appendChild(li_tag);
+    ol_tag.appendChild(div_tag)
+    answer_div_tag.appendChild(ol_tag);
 }
 
 function remove_Answer()
 {
-    var answer_div_tag = document.getElementById("answers");
+    // var answer_div_tag = document.getElementById("answers");
+    var ol_tag = document.getElementById("ol-tag");
 
-    if(answer_div_tag.children.length > 2)
+    if(ol_tag.children.length > 2)
     {
-        answer_div_tag.lastChild.remove();
+        ol_tag.lastChild.remove();
     }
-    
 }
 
 function startTimer(quiz_time, display) {
