@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FinalController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,4 +21,4 @@ Route::get('/qestion/{id}', [QuizController::class, 'index']);
 Route::post('/check-answer', [QuizController:: class, 'check']);
 Route::get('/admin', [AdminController::class, 'index']);
 Route::post('/add-question', [AdminController:: class, 'add_question']);
-
+Route::get('/final', [FinalController::class, 'index']);
