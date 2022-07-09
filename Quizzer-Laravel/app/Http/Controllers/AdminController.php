@@ -22,10 +22,11 @@ class AdminController extends Controller
         # Add Answers
         $qestion_id = Question::all()->last()->id;
         $true_answer_index = $request["true-answer"];
-        $answers = new Answer();
 
         foreach ($request["answer"] as $i => $answer)
         {
+            $answers = new Answer();
+            echo $i;
             if($i+1 == $true_answer_index)
             {
                 $is_true = 1;

@@ -15,7 +15,7 @@
         </title>
     </head>
     
-    <body style="background-color: rgb(5, 39, 18)">
+    <body style="background-color: rgb(5, 39, 18)" class="mb-2">
         <div class="container">
             <nav style="background-color: rgb(226, 169, 13)" class="navbar navbar-expand-lg navbar-dark mb-2 mt-2 rounded">
                 <div class="container-fluid">
@@ -49,18 +49,19 @@
                                 <input type="text" class="form-control" name="qestion-text">
                             </div>
 
-                            <button type="button" class="btn btn-success btn-sm" onclick="add_Answer()">+</button>
-                            <button style="width: 30px;" type="button" class="btn btn-danger btn-sm" onclick="remove_Answer()">-</button>
+                            <button type="button" class="btn btn-success btn-sm mt-3" onclick="add_Answer()">+</button>
+                            <button style="width: 30px;" type="button" class="btn btn-danger btn-sm mt-3" onclick="remove_Answer()">-</button>
 
                             <div id="answers">
-                                <div class="mb-3">
-                                    <label class="form-label">پاسخ1</label>
-                                    <input type="text" class="form-control" name="answer[]">
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">پاسخ2</label>
-                                    <input type="text" class="form-control" name="answer[]">
-                                </div>
+                            <label class="form-label mt-3">پاسخ ها</label>
+                                <ol id="ol-tag">
+                                    <div class="mb-3">
+                                        <li><input type="text" class="form-control" name="answer[]"></li>
+                                    </div>
+                                    <div class="mb-3">
+                                        <li><input type="text" class="form-control" name="answer[]"></li>
+                                    </div>
+                                </ol>
                             </div>
 
                             <div class="mb-3">
