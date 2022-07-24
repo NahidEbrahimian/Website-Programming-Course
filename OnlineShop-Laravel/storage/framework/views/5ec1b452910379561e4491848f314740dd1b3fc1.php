@@ -1,5 +1,5 @@
-@extends('template')
-@section('content')
+
+<?php $__env->startSection('content'); ?>
 
 <!-- main-slider -->
 <ul id="demo1">
@@ -21,13 +21,13 @@
 	<div class="container">
 		<h3>دسته بندی ها</h3>
 		<div class="brands-agile">
-			@foreach($categories as $category)
+			<?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $category): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div class="col-md-2 w3layouts-brand">
 				<div class="brands-w3l">
-					<p><a href="#">{{ $category->title }}</a></p>
+					<p><a href="#"><?php echo e($category->title); ?></a></p>
 				</div>
 			</div>
-			@endforeach
+			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 			<div class="clearfix"></div>
 		</div>
 	</div>
@@ -65,22 +65,22 @@
 		<h3>تخفیف ها</h3>
 		<div style="margin-top: 10px;" class="row">
 			<div class="agile_top_brands_grids">
-				@foreach($products as $product)
-				@if($product['price_off'] > 0)
+				<?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+				<?php if($product['price_off'] > 0): ?>
 				<div style="float: right;" class=" col-lg-3 top_brand_left-1 agile_top_brands_grids">
 					<div class="hover14 column">
 						<div class="agile_top_brand_left_grid">
-							@if($product['price_off'] > 0)
+							<?php if($product['price_off'] > 0): ?>
 							<div class="agile_top_brand_left_grid_pos">
 								<img src="images/offer.png" alt=" " class="img-responsive">
 							</div>
-							@endif
+							<?php endif; ?>
 							<div class="agile_top_brand_left_grid1">
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="product"><img title=" " alt=" " src="{{ $product->image }}"></a>
-											<p>{{ $product->name }}</p>
+											<a href="product"><img title=" " alt=" " src="<?php echo e($product->image); ?>"></a>
+											<p><?php echo e($product->name); ?></p>
 											<div class="stars">
 												<i class="fa fa-star blue-star" aria-hidden="true"></i>
 												<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -88,11 +88,11 @@
 												<i class="fa fa-star blue-star" aria-hidden="true"></i>
 												<i class="fa fa-star gray-star" aria-hidden="true"></i>
 											</div>
-											@if($product['price_off'] > 0)
-											<h4>{{$product['price'] -  $product['price_off']* $product['price'] /100 }} تومان<span>{{ $product['price'] }} </span></h4>
-											@else
-											<h4>{{$product['price']}} تومان</h4>
-											@endif
+											<?php if($product['price_off'] > 0): ?>
+											<h4><?php echo e($product['price'] -  $product['price_off']* $product['price'] /100); ?> تومان<span><?php echo e($product['price']); ?> </span></h4>
+											<?php else: ?>
+											<h4><?php echo e($product['price']); ?> تومان</h4>
+											<?php endif; ?>
 										</div>
 										<div class="snipcart-details top_brand_home_details">
 											<form action="#" method="post">
@@ -117,8 +117,8 @@
 					</div>
 				</div>
 			</div>
-			@endif
-			@endforeach
+			<?php endif; ?>
+			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 			<div class="clearfix"> </div>
 		</div>
 	</div>
@@ -167,21 +167,21 @@
 	<div class="container">
 		<h3>جدید ترین کالاها</h3>
 		<div style="margin-top: 10px;" class="row">
-			@foreach($products as $product)
+			<?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 			<div style="float: right;" class=" col-lg-3 top_brand_left-1 agile_top_brands_grids">
 				<div class="hover14 column">
 					<div style="height: 400px;" class="agile_top_brand_left_grid">
-						@if($product['price_off'] > 0)
+						<?php if($product['price_off'] > 0): ?>
 						<div class="agile_top_brand_left_grid_pos">
 							<img src="images/offer.png" alt=" " class="img-responsive">
 						</div>
-						@endif
+						<?php endif; ?>
 						<div class="agile_top_brand_left_grid1">
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="product"><img title=" " alt=" " src="{{ $product->image }}"></a>
-										<p>{{ $product->name }}</p>
+										<a href="product"><img title=" " alt=" " src="<?php echo e($product->image); ?>"></a>
+										<p><?php echo e($product->name); ?></p>
 										<div class="stars">
 											<i class="fa fa-star blue-star" aria-hidden="true"></i>
 											<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -189,11 +189,11 @@
 											<i class="fa fa-star blue-star" aria-hidden="true"></i>
 											<i class="fa fa-star gray-star" aria-hidden="true"></i>
 										</div>
-										@if($product['price_off'] > 0)
-										<h4>{{$product['price'] -  $product['price_off']* $product['price'] /100 }} تومان<span>{{ $product['price'] }} </span></h4>
-										@else
-										<h4>{{$product['price']}} تومان</h4>
-										@endif
+										<?php if($product['price_off'] > 0): ?>
+										<h4><?php echo e($product['price'] -  $product['price_off']* $product['price'] /100); ?> تومان<span><?php echo e($product['price']); ?> </span></h4>
+										<?php else: ?>
+										<h4><?php echo e($product['price']); ?> تومان</h4>
+										<?php endif; ?>
 									</div>
 									<div class="snipcart-details top_brand_home_details">
 										<form action="#" method="post">
@@ -217,7 +217,7 @@
 					</div>
 				</div>
 			</div>
-			@endforeach
+			<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 		</div>
 		<div class="clearfix"> </div>
 	</div>
@@ -227,28 +227,29 @@
 	<div class="row mx-4 mt-4">
 		<div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-self-start">
 			<a href="" class="text-decoration-none text-reset">
-				<img src="{{ asset('images/f2.svg') }}" style="width: 20%;" class="img-fluid mt-3" alt="">
+				<img src="<?php echo e(asset('images/f2.svg')); ?>" style="width: 20%;" class="img-fluid mt-3" alt="">
 				<p class="mt-3">امکان پرداخت در محل</p>
 			</a>
 		</div>
 		<div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-self-start">
 			<a href="" class="text-decoration-none text-reset">
-				<img src="{{ asset('images/f3.svg') }}" style="width: 20%;" class="img-fluid mt-3" alt="">
+				<img src="<?php echo e(asset('images/f3.svg')); ?>" style="width: 20%;" class="img-fluid mt-3" alt="">
 				<p class="mt-3">7 روز هفته، 24 ساعته </p>
 			</a>
 		</div>
 		<div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-self-start">
 			<a href="" class="text-decoration-none text-reset">
-				<img src="{{ asset('images/f4.svg') }}" style="width: 20%;" class="img-fluid mt-3" alt="">
+				<img src="<?php echo e(asset('images/f4.svg')); ?>" style="width: 20%;" class="img-fluid mt-3" alt="">
 				<p class="mt-3"> 7 روز ضمانت بازگشت کالا</p>
 			</a>
 		</div>
 		<div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-self-start">
 			<a href="" class="text-decoration-none text-reset">
-				<img src="{{ asset('images/f5.svg') }}" style="width: 20%;" class="img-fluid mt-3" alt="">
+				<img src="<?php echo e(asset('images/f5.svg')); ?>" style="width: 20%;" class="img-fluid mt-3" alt="">
 				<p class="mt-3">ضمانت اصل بودن کالا</p>
 			</a>
 		</div>
 	</div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp\www\OnlineShop-Laravel\resources\views/index.blade.php ENDPATH**/ ?>
