@@ -2,12 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Category;
+use App\Models\Star;
 
-class Controller extends BaseController
+class HomeController extends Controller
 {
 
+    function index()
+    {
+        $categories = Category::all();
+        $products = Product::join('images', 'products.id', '=', 'images.product_id')
+                            ->join('stars', 'products.id', '=', 'stars.product_id')->get(['products.*','images.image','stars.score']);
+    
+        return view("index",[
+            "categories"=>$categories,
+            "products"=>$products
+        ]);
+    }
 }
