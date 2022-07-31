@@ -10,6 +10,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StarController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CityController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,4 +26,14 @@ use App\Http\Controllers\OrderController;
 //     return view('index');
 // });
 Route::get('/', [HomeController::class, 'index']);
-Route::get('product', [ProductController::class, 'index_product']);
+Route::get('/product/{id}', [ProductController::class, "index_product"] );
+Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin/cities', [CityController::class, 'get_all']);
+Route::get('/admin/cities/add', [CityController::class, 'add_get']);
+Route::post('/admin/cities/add', [CityController::class, 'add_post']);
+Route::get('admin/cities/edit/{id}', [CityController::class, 'edit_get']);
+Route::post('admin/cities/edit', [CityController::class, 'edit_post']);
+
+Route::get('admin/cities/delete/{id}', [CityController::class, 'delete']);
+
+// Route
