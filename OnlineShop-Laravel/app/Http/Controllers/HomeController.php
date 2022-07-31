@@ -13,8 +13,9 @@ class HomeController extends Controller
     function index()
     {
         $categories = Category::all();
-        $products = Product::join('images', 'products.id', '=', 'images.product_id')
-                            ->join('stars', 'products.id', '=', 'stars.product_id')->get(['products.*','images.image','stars.score']);
+        $products = Product::all();
+        // $products = Product::join('images', 'products.id', '=', 'images.product_id')
+        //                     ->join('stars', 'products.id', '=', 'stars.product_id')->get(['products.*','images.image','stars.score']);
     
         return view("index",[
             "categories"=>$categories,
