@@ -79,7 +79,7 @@
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="product"><img title=" " alt=" " src="{{ $product->image }}"></a>
+											<a href="product/{{ $product->id }}"><img title=" " alt=" " src="{{ $product->images->first()->image }}"></a>
 											<p>{{ $product->name }}</p>
 											<div class="stars">
 												<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -180,7 +180,7 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="product"><img title=" " alt=" " src="{{ $product->image }}"></a>
+										<a href="product/{{ $product->id }}"><img title=" " alt=" " src="{{ $product->images->first()->image }}"></a>
 										<p>{{ $product->name }}</p>
 										<div class="stars">
 											<i class="fa fa-star blue-star" aria-hidden="true"></i>

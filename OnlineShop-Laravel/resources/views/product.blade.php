@@ -17,10 +17,10 @@
 			<div class="agileinfo_single">
 				
 				<div style="float: center;" class="col-md-4 agileinfo_single_left">
-					<img id="example" src="\images\01.jpg" alt=" " class="img-responsive">
+					<img id="example" src="{{ $product->images->first()->image }}" alt=" " class="img-responsive">
 				</div>
 				<div class="col-md-8 agileinfo_single_right">
-				<h2>دوربین دیجیتال کانن مدل EOS 4000D به همراه لنز 18-55 میلی متر DC III</h2>
+				<h2>{{ $product->name }}</h2>
 					<div class="rating1">
 						<span class="starRating">
 							<input id="rating5" type="radio" name="rating" value="5">
@@ -37,13 +37,15 @@
 					</div>
 					<div class="w3agile_description">
 						<h4>توضیحات :</h4>
-						<p>دوربین جدید EOS 4000D از شرکت کانن، جدیدترین دوربین از سری دوربین‌های DSLR رده پایین کانن است که به تازگی و تقریباً هم‌زمان با دوربین دیگری از این گروه یعنی EOS 2000D معرفی شد. این دوربین که در بازارهای آمریکا با نام EOS Rebel T7 شناخته می‌شود، ساده‌ترین و ارزان‌ترین دوربین DLSR (سری دوربین‌ها با لنز قابل تعویض) این شرکت است که به نظر می‌آید بیشتر از اینکه یک گام رو به جلو باشد، نوعی نوسازی مدل‌های قدیمی به شمار می‌رود. .</p>
+						<p>{{ $product->description }}</p>
 					</div>
 					<div class="snipcart-item block">
 						<div class="snipcart-thumb agileinfo_single_right_snipcart">
-							<!-- <h4 class="m-sing">$21.00 <span>10980000 تومان</span></h4> -->
-							<h4 class="m-sing">10980000 تومان</h4>
-
+							@if($product['price_off'] > 0)
+							<h4>{{$product['price'] -  $product['price_off']* $product['price'] /100 }} تومان<span>{{ $product['price'] }} </span></h4>
+							@else
+							<h4>{{$product['price']}} تومان</h4>
+							@endif
 						</div>
 						<div class="snipcart-details agileinfo_single_right_details">
 							<form action="#" method="post">
