@@ -4,7 +4,7 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">
               <span data-feather="home" class="align-text-bottom"></span>
-              لوحة القيادة
+              پنل ادمین 
             </a>
           </li>
           <li class="nav-item">
@@ -14,32 +14,32 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ url('/admin/products') }}">
               <span data-feather="shopping-cart" class="align-text-bottom"></span>
-              المنتجات
+              محصولات
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ url('/admin/users') }}">
               <span data-feather="users" class="align-text-bottom"></span>
-              الزبائن
+              کاربران
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ url('/admin/carts') }}">
               <span data-feather="bar-chart-2" class="align-text-bottom"></span>
-              التقارير
+              سفارش ها
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ url('/admin/comments') }}">
               <span data-feather="layers" class="align-text-bottom"></span>
-              التكاملات
+              کامنت ها
             </a>
           </li>
         </ul>
 
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
+        <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-uppercase">
           <span>التقارير المحفوظة</span>
           <a class="link-secondary" href="#" aria-label="إضافة تقرير جديد">
             <span data-feather="plus-circle" class="align-text-bottom"></span>
@@ -70,6 +70,6 @@
               مبيعات نهاية العام
             </a>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </nav>

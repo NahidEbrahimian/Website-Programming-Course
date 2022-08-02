@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.101.0">
-    <title>قالب لوحة القيادة · Bootstrap v5.2</title>
+    <title>پنل ادمین · Bootstrap v5.2</title>
     <link href="{{ asset('/css/bootstrap.rtl.css') }}" rel="stylesheet" type="text/css" media="all" />
     <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard-rtl/"> -->
 
@@ -75,14 +75,14 @@
   <body>
     
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">اسم الشركة</a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">آتلاین شاپ </a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="عرض/إخفاء لوحة التنقل">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder="بحث" aria-label="بحث">
+  <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder=" جستچو ... " aria-label="بحث">
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="#">تسجيل الخروج</a>
+      <a class="nav-link px-3" href="#">خروج از پنل ادمین </a>
     </div>
   </div>
 </header>
