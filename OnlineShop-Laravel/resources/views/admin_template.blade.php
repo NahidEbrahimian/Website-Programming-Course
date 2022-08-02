@@ -79,10 +79,10 @@
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="عرض/إخفاء لوحة التنقل">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <input class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder=" جستچو ... " aria-label="بحث">
+  <input style="color: white;" class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder=" جستجو ... " aria-label="بحث">
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
-      <a class="nav-link px-3" href="#">خروج از پنل ادمین </a>
+      <a style="color: white;" class="nav-link px-3" href="#">خروج از پنل مدیریت </a>
     </div>
   </div>
 </header>
