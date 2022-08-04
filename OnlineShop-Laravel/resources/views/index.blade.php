@@ -137,13 +137,11 @@
 				<div class=" ban-bottom1">
 					<div class="ban-top">
 						<img src="images/p3.jpg" class="img-responsive" alt="" />
-
 					</div>
 				</div>
 				<div class="ban-bottom2">
 					<div class="ban-top">
 						<img src="images/p4.jpg" class="img-responsive" alt="" />
-
 					</div>
 				</div>
 				<div class="clearfix"></div>
@@ -152,11 +150,8 @@
 		<div class="col-md-6 ban-bottom">
 			<div class="ban-top">
 				<img src="images/111.jpg" class="img-responsive" alt="" />
-
-
 			</div>
 		</div>
-
 		<div class="clearfix"></div>
 	</div>
 </div>

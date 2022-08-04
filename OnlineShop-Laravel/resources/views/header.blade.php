@@ -11,7 +11,7 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-4 float-right">
 					<div style="float: left;">
-						<p class="phone_email"><i class="fa fa-phone" aria-hidden="true"></i> 41234 567 98+</p>
+						<p class="phone_email"><i class="fa fa-phone" aria-hidden="true"></i>9841234567+</p>
 					</div>
 				</div>
 				<div class="col-lg-4">
@@ -31,7 +31,6 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="clearfix"> </div>
 		</div>
 	</div>
@@ -51,27 +50,32 @@
 				<div class="row collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<div style="float: left;" class="col-6">
 						<ul class="nav navbar-nav">
-							<li style="margin-top: 12px;" class="product_list_header">
+							<li style="margin-top: 6px;" class="product_list_header">
 								<form action="#" method="post" class="last">
 									<input type="hidden" name="cmd" value="_cart">
 									<input type="hidden" name="display" value="1">
 									<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
 								</form>
 							</li>
-							<li><a href="login.html">
-							<button style="background-color: #fe9126; border-color: white;" type="button" class="btn btn-outline-white border3" id="loggin" data-bs-toggle="modal"
-								data-bs-target="#staticBackdrop">
-								<!-- <span><i class="far fa-user fa-lg"></i></span> -->
-								<span style="color: white;" class=" font_menu px-1">ورود به حساب کاربری</span>
-							</button>
-							</a></li>
+							<li style="margin-top: 5px;">
+							@auth
+								<a href="/client/log_out">
+									<span style="color: white;" class=" font_menu px-1">خروج</span>
+								</a>
+							@endauth
+							@guest
+								<a href="/client/login">
+									<span style="color: white;" class=" font_menu px-1">ورود | ثبت نام</span>
+								</a>
+							@endguest
+							</li>
 						</ul>
 					</div>
 					<div  style="float: right;" class="col-6">
 						<ul class="nav navbar-nav">
-							<li style="margin-top: 10px;"><a href="offers.html">تخفیف ها</a></li>
+							<li style="margin-top: 5px;"><a href="offers.html">تخفیف ها</a></li>
 
-							<li style="margin-top: 10px;" class="dropdown">
+							<li style="margin-top: 5px;" class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">دسته بندی ها<b class="caret"></b></a>
 								<ul class="dropdown-menu multi-column columns-3">
 									<div class="row">
@@ -85,8 +89,7 @@
 									</div>
 								</ul>
 							</li>
-
-							<li style="margin-top: 10px;" class="active"><a href="index.html" class="act">خانه</a></li>
+							<li style="margin-top: 5px;" class="active"><a href="index.html" class="act">خانه</a></li>
 						</ul>
 					</div>
 
