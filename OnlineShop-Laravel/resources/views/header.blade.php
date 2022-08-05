@@ -59,7 +59,7 @@
 							</li>
 							<li style="margin-top: 5px;">
 							@auth
-								<a href="/client/log_out">
+								<a href="/client/logout">
 									<span style="color: white;" class=" font_menu px-1">خروج</span>
 								</a>
 							@endauth

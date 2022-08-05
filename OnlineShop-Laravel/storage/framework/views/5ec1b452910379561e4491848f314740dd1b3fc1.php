@@ -79,7 +79,7 @@
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="product"><img title=" " alt=" " src="<?php echo e($product->image); ?>"></a>
+											<a href="product/<?php echo e($product->id); ?>"><img title=" " alt=" " src="<?php echo e($product->images->first()->image); ?>"></a>
 											<p><?php echo e($product->name); ?></p>
 											<div class="stars">
 												<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -137,13 +137,11 @@
 				<div class=" ban-bottom1">
 					<div class="ban-top">
 						<img src="images/p3.jpg" class="img-responsive" alt="" />
-
 					</div>
 				</div>
 				<div class="ban-bottom2">
 					<div class="ban-top">
 						<img src="images/p4.jpg" class="img-responsive" alt="" />
-
 					</div>
 				</div>
 				<div class="clearfix"></div>
@@ -152,11 +150,8 @@
 		<div class="col-md-6 ban-bottom">
 			<div class="ban-top">
 				<img src="images/111.jpg" class="img-responsive" alt="" />
-
-
 			</div>
 		</div>
-
 		<div class="clearfix"></div>
 	</div>
 </div>
@@ -180,7 +175,7 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="product"><img title=" " alt=" " src="<?php echo e($product->image); ?>"></a>
+										<a href="product/<?php echo e($product->id); ?>"><img title=" " alt=" " src="<?php echo e($product->images->first()->image); ?>"></a>
 										<p><?php echo e($product->name); ?></p>
 										<div class="stars">
 											<i class="fa fa-star blue-star" aria-hidden="true"></i>

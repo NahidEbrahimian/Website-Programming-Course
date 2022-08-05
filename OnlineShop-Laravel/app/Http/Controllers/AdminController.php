@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -15,13 +16,9 @@ class AdminController extends Controller
         ]);
     }
 
-    function sign_in()
+    function logout()
     {
-
-    }
-
-    function log_out()
-    {
-
+        Auth::logout();
+        return redirect("/");
     }
 }

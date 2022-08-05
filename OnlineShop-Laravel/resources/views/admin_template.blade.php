@@ -82,7 +82,7 @@
   <input style="color: white;" class="form-control form-control-dark w-100 rounded-0 border-0" type="text" placeholder=" جستجو ... " aria-label="بحث">
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
-      <a style="color: white;" class="nav-link px-3" href="#">خروج از پنل مدیریت </a>
+      <a style="color: white;" class="nav-link px-3" href="{{ url('admin/logout') }}">خروج از پنل مدیریت </a>
     </div>
   </div>
 </header>
