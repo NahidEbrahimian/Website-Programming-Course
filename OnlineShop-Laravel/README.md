@@ -22,7 +22,7 @@
 
 ---
 
-### Login & REgister
+### Login & Register
 
 ![screencapture-127-0-0-1-8000-client-registere-2022-08-05-01_11_22](https://user-images.githubusercontent.com/82975802/183064836-5c534975-bc8d-437b-b3ad-74a78c7617e3.png)
 
