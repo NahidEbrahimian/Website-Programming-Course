@@ -41,13 +41,11 @@
 					</div>
 					<div class="snipcart-item block">
 						<div class="snipcart-thumb agileinfo_single_right_snipcart">
-							<!-- <h4 class="m-sing">$21.00 <span>10980000 تومان</span></h4> -->
 							<?php if($product['price_off'] > 0): ?>
 							<h4><?php echo e($product['price'] -  $product['price_off']* $product['price'] /100); ?> تومان<span><?php echo e($product['price']); ?> </span></h4>
 							<?php else: ?>
 							<h4><?php echo e($product['price']); ?> تومان</h4>
 							<?php endif; ?>
-
 						</div>
 						<div class="snipcart-details agileinfo_single_right_details">
 							<form action="#" method="post">

@@ -26,6 +26,8 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/product/{id}', [ProductController::class, "index_product"] );
 
 Route::get('/admin', [AdminController::class, 'index'])->middleware("auth");
+Route::post('/admin/login', [AdminController::class, 'login_post']);
+Route::get('/admin/login', [AdminController::class, 'login_get']);
 Route::get('/admin/logout', [AdminController::class, 'logout']);
 
 Route::get('/admin/cities', [CityController::class, 'get_all'])->middleware("auth");
@@ -35,8 +37,12 @@ Route::get('/admin/cities/edit/{id}', [CityController::class, 'edit_get'])->midd
 Route::post('/admin/cities/edit', [CityController::class, 'edit_post'])->middleware("auth");
 Route::get('/admin/cities/delete/{id}', [CityController::class, 'delete'])->middleware("auth");
 
-Route::get('/admin/products', [ProductController::class, 'get_all'])->middleware("auth");
+Route::get('/admin/products', [ProductController::class, 'get_all_for_admin'])->middleware("auth");
 Route::get('/admin/products/delete/{id}', [ProductController::class, 'delete'])->middleware("auth");
+Route::get('/admin/products/add', [ProductController::class, 'add_get'])->middleware("auth");
+Route::post('/admin/products/post', [ProductController::class, 'add_post'])->middleware("auth");
+Route::get('/admin/products/edit/{id}', [ProductController::class, 'edit_get'])->middleware("auth");
+Route::post('/admin/products/edit', [ProductController::class, 'edit_post'])->middleware("auth");
 
 Route::get('/admin/users', [UserController::class, 'get_all'])->middleware("auth");
 
@@ -54,4 +60,8 @@ Route::post('/client/registere', [UserController::class, 'registere_post']);
 
 Route::get('/client/user_profile', [UserController::class, 'profile'])->middleware("auth");
 
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 // Route

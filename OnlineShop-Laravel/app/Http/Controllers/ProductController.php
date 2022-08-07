@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\Star;
 
 class ProductController extends Controller
@@ -20,7 +21,17 @@ class ProductController extends Controller
                 "categories"=>$categories
             ]);
     }
-    function get_all()
+    // function get_all_for_client()
+    // {
+    //     $products = Product::all();
+    //     $categories = Category::all();
+
+    //     return view("client/products", [
+    //         "products" => $products,
+    //         "categories" => $categories
+    //     ]);
+    // }
+    function get_all_for_admin()
     {
         $products = Product::all();
         $categories = Category::all();
@@ -50,9 +61,31 @@ class ProductController extends Controller
             "message_type" => $message_type,
         ]);
     }
-    function add()
+    function add_get()
     {
+        $categories = Category::all();
+        return view("admin/add_product")->with([
+            "categories" => $categories,
+            // "message_type" => $message_type,
+        ]);
+    }
 
+    function add_post(Request $request)
+    {
+        $new_product= new Product();
+        $new_product->name = $request["name"];
+        $new_product->description = $request["text"];
+        $new_product->price = $request["price"];
+        $new_product->price_off = $request["price"];
+        $new_product->count = $request["count"];
+        $new_product->category_id = $request["category-id"];
+
+        $new_image = new Image();
+        $new_image->image = $request["image"];
+        $new_product->images()->save($new_image);
+        // $new_product->save();
+
+        return redirect("/admin/products");
     }
 
     function edit()

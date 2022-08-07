@@ -9,7 +9,7 @@
 @endif
 
 <h4 style="margin-top: 15px;"> محصولات</h4>
-
+<a style="margin-top: 10px;" class="btn btn-success" href="{{url('/admin/products/add')}}">افزودن محصول جدید</a>
 <table id="tabel" class="table table-striped">
     <thead>
         <tr class="text-center">

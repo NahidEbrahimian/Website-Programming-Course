@@ -63,13 +63,13 @@ class UserController extends Controller
     {
         $categories = Category::all();
 
-        if(Auth::attempt(["email"=>$request['user_name'], "password"=>$request['password'], "role"=>1]) ||
-            Auth::attempt(["mobile_number"=>$request['user_name'], "password"=>$request['password'], "role"=>1]) ||
-            Auth::attempt(["user_name"=>$request['user_name'], "password"=>$request['password'], "role"=>1]))
-        {
-            return redirect('admin');
-        }
-        elseif(Auth::attempt(["email"=>$request['user_name'], "password"=>$request['password'], "role"=>0]) ||
+        // if(Auth::attempt(["email"=>$request['user_name'], "password"=>$request['password'], "role"=>1]) ||
+        //     Auth::attempt(["mobile_number"=>$request['user_name'], "password"=>$request['password'], "role"=>1]) ||
+        //     Auth::attempt(["user_name"=>$request['user_name'], "password"=>$request['password'], "role"=>1]))
+        // {
+        //     return redirect('admin');
+        // }
+        if(Auth::attempt(["email"=>$request['user_name'], "password"=>$request['password'], "role"=>0]) ||
         Auth::attempt(["mobile_number"=>$request['user_name'], "password"=>$request['password'], "role"=>0]) ||
         Auth::attempt(["user_name"=>$request['user_name'], "password"=>$request['password'], "role"=>0]))
         {

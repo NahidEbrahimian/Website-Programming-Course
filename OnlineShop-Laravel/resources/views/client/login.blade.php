@@ -12,7 +12,7 @@
 <!-- login -->
 	<div class="login">
 		<div class="container">
-			<h2>ورود</h2>
+			<h2>ورود کاربر</h2>
 		
 			<div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
 				<form method="post" action="{{ url('/client/login') }}">
