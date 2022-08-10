@@ -18,11 +18,11 @@
 				<form method="post" action="{{ url('/admin/login') }}">
 					<input style=" border-radius: 3px;" name="user_name" type="text" placeholder="آدرس ایمیل، نام کاربری و یا شماره موبایل" required=" ">
 					<input style=" border-radius: 3px;" name="password" type="password" placeholder="گذرواژه" required=" ">
-					<div class="forgot">
-						<a href="#">فراموشی گذرواژه</a>
-					</div>
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<button style="width: 100%; height: 40px; margin-top: 25px; background-color: #fe9126; border: none; border-radius: 3px;" type="submit"> ورود</button>
+					<div style="text-align: center;" class="forgot">
+					<a href="#">فراموشی گذرواژه</a>
+				</div>
 				</form>
 			</div>
 			<!-- <p><a href="/client/registere">ایجاد حساب کاربری</a> </p> -->
