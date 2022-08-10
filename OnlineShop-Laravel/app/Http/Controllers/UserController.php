@@ -62,16 +62,11 @@ class UserController extends Controller
     function login_post(Request $request)
     {
         $categories = Category::all();
+        echo $request["remember_me"];
 
-        // if(Auth::attempt(["email"=>$request['user_name'], "password"=>$request['password'], "role"=>1]) ||
-        //     Auth::attempt(["mobile_number"=>$request['user_name'], "password"=>$request['password'], "role"=>1]) ||
-        //     Auth::attempt(["user_name"=>$request['user_name'], "password"=>$request['password'], "role"=>1]))
-        // {
-        //     return redirect('admin');
-        // }
-        if(Auth::attempt(["email"=>$request['user_name'], "password"=>$request['password'], "role"=>0]) ||
-        Auth::attempt(["mobile_number"=>$request['user_name'], "password"=>$request['password'], "role"=>0]) ||
-        Auth::attempt(["user_name"=>$request['user_name'], "password"=>$request['password'], "role"=>0]))
+        if(Auth::attempt(["email"=>$request['user_name'], "password"=>$request['password'], "role"=>0], $request['remember_me']) ||
+        Auth::attempt(["mobile_number"=>$request['user_name'], "password"=>$request['password'], "role"=>0], $request["remember_me"]) ||
+        Auth::attempt(["user_name"=>$request['user_name'], "password"=>$request['password'], "role"=>0], $request["remember_me"]))
         {
             return redirect('client/user_profile')->with([
                 "categories"=>$categories,

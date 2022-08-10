@@ -5,7 +5,7 @@
 		<div class="container">
 			<ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
 				<li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>خانه</a></li>
-				<li class="active">ورود به حساب کاربری</li>
+				<li class="active">ورود به  پنل مدیریت</li>
 			</ol>
 		</div>
 	</div>
@@ -25,7 +25,7 @@
 					<button style="width: 100%; height: 40px; margin-top: 25px; background-color: #fe9126; border: none; border-radius: 3px;" type="submit"> ورود</button>
 				</form>
 			</div>
-			<p><a href="/client/registere">ایجاد حساب کاربری</a> </p>
+			<!-- <p><a href="/client/registere">ایجاد حساب کاربری</a> </p> -->
 		</div>
 	</div>
 

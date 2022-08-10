@@ -32,7 +32,7 @@
                     <td>{{ $comment->text }}</td>
                     <td>{{ $comment->product->name }}</td>
                     <td>
-                        <a class="btn btn-danger" href="{{ url('admin/comments/delete/$comment->id') }}">حذف</a>
+                        <a class="btn btn-danger" href="{{ url("admin/comments/delete/$comment->id") }}">حذف</a>
                     </td>
                 </tr>
                 @endforeach

@@ -28,8 +28,8 @@
                     </th>
                     <td>{{ $city->name }}</td>
                     <td>
-                        <a class="btn btn-info" href="{{ url('admin/cities/edit/$city->id') }}">ویرایش</a>
-                        <a class="btn btn-danger" href="{{ url('admin/cities/delete/$city->id') }}">حذف</a>
+                        <a class="btn btn-info" href="{{ url("admin/cities/edit/$city->id") }}">ویرایش</a>
+                        <a class="btn btn-danger" href="{{ url("/admin/cities/delete/$city->id") }}">حذف</a>
                     </td>
                 </tr>
                 @endforeach

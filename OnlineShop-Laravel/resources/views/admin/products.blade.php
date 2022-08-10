@@ -40,10 +40,10 @@
                     <td>{{ $product->price }}</td>
                     <td>{{ $product->price_off }}%</td>
                     <td>
-                        <a class="btn btn-info" href="{{ url('admin/products/edit/$product->id') }}">ویرایش</a>
+                        <a class="btn btn-info" href="{{ url("admin/products/edit/$product->id") }}">ویرایش</a>
                     </td>
                     <td>
-                        <a class="btn btn-danger" href="{{ url('admin/products/delete/$product->id') }}">حذف</a>
+                        <a class="btn btn-danger" href="{{ url("admin/products/delete/$product->id") }}">حذف</a>
                     </td>
                 </tr>
              @endforeach

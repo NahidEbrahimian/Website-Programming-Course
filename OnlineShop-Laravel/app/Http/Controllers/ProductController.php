@@ -66,7 +66,6 @@ class ProductController extends Controller
         $categories = Category::all();
         return view("admin/add_product")->with([
             "categories" => $categories,
-            // "message_type" => $message_type,
         ]);
     }
 
@@ -76,14 +75,14 @@ class ProductController extends Controller
         $new_product->name = $request["name"];
         $new_product->description = $request["text"];
         $new_product->price = $request["price"];
-        $new_product->price_off = $request["price"];
+        $new_product->price_off = $request["price_off"];
         $new_product->count = $request["count"];
-        $new_product->category_id = $request["category-id"];
+        $new_product->category_id = $request["category_id"];
+        $new_product->save();
 
         $new_image = new Image();
         $new_image->image = $request["image"];
         $new_product->images()->save($new_image);
-        // $new_product->save();
 
         return redirect("/admin/products");
     }

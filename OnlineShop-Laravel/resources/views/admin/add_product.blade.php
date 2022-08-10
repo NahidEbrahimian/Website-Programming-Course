@@ -40,7 +40,7 @@
                     درصد تخفیف(عدد بدون درصد و اعشار)
                 </span>
             </label>
-            <input name="price-off" type="text" class="form-control " id="inputEmail4" placeholder=" ">
+            <input name="price_off" type="text" class="form-control " id="inputEmail4" placeholder=" ">
         </div>
     </div>
 
@@ -59,7 +59,7 @@
                     دسته بندی
                 </span>
             </label>
-            <select class="w-100 form-select" style="height: 40px; width: 100%;" name="category-id" id="select-tag-specialty">
+            <select class="w-100 form-select" style="height: 40px; width: 100%;" name="category_id" id="select-tag-specialty">
                 @foreach($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->title }}</option>
                 @endforeach
@@ -67,12 +67,12 @@
         </div>
     </div>
 
+    <label for="inputEmail4" class="exampleFormControlTexterea1 " class="form-label">
+        <span style="font-size: 12px; color: gray;">
+            افزودن تصویر
+        </span>
+    </label>
     <div style="margin-top: 10px;" class="input-group">
-            <label for="inputEmail4" class="exampleFormControlTexterea1 " class="form-label">
-                <span style="font-size: 12px; color: gray;">
-                    افزودن تصویر 
-                </span>
-            </label>
         <span class="input-group-btn">
             <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary">
                 <i class="fa fa-picture-o"></i> Choose
@@ -90,7 +90,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
 <script>
-     $('#lfm').filemanager('image');
+    $('#lfm').filemanager('image');
 </script>
 
 @endsection

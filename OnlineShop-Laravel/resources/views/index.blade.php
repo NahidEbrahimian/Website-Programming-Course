@@ -46,18 +46,14 @@
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">
 			<a href="beverages.html"> <img class="first-slide" src="images/b1.jpg" alt="First slide"></a>
-
 		</div>
 		<div class="item">
 			<a href="personalcare.html"> <img class="second-slide " src="images/b3.jpg" alt="Second slide"></a>
-
 		</div>
 		<div class="item">
 			<a href="household.html"><img class="third-slide " src="images/b1.jpg" alt="Third slide"></a>
-
 		</div>
 	</div>
-
 </div>
 
 <div class="newproducts-w3agile">
@@ -79,7 +75,9 @@
 								<figure>
 									<div class="snipcart-item block">
 										<div class="snipcart-thumb">
-											<a href="product/{{ $product->id }}"><img title=" " alt=" " src="{{ $product->images->first()->image }}"></a>
+											<a href="product/{{ $product->id }}">
+												<img style="width: 150px;" title=" " alt=" " src="{{ $product->images->first()->image }}">
+											</a>
 											<p>{{ $product->name }}</p>
 											<div class="stars">
 												<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -175,7 +173,9 @@
 							<figure>
 								<div class="snipcart-item block">
 									<div class="snipcart-thumb">
-										<a href="product/{{ $product->id }}"><img title=" " alt=" " src="{{ $product->images->first()->image }}"></a>
+										<a href="product/{{ $product->id }}">
+											<img style="width: 150px;" title=" " alt=" " src="{{ url($product->images->first()->image) }}">
+										</a>
 										<p>{{ $product->name }}</p>
 										<div class="stars">
 											<i class="fa fa-star blue-star" aria-hidden="true"></i>
@@ -222,26 +222,26 @@
 	<div class="row mx-4 mt-4">
 		<div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-self-start">
 			<a href="" class="text-decoration-none text-reset">
-				<img src="{{ asset('images/f2.svg') }}" style="width: 20%;" class="img-fluid mt-3" alt="">
-				<p class="mt-3">امکان پرداخت در محل</p>
+				<img src="{{ asset('images/small-icon1.svg') }}" style="width: 25%;" class="img-fluid mt-3" alt="">
+				<p style="color:darkgray; margin-top: 10px;" class="mt-3">امکان پرداخت در محل</p>
 			</a>
 		</div>
 		<div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-self-start">
 			<a href="" class="text-decoration-none text-reset">
-				<img src="{{ asset('images/f3.svg') }}" style="width: 20%;" class="img-fluid mt-3" alt="">
-				<p class="mt-3">7 روز هفته، 24 ساعته </p>
+				<img src="{{ asset('images/small-icon2.svg') }}" style="width: 25%;" class="img-fluid mt-3" alt="">
+				<p style="color:darkgray; margin-top: 10px;" class="mt-3">7 روز هفته، 24 ساعته </p>
 			</a>
 		</div>
 		<div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-self-start">
 			<a href="" class="text-decoration-none text-reset">
-				<img src="{{ asset('images/f4.svg') }}" style="width: 20%;" class="img-fluid mt-3" alt="">
-				<p class="mt-3"> 7 روز ضمانت بازگشت کالا</p>
+				<img src="{{ asset('images/small-icon4.svg') }}" style="width: 25%;" class="img-fluid mt-3" alt="">
+				<p style="color:darkgray; margin-top: 10px;" class="mt-3"> 7 روز ضمانت بازگشت کالا</p>
 			</a>
 		</div>
 		<div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-self-start">
 			<a href="" class="text-decoration-none text-reset">
-				<img src="{{ asset('images/f5.svg') }}" style="width: 20%;" class="img-fluid mt-3" alt="">
-				<p class="mt-3">ضمانت اصل بودن کالا</p>
+				<img src="{{ asset('images/small-icon5.svg') }}" style="width: 25%;" class="img-fluid mt-3" alt="">
+				<p style="color:darkgray; margin-top: 10px;" class="mt-3">ضمانت اصل بودن کالا</p>
 			</a>
 		</div>
 	</div>
