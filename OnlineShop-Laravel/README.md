@@ -18,7 +18,7 @@
 
 ![screencapture-127-0-0-1-8000-admin-products-2022-08-11-14_28_35](https://user-images.githubusercontent.com/82975802/184114490-1d4a1a2b-9a5e-4ae7-a873-2264d0883ed5.png)
 
-![screencapture-127-0-0-1-8000-admin-products-add-2022-08-11-14_28_47](https://user-images.githubusercontent.com/82975802/184114479-c2a8e74f-6567-4a00-919a-37cd8f196304.png)
+![screencapture-127-0-0-1-8000-admin-products-add-2022-08-11-20_16_25](https://user-images.githubusercontent.com/82975802/184174701-a3609bef-717d-4e39-9c88-f42d0e8f0cf6.png)
 
 ![screencapture-127-0-0-1-8000-admin-cities-add-2022-08-11-14_28_26](https://user-images.githubusercontent.com/82975802/184114630-404fbb01-c600-4df6-89d7-9ed87e6c1537.png)
 
