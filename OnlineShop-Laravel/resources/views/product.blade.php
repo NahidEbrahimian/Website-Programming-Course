@@ -39,7 +39,7 @@
 						<hr>
 						<div class="row">
 							<div class="col-lg-12">
-								<p style="font-size: 14px; color:darkgrey; margin-bottom: 15px;">قیمت:</p>
+								<p  style="font-size: 14px; color:darkgrey; margin-bottom: 15px;">قیمت:</p>
 
 								@if($product['price_off'] > 0)
 								<h4>

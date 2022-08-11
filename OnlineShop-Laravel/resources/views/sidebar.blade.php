@@ -9,13 +9,13 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/admin/cities') }}">
-              <span data-feather="file" class="align-text-bottom"></span>
+              <span data-feather="map-pin" class="align-text-bottom"></span>
               شهرها
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/admin/products') }}">
-              <span data-feather="shopping-cart" class="align-text-bottom"></span>
+              <span data-feather="file" class="align-text-bottom"></span>
               محصولات
             </a>
           </li>
@@ -27,13 +27,13 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/admin/carts') }}">
-              <span data-feather="bar-chart-2" class="align-text-bottom"></span>
+              <span data-feather="shopping-cart" class="align-text-bottom"></span>
               سفارش ها
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/admin/comments') }}">
-              <span data-feather="layers" class="align-text-bottom"></span>
+              <span data-feather="message-circle" class="align-text-bottom"></span>
               کامنت ها
             </a>
           </li>

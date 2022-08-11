@@ -20,12 +20,18 @@
 
 ### Admin Dashboard
 
-![screencapture-127-0-0-1-8000-admin-cities-2022-08-02-18_01_25](https://user-images.githubusercontent.com/82975802/183064929-5211794f-88f2-492e-b31a-645a10e9504e.png)
+![screencapture-127-0-0-1-8000-admin-products-2022-08-11-14_28_35](https://user-images.githubusercontent.com/82975802/184114490-1d4a1a2b-9a5e-4ae7-a873-2264d0883ed5.png)
 
-![screencapture-127-0-0-1-8000-admin-comments-2022-08-02-18_01_57](https://user-images.githubusercontent.com/82975802/183064864-48a0cc4b-86dc-4302-ad24-703f478850bd.png)
+![screencapture-127-0-0-1-8000-admin-products-add-2022-08-11-14_28_47](https://user-images.githubusercontent.com/82975802/184114479-c2a8e74f-6567-4a00-919a-37cd8f196304.png)
 
-![screencapture-127-0-0-1-8000-admin-carts-2022-08-02-18_01_50](https://user-images.githubusercontent.com/82975802/183064857-66c4d91a-dd8d-4bf3-a655-8551ce4c06cc.png)
-![screencapture-127-0-0-1-8000-admin-products-2022-08-02-18_01_33](https://user-images.githubusercontent.com/82975802/183064811-7771d025-18d9-4470-a77f-64a3c7f98fd8.png)
+![screencapture-127-0-0-1-8000-admin-cities-add-2022-08-11-14_28_26](https://user-images.githubusercontent.com/82975802/184114630-404fbb01-c600-4df6-89d7-9ed87e6c1537.png)
+
+![screencapture-127-0-0-1-8000-admin-cities-2022-08-11-14_28_14](https://user-images.githubusercontent.com/82975802/184114624-9d850d01-c5e6-46ec-8000-6cbb6ab1147b.png)
+
+![screencapture-127-0-0-1-8000-admin-carts-2022-08-11-14_30_57](https://user-images.githubusercontent.com/82975802/184114736-832953c4-7c6d-4fd3-9e32-e848c0d0fe5e.png)
+
+![screencapture-127-0-0-1-8000-admin-comments-2022-08-11-14_31_10](https://user-images.githubusercontent.com/82975802/184114744-d8b17b93-a2d3-450e-be58-a081e92ac010.png)
+
 ![screencapture-127-0-0-1-8000-admin-users-2022-08-02-18_01_42](https://user-images.githubusercontent.com/82975802/183064845-266663ea-2b4d-4c4c-86ad-a346fc6253ac.png)
 
 ---

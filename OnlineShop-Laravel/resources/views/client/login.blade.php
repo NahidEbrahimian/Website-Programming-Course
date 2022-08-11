@@ -21,12 +21,7 @@
 					<input name="remember_me" type="checkbox" class="form-check-input">
 					<label class="form-check-label" for="exampleCheck1" style="font-size: 14px;">مرا به خاطر بسپار</label>
 				</div>
-				<!-- <div class="form-check">
-    <input name="remember_me" type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div> -->
 				<button style="width: 100%; height: 40px; margin-top: 25px; background-color: #fe9126; border: none; border-radius: 3px;" type="submit"> ورود</button>
-
 				<div style="text-align: center;" class="forgot">
 					<a href="#">فراموشی گذرواژه</a>
 				</div>
