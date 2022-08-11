@@ -12,10 +12,6 @@
 
 ![screencapture-127-0-0-1-8000-client-login-2022-08-11-00_16_56](https://user-images.githubusercontent.com/82975802/184010422-ebcfd3ce-cf38-478f-bdc8-66358562bf87.png)
 
-### Index Page
-
-![screencapture-127-0-0-1-8000-2022-08-05-15_33_28](https://user-images.githubusercontent.com/82975802/183064844-2b79b38f-0012-42a7-b344-530c8f8d6a32.png)
-
 ---
 
 ### Admin Dashboard
@@ -35,3 +31,8 @@
 ![screencapture-127-0-0-1-8000-admin-users-2022-08-02-18_01_42](https://user-images.githubusercontent.com/82975802/183064845-266663ea-2b4d-4c4c-86ad-a346fc6253ac.png)
 
 ---
+
+### Index Page
+
+![screencapture-127-0-0-1-8000-2022-08-05-15_33_28](https://user-images.githubusercontent.com/82975802/183064844-2b79b38f-0012-42a7-b344-530c8f8d6a32.png)
+
