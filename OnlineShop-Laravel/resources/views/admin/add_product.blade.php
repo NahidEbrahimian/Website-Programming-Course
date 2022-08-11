@@ -34,7 +34,7 @@
                             قیمت
                         </span>
                     </label>
-                    <input name="price" type="text" class="form-control" id="inputEmail4" placeholder="ایمیل">
+                    <input name="price" type="text" class="form-control" id="inputEmail4" placeholder="">
                 </div>
                 <div class="col-md-6 col-sm-12 mt-3">
                     <label for="inputEmail4" class="exampleFormControlTexterea1 " class="form-label">
