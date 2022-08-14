@@ -80,10 +80,13 @@
 											</a>
 											<p>{{ $product->name }}</p>
 											<div class="stars">
-												<i class="fa fa-star blue-star" aria-hidden="true"></i>
-												<i class="fa fa-star blue-star" aria-hidden="true"></i>
-												<i class="fa fa-star blue-star" aria-hidden="true"></i>
-												<i class="fa fa-star blue-star" aria-hidden="true"></i>
+												<i class="fa fa-star warning-star" aria-hidden="true"></i>
+											</div>
+											<div class="stars">
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
 												<i class="fa fa-star gray-star" aria-hidden="true"></i>
 											</div>
 											@if($product['price_off'] > 0)
@@ -177,13 +180,16 @@
 											<img style="width: 150px;" title=" " alt=" " src="{{ url($product->images->first()->image) }}">
 										</a>
 										<p>{{ $product->name }}</p>
-										<div class="stars">
-											<i class="fa fa-star blue-star" aria-hidden="true"></i>
-											<i class="fa fa-star blue-star" aria-hidden="true"></i>
-											<i class="fa fa-star blue-star" aria-hidden="true"></i>
-											<i class="fa fa-star blue-star" aria-hidden="true"></i>
-											<i class="fa fa-star gray-star" aria-hidden="true"></i>
-										</div>
+											<div class="stars">
+												<i class="fa fa-star warning-star" aria-hidden="true"></i>
+											</div>
+											<div class="stars">
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+											</div>
 										@if($product['price_off'] > 0)
 										<h4>{{$product['price'] -  $product['price_off']* $product['price'] /100 }} تومان<span>{{ $product['price'] }} </span></h4>
 										@else
@@ -246,4 +252,7 @@
 		</div>
 	</div>
 </div>
+
 @endsection
+
+ 

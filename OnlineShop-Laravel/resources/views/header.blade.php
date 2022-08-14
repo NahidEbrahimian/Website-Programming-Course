@@ -73,10 +73,12 @@
 					</div>
 					<div  style="float: right;" class="col-6">
 						<ul class="nav navbar-nav">
+							<li style="margin-top: 5px;"><a href="/products">محصولات</a></li>
+
 							<li style="margin-top: 5px;"><a href="offers.html">تخفیف ها</a></li>
 
 							<li style="margin-top: 5px;" class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">دسته بندی ها<b class="caret"></b></a>
+								<a href="" class="dropdown-toggle" data-toggle="dropdown">دسته بندی ها<b class="caret"></b></a>
 								<ul class="dropdown-menu multi-column columns-3">
 									<div class="row">
 										<div class="multi-gd-img">
@@ -92,7 +94,6 @@
 							<li style="margin-top: 5px;" class="active"><a href="index.html" class="act">خانه</a></li>
 						</ul>
 					</div>
-
 				</div>
 			</nav>
 		</div>

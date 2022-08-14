@@ -10,35 +10,25 @@ use App\Models\Star;
 
 class ProductController extends Controller
 {
-    // function index_product(Request $request)
     function index_product($id)
     {
             $product = Product::find($id);
-            $categories = Category::all();
-
             return view("product",[
                 "product" => $product,
-                "categories"=>$categories
             ]);
     }
-    // function get_all_for_client()
-    // {
-    //     $products = Product::all();
-    //     $categories = Category::all();
-
-    //     return view("client/products", [
-    //         "products" => $products,
-    //         "categories" => $categories
-    //     ]);
-    // }
+    function get_all_for_client()
+    {
+        $products = Product::paginate(1);
+        return view("products", [
+            "products" => $products,
+        ]);
+    }
     function get_all_for_admin()
     {
         $products = Product::all();
-        $categories = Category::all();
-
         return view("admin/products", [
             "products" => $products,
-            "categories" => $categories
         ]);
     }
     function delete($id)
@@ -85,11 +75,6 @@ class ProductController extends Controller
         $new_product->images()->save($new_image);
 
         return redirect("/admin/products");
-    }
-
-    function edit()
-    {
-        
     }
 
     function get_by_category($category_id)

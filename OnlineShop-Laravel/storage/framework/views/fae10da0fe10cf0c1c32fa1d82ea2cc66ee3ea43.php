@@ -71,6 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         }
     </script>
     <script src="<?php echo e(url('js/skdslider.min.js')); ?>"></script>
+    <script src="<?php echo e(url('js/script.js')); ?>"></script>
     <link href="<?php echo e(asset('/css/skdslider.css')); ?>" rel="stylesheet">
     <script type="text/javascript">
         jQuery(document).ready(function() {

@@ -580,11 +580,11 @@ p.w3l-ad {
     text-align: center;
     margin-bottom: 13px;
 }
-i.blue-star {
+i.warning-star {
     color: #f8e80c;
 }
 i.gray-star {
-    color: #808080;
+    color: #e2dddd;
 }
 /*-- to-top --*/
 #toTop {

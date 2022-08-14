@@ -4,14 +4,14 @@
 <!-- main-slider -->
 <ul id="demo1">
 	<li>
-		<img src="images/11.jpg" alt="" />
+		<img src="<?php echo e(url('images/11.jpg')); ?>" alt="" />
 	</li>
 	<li>
-		<img src="images/22.jpg" alt="" />
+		<img src="<?php echo e(url('images/22.jpg')); ?>" alt="" />
 	</li>
 
 	<li>
-		<img src="images/44.jpg" alt="" />
+		<img src="<?php echo e(url('images/44.jpg')); ?>" alt="" />
 	</li>
 </ul>
 
@@ -45,13 +45,13 @@
 	</ol>
 	<div class="carousel-inner" role="listbox">
 		<div class="item active">
-			<a href="beverages.html"> <img class="first-slide" src="images/b1.jpg" alt="First slide"></a>
+			<a href="beverages.html"> <img class="first-slide" src="<?php echo e(url('images/b1.jpg')); ?>" alt="First slide"></a>
 		</div>
 		<div class="item">
-			<a href="personalcare.html"> <img class="second-slide " src="images/b3.jpg" alt="Second slide"></a>
+			<a href="personalcare.html"> <img class="second-slide " src="<?php echo e(url('images/b3.jpg')); ?>" alt="Second slide"></a>
 		</div>
 		<div class="item">
-			<a href="household.html"><img class="third-slide " src="images/b1.jpg" alt="Third slide"></a>
+			<a href="household.html"><img class="third-slide " src="<?php echo e(url('images/b1.jpg')); ?>" alt="Third slide"></a>
 		</div>
 	</div>
 </div>
@@ -68,7 +68,7 @@
 						<div class="agile_top_brand_left_grid">
 							<?php if($product['price_off'] > 0): ?>
 							<div class="agile_top_brand_left_grid_pos">
-								<img src="images/offer.png" alt=" " class="img-responsive">
+								<img src="<?php echo e(url('images/offer.png')); ?>" alt=" " class="img-responsive">
 							</div>
 							<?php endif; ?>
 							<div class="agile_top_brand_left_grid1">
@@ -80,10 +80,13 @@
 											</a>
 											<p><?php echo e($product->name); ?></p>
 											<div class="stars">
-												<i class="fa fa-star blue-star" aria-hidden="true"></i>
-												<i class="fa fa-star blue-star" aria-hidden="true"></i>
-												<i class="fa fa-star blue-star" aria-hidden="true"></i>
-												<i class="fa fa-star blue-star" aria-hidden="true"></i>
+												<i class="fa fa-star warning-star" aria-hidden="true"></i>
+											</div>
+											<div class="stars">
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
 												<i class="fa fa-star gray-star" aria-hidden="true"></i>
 											</div>
 											<?php if($product['price_off'] > 0): ?>
@@ -128,18 +131,18 @@
 	<div class="container">
 		<div class="col-md-6 ban-bottom3">
 			<div class="ban-top">
-				<img src="images/p2.jpg" class="img-responsive" alt="" />
+				<img src="<?php echo e(url('images/p2.jpg')); ?>" class="img-responsive" alt="" />
 
 			</div>
 			<div class="ban-img">
 				<div class=" ban-bottom1">
 					<div class="ban-top">
-						<img src="images/p3.jpg" class="img-responsive" alt="" />
+						<img src="<?php echo e(url('images/p3.jpg')); ?>" class="img-responsive" alt="" />
 					</div>
 				</div>
 				<div class="ban-bottom2">
 					<div class="ban-top">
-						<img src="images/p4.jpg" class="img-responsive" alt="" />
+						<img src="<?php echo e(url('images/p4.jpg')); ?>" class="img-responsive" alt="" />
 					</div>
 				</div>
 				<div class="clearfix"></div>
@@ -147,7 +150,7 @@
 		</div>
 		<div class="col-md-6 ban-bottom">
 			<div class="ban-top">
-				<img src="images/111.jpg" class="img-responsive" alt="" />
+				<img src="<?php echo e(url('images/111.jpg')); ?>" class="img-responsive" alt="" />
 			</div>
 		</div>
 		<div class="clearfix"></div>
@@ -166,7 +169,7 @@
 					<div style="height: 400px;" class="agile_top_brand_left_grid">
 						<?php if($product['price_off'] > 0): ?>
 						<div class="agile_top_brand_left_grid_pos">
-							<img src="images/offer.png" alt=" " class="img-responsive">
+							<img src="<?php echo e(url('images/offer.png')); ?>" alt=" " class="img-responsive">
 						</div>
 						<?php endif; ?>
 						<div class="agile_top_brand_left_grid1">
@@ -177,13 +180,16 @@
 											<img style="width: 150px;" title=" " alt=" " src="<?php echo e(url($product->images->first()->image)); ?>">
 										</a>
 										<p><?php echo e($product->name); ?></p>
-										<div class="stars">
-											<i class="fa fa-star blue-star" aria-hidden="true"></i>
-											<i class="fa fa-star blue-star" aria-hidden="true"></i>
-											<i class="fa fa-star blue-star" aria-hidden="true"></i>
-											<i class="fa fa-star blue-star" aria-hidden="true"></i>
-											<i class="fa fa-star gray-star" aria-hidden="true"></i>
-										</div>
+											<div class="stars">
+												<i class="fa fa-star warning-star" aria-hidden="true"></i>
+											</div>
+											<div class="stars">
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+											</div>
 										<?php if($product['price_off'] > 0): ?>
 										<h4><?php echo e($product['price'] -  $product['price_off']* $product['price'] /100); ?> تومان<span><?php echo e($product['price']); ?> </span></h4>
 										<?php else: ?>
@@ -246,5 +252,8 @@
 		</div>
 	</div>
 </div>
+
 <?php $__env->stopSection(); ?>
+
+ 
 <?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp\www\OnlineShop-Laravel\resources\views/index.blade.php ENDPATH**/ ?>

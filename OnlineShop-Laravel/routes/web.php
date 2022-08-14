@@ -24,6 +24,7 @@ use App\Http\Controllers\CityController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/product/{id}', [ProductController::class, "index_product"] );
+Route::get('/products', [ProductController::class, "get_all_for_client"] );
 
 Route::get('/admin', [AdminController::class, 'index'])->middleware("auth");
 Route::post('/admin/login', [AdminController::class, 'login_post']);
@@ -60,8 +61,9 @@ Route::post('/client/registere', [UserController::class, 'registere_post']);
 
 Route::get('/client/user_profile', [UserController::class, 'profile'])->middleware("auth");
 
+Route::post('/send-rating', [StarController::class, 'send_rating'])->middleware("auth");
 
-Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
-    \UniSharp\LaravelFilemanager\Lfm::routes();
-});
+// Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+//     \UniSharp\LaravelFilemanager\Lfm::routes();
+// });
 // Route

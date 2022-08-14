@@ -39,7 +39,7 @@
 						<hr>
 						<div class="row">
 							<div class="col-lg-12">
-								<p data-feather="message-circle" style="font-size: 14px; color:darkgrey; margin-bottom: 15px;">قیمت:</p>
+								<p  style="font-size: 14px; color:darkgrey; margin-bottom: 15px;">قیمت:</p>
 
 								<?php if($product['price_off'] > 0): ?>
 								<h4>
@@ -68,12 +68,24 @@
 						<div style="margin-top: 15px; margin-right: 7px;" class="row">
 							<div class="col">
 								<div class="rating1" style="float: right;">
-									<span style="font-size: 13px;">
+								<div>
+								<span style="font-size: 13px;">
 										<a href="">دیدگاه ها</a>
 									</span>
-									<i class="fa fa-star blue-star" aria-hidden="true">
+									<i class="fa fa-star warning-star" aria-hidden="true">
 										<span style="color: black;">3.6</span>
 									</i>
+								</div>
+									<div>
+									<small>نظر شما:</small>
+									<div class="stars" dir="rtl"  onmouseout="clear_rate()"> 
+										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(1)"></i>
+										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(2)"></i>
+										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(3)"></i>
+										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(4)"></i>
+										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(5)"></i>
+									</div>
+									</div>
 								</div>
 							</div>
 						</div>
