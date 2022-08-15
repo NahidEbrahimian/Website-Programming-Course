@@ -20,11 +20,9 @@ class UserController extends Controller
     }
     function registere_get()
     {
-        $categories = Category::all();
         $cities = City::all();
 
         return view("client.registere",[
-            "categories"=>$categories,
             "cities" => $cities
         ]);
     }
@@ -53,31 +51,37 @@ class UserController extends Controller
     }
     function login_get()
     {
-        $categories = Category::all();
-
-        return view("client.login",[
-            "categories"=>$categories,
-        ]);
+        return view("client.login");
     }
     function login_post(Request $request)
     {
-        $categories = Category::all();
         echo $request["remember_me"];
 
         if(Auth::attempt(["email"=>$request['user_name'], "password"=>$request['password'], "role"=>0], $request['remember_me']) ||
         Auth::attempt(["mobile_number"=>$request['user_name'], "password"=>$request['password'], "role"=>0], $request["remember_me"]) ||
         Auth::attempt(["user_name"=>$request['user_name'], "password"=>$request['password'], "role"=>0], $request["remember_me"]))
         {
-            return redirect('client/user_profile')->with([
-                "categories"=>$categories,
-            ]);
-            
+
+            $user_name = $request['user_name'];
+            // $user_id = User::where("password", $request['password'])->where("role", 0)->where(function($query) use ($user_name) {
+            //                 $query->where("mobile_number", $user_name)
+            //                 ->orWhere("user_name", $user_name)
+            //                 ->orWhere("email", $user_name);
+            //                 })->first()->id;
+
+            $user_id = User::where("user_name", $user_name)->first()->id;
+
+            // $user_id = User::where("email", $request['user_name'])->where("password"=$request['password'])->where("role", 0)
+            //                 ->orWhere("mobile_number"=$request['user_name'], "password"=$request['password'], "role"=0)
+            //                 ->orWhere("user_name"=$request['user_name'], "password"=$request['password'], "role"=0)->get();
+            $request->session()->put('user_id', $user_id);
+            // $id = $request->session()->get('user_id');           
+            // echo $id;
+            return redirect('client/user_profile');
         }
         else
         {
-            return redirect('client/login')->with([
-                "categories"=>$categories,
-            ]);
+            return redirect('client/login');
         }
     }
     function logout()
@@ -87,10 +91,7 @@ class UserController extends Controller
     }
     function profile()
     {
-        $categories = Category::all();
-        return view('client.user_profile',[
-            "categories"=>$categories,
-        ]);
+        return view('client.user_profile');
     }
 
     function reset_password()

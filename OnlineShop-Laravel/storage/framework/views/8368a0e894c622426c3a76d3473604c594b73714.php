@@ -79,11 +79,11 @@
 									<div>
 									<small>نظر شما:</small>
 									<div class="stars" dir="rtl"  onmouseout="clear_rate()"> 
-										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(1)"></i>
-										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(2)"></i>
-										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(3)"></i>
-										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(4)"></i>
-										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(5)"></i>
+										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(1)" onclick="add(1)"></i>
+										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(2)" onclick="add(2)"></i>
+										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(3)" onclick="add(3)"></i>
+										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(4)" onclick="add(4)"></i>
+										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(5)" onclick="add(5)"></i>
 									</div>
 									</div>
 								</div>

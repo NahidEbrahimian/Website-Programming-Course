@@ -23,22 +23,56 @@ function clear_rate()
     }
 }
 
-function add(rate)
+function add(received_score)
 {
+    // $.ajaxSetup({
+    //     headers: {
+    //       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //     }
+    //   });
 
-    var json_data = {
-        score: rate,
-        product_id: "{{ $product->id }}"
+      var json_data = {
+        score: received_score,
+        product_id: "{{ $product->id }}",
+        _token : $('meta[name="csrf-token"]').attr('content')
     };
+
+    var my_data = new FormData();
     my_data.append("json", JSON.stringify(json_data));
 
-    fetch("/send-rating"), {
+    // $.ajax({
+    //     type:"POST",
+    //     url: "/send-rating",
+    //     data: {score: rate,
+    //         product_id: "{{ $product->id }}",
+    //         _token : $('meta[name="csrf-token"]').attr('content') },
+    //     dataType: 'json',
+    //     // success: function(res){
+    //     // var oTable = $('#ajax-crud-datatable').dataTable();
+    //     // oTable.fnDraw(false);
+    //     // }
+    //     }).then(
+    //         result => result.text()
+    //     ).then(result => {
+    //         if (result == 1){
+    //             // color
+    //             for (var i = 0; i < rate; i++)
+    //             {
+    //                 stars[i].classList.remove("gray-star");
+    //                 stars[i].classList.add("warning-star");
+    //             }
+    //         }
+    //     }).catch(error => {
+    //         console.log(error)});
+
+
+    fetch("/send-rating", {
         method: "post",
-        body: my_data
-    }.then(
+        body: my_data,
+    }).then(
         result => result.text()
     ).then(result => {
-        if (result == 1) {
+        if (result == 1){
             // color
             for (var i = 0; i < rate; i++)
             {
