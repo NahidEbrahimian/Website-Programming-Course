@@ -79,15 +79,9 @@
 												<img style="width: 150px;" title=" " alt=" " src="<?php echo e($product->images->first()->image); ?>">
 											</a>
 											<p><?php echo e($product->name); ?></p>
-											<div class="stars">
+											<div class="stars" dir="rtl">
 												<i class="fa fa-star warning-star" aria-hidden="true"></i>
-											</div>
-											<div class="stars">
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+												<span style="font-size: 14px; color: gray;"><?php echo e($product->stars->avg("score")); ?></span>
 											</div>
 											<?php if($product['price_off'] > 0): ?>
 											<h4><?php echo e($product['price'] -  $product['price_off']* $product['price'] /100); ?> تومان<span><?php echo e($product['price']); ?> </span></h4>
@@ -180,16 +174,10 @@
 											<img style="width: 150px;" title=" " alt=" " src="<?php echo e(url($product->images->first()->image)); ?>">
 										</a>
 										<p><?php echo e($product->name); ?></p>
-											<div class="stars">
-												<i class="fa fa-star warning-star" aria-hidden="true"></i>
-											</div>
-											<div class="stars">
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-											</div>
+										<div class="stars" dir="rtl">
+											<i class="fa fa-star warning-star" aria-hidden="true"></i>
+											<span style="font-size: 14px; color: gray;"><?php echo e($product->stars->avg("score")); ?></span>
+										</div>
 										<?php if($product['price_off'] > 0): ?>
 										<h4><?php echo e($product['price'] -  $product['price_off']* $product['price'] /100); ?> تومان<span><?php echo e($product['price']); ?> </span></h4>
 										<?php else: ?>
@@ -254,6 +242,4 @@
 </div>
 
 <?php $__env->stopSection(); ?>
-
- 
 <?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp\www\OnlineShop-Laravel\resources\views/index.blade.php ENDPATH**/ ?>

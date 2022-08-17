@@ -79,15 +79,9 @@
 												<img style="width: 150px;" title=" " alt=" " src="{{ $product->images->first()->image }}">
 											</a>
 											<p>{{ $product->name }}</p>
-											<div class="stars">
+											<div class="stars" dir="rtl">
 												<i class="fa fa-star warning-star" aria-hidden="true"></i>
-											</div>
-											<div class="stars">
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
+												<span style="font-size: 14px; color: gray;">{{ $product->stars->avg("score") }}</span>
 											</div>
 											@if($product['price_off'] > 0)
 											<h4>{{$product['price'] -  $product['price_off']* $product['price'] /100 }} تومان<span>{{ $product['price'] }} </span></h4>
@@ -180,16 +174,10 @@
 											<img style="width: 150px;" title=" " alt=" " src="{{ url($product->images->first()->image) }}">
 										</a>
 										<p>{{ $product->name }}</p>
-											<div class="stars">
-												<i class="fa fa-star warning-star" aria-hidden="true"></i>
-											</div>
-											<div class="stars">
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-												<i class="fa fa-star gray-star" aria-hidden="true"></i>
-											</div>
+										<div class="stars" dir="rtl">
+											<i class="fa fa-star warning-star" aria-hidden="true"></i>
+											<span style="font-size: 14px; color: gray;">{{ $product->stars->avg("score") }}</span>
+										</div>
 										@if($product['price_off'] > 0)
 										<h4>{{$product['price'] -  $product['price_off']* $product['price'] /100 }} تومان<span>{{ $product['price'] }} </span></h4>
 										@else
@@ -254,5 +242,3 @@
 </div>
 
 @endsection
-
- 

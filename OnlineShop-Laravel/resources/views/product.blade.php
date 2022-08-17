@@ -39,7 +39,7 @@
 						<hr>
 						<div class="row">
 							<div class="col-lg-12">
-								<p  style="font-size: 14px; color:darkgrey; margin-bottom: 15px;">قیمت:</p>
+								<p style="font-size: 14px; color:darkgrey; margin-bottom: 15px;">قیمت:</p>
 
 								@if($product['price_off'] > 0)
 								<h4>
@@ -65,27 +65,31 @@
 						<h3>{{ $product->name }}</h3>
 					</div>
 					<div class="agileinfo_single_right " style="float: right;">
-						<div style="margin-top: 15px; margin-right: 7px;" class="row">
-							<div class="col">
+						<div style="margin-top: 20px; margin-right: 7px;" class="row">
+							<div class="col-4">
+								<div class="rating1" style=" margin-left: 10px; float: right;">
+									<div class="stars" dir="rtl">
+										<i class="fa fa-star warning-star" aria-hidden="true"></i>
+										<span style="font-size: 14px; color: gray;">{{ $product->stars->avg("score") }} ({{ $product->stars->count()}})</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-4">
 								<div class="rating1" style="float: right;">
-								<div>
-								<span style="font-size: 13px;">
+									<span style="font-size: 14px;">
 										<a href="">دیدگاه ها</a>
 									</span>
-									<i class="fa fa-star warning-star" aria-hidden="true">
-										<span style="color: black;">3.6</span>
-									</i>
-								</div>
-									<div>
-									<small>نظر شما:</small>
-									<div class="stars" dir="rtl"  onmouseout="clear_rate()"> 
-										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(1)" onclick="add(1)"></i>
-										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(2)" onclick="add(2)"></i>
-										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(3)" onclick="add(3)"></i>
-										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(4)" onclick="add(4)"></i>
-										<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(5)" onclick="add(5)"></i>
-									</div>
-									</div>
+
+									<!-- <div>
+										<small>نظر شما:</small>
+										<div class="stars" dir="rtl" onmouseout="clear_rate()">
+											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(1)" onclick="add(1)"></i>
+											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(2)" onclick="add(2)"></i>
+											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(3)" onclick="add(3)"></i>
+											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(4)" onclick="add(4)"></i>
+											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(5)" onclick="add(5)"></i>
+										</div>
+									</div> -->
 								</div>
 							</div>
 						</div>
@@ -106,7 +110,7 @@
 		</div>
 	</div>
 </div>
-<!-- new -->
+<hr>
 <div style="margin-top: 40px; margin-bottom: 40px;" class="container-fluid text-secondary font-text text-center">
 	<div class="row mx-4 mt-4">
 		<div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-self-start">
@@ -135,4 +139,46 @@
 		</div>
 	</div>
 </div>
+
+<hr>
+
+<div class="container">
+	<a style="border-color:none;" id="patient-btn" onclick="comments()" type="submit" class="btn">دیدگاه کاربران</a>
+	<a style="border-color:none; " id="doctor-btn" onclick="send_comment()" type="submit" class="btn">ثبت دیدگاه</a>
+	<div id="comments" style="margin-top: 10px; display: block;">
+		<ul class="list-group list-group-flush">
+			@foreach($product->comments as $comment)
+			<li class="list-group-item text-right px-0">
+				<div class="row">
+					<small class="text-muted">{{$comment->user->name}} | {{$comment->created_at}} </small>
+				</div>
+				<div class="d-flex my-2" dir="rtl">
+					<div class=" row">
+						<i class="fa fa-star warning-star rating" aria-hidden="true"></i>
+						<i class="fa fa-star warning-star rating" aria-hidden="true"></i>
+						<i class="fa fa-star warning-star rating" aria-hidden="true"></i>
+						<i class="fa fa-star warning-star rating" aria-hidden="true"></i>
+						<i class="fa fa-star warning-star rating" aria-hidden="true"></i>
+						<span style="font-size: 14px; color: gray;">({{ $product->stars->first()->score }})</span>
+					</div>
+				</div>
+				<div style="margin-top: 5px;" class="row">
+					<p class="my-2">{{$comment->text}}</p>
+				</div>
+			</li>
+			@endforeach
+		</ul>
+	</div>
+
+	<div id="send-comment" style="margin-top: 10px; display: None;">
+		<div class="stars" dir="rtl" onmouseout="clear_rate()">
+			<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(1)" onclick="add(1)"></i>
+			<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(2)" onclick="add(2)"></i>
+			<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(3)" onclick="add(3)"></i>
+			<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(4)" onclick="add(4)"></i>
+			<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(5)" onclick="add(5)"></i>
+		</div>
+	</div>
+</div>
+
 @endsection

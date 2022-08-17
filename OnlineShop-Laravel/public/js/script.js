@@ -84,3 +84,21 @@ function add(received_score)
         console.log(error)
     });
 }
+
+function comments()
+{
+    var comment = document.getElementById("comments");
+    var send_comment = document.getElementById("send-comment");
+
+    comment.style.display = "block";
+    send_comment.style.display = "None";
+}
+
+function send_comment()
+{
+    var comment = document.getElementById("comments");
+    var send_comment = document.getElementById("send-comment");
+
+    send_comment.style.display = "block";
+    comment.style.display = "None";
+}

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Image;
 use App\Models\Star;
 
@@ -13,6 +14,7 @@ class ProductController extends Controller
     function index_product($id)
     {
             $product = Product::find($id);
+            $comments = Comment::all();
             return view("product",[
                 "product" => $product,
             ]);
