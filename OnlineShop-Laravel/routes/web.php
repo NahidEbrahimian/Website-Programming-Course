@@ -48,6 +48,7 @@ Route::post('/admin/products/edit', [ProductController::class, 'edit_post'])->mi
 Route::get('/admin/users', [UserController::class, 'get_all'])->middleware("auth");
 
 Route::get('/admin/carts', [CartController::class, 'get_all'])->middleware("auth");
+Route::post('/add-to-cart', [CartController::class, 'add'])->middleware("auth");
 
 Route::get('/admin/comments', [CommentController::class, 'get_all'])->middleware("auth");
 Route::get('/admin/comments/delete/{id}', [CommentController::class, 'delete'])->middleware("auth");

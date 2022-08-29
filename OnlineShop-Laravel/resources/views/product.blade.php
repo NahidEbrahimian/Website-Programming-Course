@@ -54,7 +54,9 @@
 						<div class="row">
 							<div class="col-12">
 								<form action="#" method="post">
-									<button style="width: 100%; height: 40px; margin-top: 25px; background-color: #fe9126; border: none; border-radius: 3px;" type="submit"> افزودن به سبد خرید</button>
+									<button style="width: 100%; height: 40px; margin-top: 25px; background-color: #fe9126; border: none; border-radius: 3px;" type="submit" onclick='add_to_cart({{ $product->id }}, "{{ csrf_token() }}")'> 
+									افزودن به سبد خرید
+									</button>
 								</form>
 							</div>
 						</div>
@@ -80,16 +82,16 @@
 										<a href="">دیدگاه ها</a>
 									</span>
 
-									<!-- <div>
+									<div>
 										<small>نظر شما:</small>
 										<div class="stars" dir="rtl" onmouseout="clear_rate()">
-											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(1)" onclick="add(1)"></i>
-											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(2)" onclick="add(2)"></i>
-											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(3)" onclick="add(3)"></i>
-											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(4)" onclick="add(4)"></i>
-											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(5)" onclick="add(5)"></i>
+											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(1)" onclick="add_rating(1)"></i>
+											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(2)" onclick="add_rating(2)"></i>
+											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(3)" onclick="add_rating(3)"></i>
+											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(4)" onclick="add_rating(4)"></i>
+											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(5)" onclick="add_rating(5)"></i>
 										</div>
-									</div> -->
+									</div>
 								</div>
 							</div>
 						</div>
@@ -142,7 +144,7 @@
 
 <hr>
 
-<div class="container">
+<!-- <div class="container">
 	<a style="border-color:none;" id="patient-btn" onclick="comments()" type="submit" class="btn">دیدگاه کاربران</a>
 	<a style="border-color:none; " id="doctor-btn" onclick="send_comment()" type="submit" class="btn">ثبت دیدگاه</a>
 	<div id="comments" style="margin-top: 10px; display: block;">
@@ -168,9 +170,9 @@
 			</li>
 			@endforeach
 		</ul>
-	</div>
+	</div> -->
 
-	<div id="send-comment" style="margin-top: 10px; display: None;">
+	<!-- <div id="send-comment" style="margin-top: 10px; display: None;">
 		<div class="stars" dir="rtl" onmouseout="clear_rate()">
 			<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(1)" onclick="add(1)"></i>
 			<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(2)" onclick="add(2)"></i>
@@ -178,7 +180,53 @@
 			<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(4)" onclick="add(4)"></i>
 			<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(5)" onclick="add(5)"></i>
 		</div>
-	</div>
-</div>
+	</div> -->
+<!-- </div> -->
+<!-- <script> -->
+// function add_rating(received_score)
+// {
+// 	// alert("ok");
+// 	console.log("ok");
+//     // $.ajaxSetup({
+//     //     headers: {
+//     //       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//     //     }
+//     //   });
+
+//       var json_data = {
+//         score: received_score,
+//         product_id: "{{ $product->id }}",
+//         // _token : $('meta[name="csrf-token"]').attr('content')
+//     };
+
+//     // var my_data = new FormData();
+//     // my_data.append("json", JSON.stringify(json_data));
+
+//     fetch("/send-rating", {
+//         method: "post",
+//         headers: {
+//             "Content-Type": "application/json",
+//             "Accept": "application/json",
+//             "X-Requested-With": "XMLHttp/request",
+//             "X-CSRF-Token": "{{ csrf_token() }}"
+//         },
+//         body: JSON.stringify(json_data),
+//     })
+//     .then(result => result.text())
+//     .then(result => {
+//         // if (result == 1){
+//             // color
+//             alert(result);
+//             // for (var i = 0; i < rate; i++)
+//             // {
+//             //     stars[i].classList.remove("gray-star");
+//             //     stars[i].classList.add("warning-star");
+//             // }
+//         // }
+//     // }).catch(error => {
+//     //     console.log(error)
+//     });
+// }
+<!-- // </script> -->
 
 @endsection

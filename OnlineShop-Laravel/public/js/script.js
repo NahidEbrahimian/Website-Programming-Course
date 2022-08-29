@@ -22,9 +22,10 @@ function clear_rate()
         stars[i].classList.remove("warning-star");
     }
 }
-
-function add(received_score)
+function add_rating(received_score)
 {
+	// alert("ok");
+	console.log("ok");
     // $.ajaxSetup({
     //     headers: {
     //       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -34,54 +35,35 @@ function add(received_score)
       var json_data = {
         score: received_score,
         product_id: "{{ $product->id }}",
-        _token : $('meta[name="csrf-token"]').attr('content')
+        // _token : $('meta[name="csrf-token"]').attr('content')
     };
 
-    var my_data = new FormData();
-    my_data.append("json", JSON.stringify(json_data));
-
-    // $.ajax({
-    //     type:"POST",
-    //     url: "/send-rating",
-    //     data: {score: rate,
-    //         product_id: "{{ $product->id }}",
-    //         _token : $('meta[name="csrf-token"]').attr('content') },
-    //     dataType: 'json',
-    //     // success: function(res){
-    //     // var oTable = $('#ajax-crud-datatable').dataTable();
-    //     // oTable.fnDraw(false);
-    //     // }
-    //     }).then(
-    //         result => result.text()
-    //     ).then(result => {
-    //         if (result == 1){
-    //             // color
-    //             for (var i = 0; i < rate; i++)
-    //             {
-    //                 stars[i].classList.remove("gray-star");
-    //                 stars[i].classList.add("warning-star");
-    //             }
-    //         }
-    //     }).catch(error => {
-    //         console.log(error)});
-
+    // var my_data = new FormData();
+    // my_data.append("json", JSON.stringify(json_data));
 
     fetch("/send-rating", {
         method: "post",
-        body: my_data,
-    }).then(
-        result => result.text()
-    ).then(result => {
-        if (result == 1){
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "X-Requested-With": "XMLHttpRequest",
+            "X-CSRF-Token": "{{ csrf_token() }}"
+        },
+        body: JSON.stringify(json_data),
+    })
+    .then(result => result.text())
+    .then(result => {
+        // if (result == 1){
             // color
-            for (var i = 0; i < rate; i++)
-            {
-                stars[i].classList.remove("gray-star");
-                stars[i].classList.add("warning-star");
-            }
-        }
-    }).catch(error => {
-        console.log(error)
+            alert("امتیاز شما با موفقیت ثبت شد.");
+            // for (var i = 0; i < rate; i++)
+            // {
+            //     stars[i].classList.remove("gray-star");
+            //     stars[i].classList.add("warning-star");
+            // }
+        // }
+    // }).catch(error => {
+    //     console.log(error)
     });
 }
 
@@ -101,4 +83,49 @@ function send_comment()
 
     send_comment.style.display = "block";
     comment.style.display = "None";
+}
+
+function add_to_cart(product_id, csrf_token)
+{
+    	// alert("ok");
+	// console.log("ok");
+    // $.ajaxSetup({
+    //     headers: {
+    //       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //     }
+    //   });
+
+      var json_data = {
+        // score: received_score,
+        product_id: product_id,
+        // _token : $('meta[name="csrf-token"]').attr('content')
+    };
+
+    // var my_data = new FormData();
+    // my_data.append("json", JSON.stringify(json_data));
+
+    fetch("/add-to-cart", {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "X-Requested-With": "XMLHttpRequest",
+            "X-CSRF-Token": csrf_token,
+        },
+        body: JSON.stringify(json_data),
+    })
+    .then(result => result.text())
+    .then(result => {
+        // if (result == 1){
+            // color
+            alert(result);
+            // for (var i = 0; i < rate; i++)
+            // {
+            //     stars[i].classList.remove("gray-star");
+            //     stars[i].classList.add("warning-star");
+            // }
+        // }
+    // }).catch(error => {
+    //     console.log(error)
+    });
 }
