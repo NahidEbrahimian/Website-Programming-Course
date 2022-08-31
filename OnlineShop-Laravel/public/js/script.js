@@ -22,24 +22,12 @@ function clear_rate()
         stars[i].classList.remove("warning-star");
     }
 }
-function add_rating(received_score)
+function add_rating(received_score, product_id, csrf_token)
 {
-	// alert("ok");
-	console.log("ok");
-    // $.ajaxSetup({
-    //     headers: {
-    //       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    //     }
-    //   });
-
       var json_data = {
         score: received_score,
-        product_id: "{{ $product->id }}",
-        // _token : $('meta[name="csrf-token"]').attr('content')
+        product_id: product_id,
     };
-
-    // var my_data = new FormData();
-    // my_data.append("json", JSON.stringify(json_data));
 
     fetch("/send-rating", {
         method: "post",
@@ -47,7 +35,7 @@ function add_rating(received_score)
             "Content-Type": "application/json",
             "Accept": "application/json",
             "X-Requested-With": "XMLHttpRequest",
-            "X-CSRF-Token": "{{ csrf_token() }}"
+            "X-CSRF-Token": csrf_token,
         },
         body: JSON.stringify(json_data),
     })
@@ -87,22 +75,9 @@ function send_comment()
 
 function add_to_cart(product_id, csrf_token)
 {
-    	// alert("ok");
-	// console.log("ok");
-    // $.ajaxSetup({
-    //     headers: {
-    //       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    //     }
-    //   });
-
       var json_data = {
-        // score: received_score,
         product_id: product_id,
-        // _token : $('meta[name="csrf-token"]').attr('content')
     };
-
-    // var my_data = new FormData();
-    // my_data.append("json", JSON.stringify(json_data));
 
     fetch("/add-to-cart", {
         method: "post",

@@ -85,11 +85,11 @@
 									<div>
 										<small>نظر شما:</small>
 										<div class="stars" dir="rtl" onmouseout="clear_rate()">
-											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(1)" onclick="add_rating(1)"></i>
-											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(2)" onclick="add_rating(2)"></i>
-											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(3)" onclick="add_rating(3)"></i>
-											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(4)" onclick="add_rating(4)"></i>
-											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(5)" onclick="add_rating(5)"></i>
+											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(1)" onclick='add_rating(1, {{ $product->id }}, "{{ csrf_token() }}")'></i>
+											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(2)" onclick='add_rating(2, {{ $product->id }}, "{{ csrf_token() }}")'></i>
+											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(3)" onclick='add_rating(3, {{ $product->id }}, "{{ csrf_token() }}")'></i>
+											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(4)" onclick='add_rating(4, {{ $product->id }}, "{{ csrf_token() }}")'></i>
+											<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(5)" onclick='add_rating(5, {{ $product->id }}, "{{ csrf_token() }}")'></i>
 										</div>
 									</div>
 								</div>
@@ -182,51 +182,5 @@
 		</div>
 	</div> -->
 <!-- </div> -->
-<!-- <script> -->
-// function add_rating(received_score)
-// {
-// 	// alert("ok");
-// 	console.log("ok");
-//     // $.ajaxSetup({
-//     //     headers: {
-//     //       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//     //     }
-//     //   });
-
-//       var json_data = {
-//         score: received_score,
-//         product_id: "{{ $product->id }}",
-//         // _token : $('meta[name="csrf-token"]').attr('content')
-//     };
-
-//     // var my_data = new FormData();
-//     // my_data.append("json", JSON.stringify(json_data));
-
-//     fetch("/send-rating", {
-//         method: "post",
-//         headers: {
-//             "Content-Type": "application/json",
-//             "Accept": "application/json",
-//             "X-Requested-With": "XMLHttp/request",
-//             "X-CSRF-Token": "{{ csrf_token() }}"
-//         },
-//         body: JSON.stringify(json_data),
-//     })
-//     .then(result => result.text())
-//     .then(result => {
-//         // if (result == 1){
-//             // color
-//             alert(result);
-//             // for (var i = 0; i < rate; i++)
-//             // {
-//             //     stars[i].classList.remove("gray-star");
-//             //     stars[i].classList.add("warning-star");
-//             // }
-//         // }
-//     // }).catch(error => {
-//     //     console.log(error)
-//     });
-// }
-<!-- // </script> -->
 
 @endsection

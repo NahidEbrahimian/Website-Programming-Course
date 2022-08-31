@@ -50,12 +50,18 @@
 				<div class="row collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<div style="float: left;" class="col-6">
 						<ul class="nav navbar-nav">
-							<li style="margin-top: 6px;" class="product_list_header">
-								<form action="#" method="post" class="last">
+							<li style="margin-top: 8px;" class="product_list_header">
+							<!-- <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button> -->
+							<!-- <a class="w3view-cart" href="">
+								<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+							</a> -->
+								<!-- <form action="#" method="post" class="last">
 									<input type="hidden" name="cmd" value="_cart">
-									<input type="hidden" name="display" value="1">
-									<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-								</form>
+									<input type="hidden" name="display" value="1"> -->
+									<a style="padding-top: 0px;" href="/cart">
+										<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+									</a>
+								<!-- </form> -->
 							</li>
 							<li style="margin-top: 5px;">
 							@auth

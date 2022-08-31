@@ -16,6 +16,15 @@ class CartController extends Controller
             "carts" => $carts,
         ]);
     }
+
+    function get()
+    {
+        $carts = Auth::user()->carts();
+        return view('client/cart')->with([
+            "carts" => $carts
+        ]);
+    }
+
     function add(Request $request)
     {
         $carts = Cart::where("user_id", "=", Auth::id())->where("product_id", "=", $request["product_id"]);
