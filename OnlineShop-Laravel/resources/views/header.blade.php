@@ -58,9 +58,14 @@
 								<!-- <form action="#" method="post" class="last">
 									<input type="hidden" name="cmd" value="_cart">
 									<input type="hidden" name="display" value="1"> -->
+									@auth
 									<a style="padding-top: 0px;" href="/cart">
-										<button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+										<button class="w3view-cart" type="submit" name="submit" value="">
+											<i class="fa fa-cart-arrow-down" aria-hidden="true">
+											</i>
+										</button>
 									</a>
+									@endauth
 								<!-- </form> -->
 							</li>
 							<li style="margin-top: 5px;">
@@ -97,7 +102,7 @@
 									</div>
 								</ul>
 							</li>
-							<li style="margin-top: 5px;" class="active"><a href="index.html" class="act">خانه</a></li>
+							<li style="margin-top: 5px;" class="active"><a href="/" class="act">خانه</a></li>
 						</ul>
 					</div>
 				</div>

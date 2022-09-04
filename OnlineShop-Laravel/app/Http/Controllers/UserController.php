@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\City;
+// use App\Models\Cart;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -77,6 +78,7 @@ class UserController extends Controller
             $request->session()->put('user_id', $user_id);
             // $id = $request->session()->get('user_id');           
             // echo $id;
+            // $carts = Cart
             return redirect('client/user_profile');
         }
         else

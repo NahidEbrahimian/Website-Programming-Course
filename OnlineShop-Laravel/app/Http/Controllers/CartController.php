@@ -19,7 +19,7 @@ class CartController extends Controller
 
     function get()
     {
-        $carts = Auth::user()->carts();
+        $carts = Auth::user()->carts;
         return view('client/cart')->with([
             "carts" => $carts
         ]);
