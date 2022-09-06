@@ -20,13 +20,18 @@
 <div style="background-color: white;" class="brands">
 	<div class="container">
 		<h3>دسته بندی ها</h3>
-		<div class="brands-agile">
+		<div class="justify-content-center row brands-agile">
 			@foreach($categories as $category)
-			<div class="col-md-2 w3layouts-brand">
-				<div class="brands-w3l">
-					<p><a href="#">{{ $category->title }}</a></p>
+			<a href="#">
+				<div style="margin-top: 10px;" class="col-lg-2 col-md-4 col-sm-6 rounded text-center">
+					<div class="card mt-3 zoom">
+						<img style="height:150px;" class="card-img-top" src="{{ $category->image }}" alt="Card image cap">
+						<div class="card-body text-center">
+							<p>{{ $category->title }}</p>
+						</div>
+					</div>
 				</div>
-			</div>
+			</a>
 			@endforeach
 			<div class="clearfix"></div>
 		</div>
@@ -63,7 +68,7 @@
 			<div class="agile_top_brands_grids">
 				@foreach($products as $product)
 				@if($product['price_off'] > 0)
-				<div style="float: right;" class=" col-lg-3 top_brand_left-1 agile_top_brands_grids">
+				<div style="float: right;" class="col-lg-3 col-md-4 col-sm-12 top_brand_left-1 agile_top_brands_grids">
 					<div class="hover14 column">
 						<div class="agile_top_brand_left_grid">
 							@if($product['price_off'] > 0)
@@ -122,7 +127,7 @@
 <!-- /.carousel -->
 <!--banner-bottom-->
 <div class="ban-bottom-w3l">
-	<div class="container">
+	<div class="container-fluid">
 		<div class="col-md-6 ban-bottom3">
 			<div class="ban-top">
 				<img src="{{ url('images/p2.jpg') }}" class="img-responsive" alt="" />
@@ -158,7 +163,7 @@
 		<h3>جدید ترین کالاها</h3>
 		<div style="margin-top: 10px;" class="row">
 			@foreach($products as $product)
-			<div style="float: right;" class=" col-lg-3 top_brand_left-1 agile_top_brands_grids">
+			<div style="float: right;" class="col-lg-3 col-md-4 col-sm-12 top_brand_left-1 agile_top_brands_grids">
 				<div class="hover14 column">
 					<div style="height: 400px;" class="agile_top_brand_left_grid">
 						@if($product['price_off'] > 0)
@@ -214,25 +219,25 @@
 
 <div style="margin-top: 40px; margin-bottom: 40px;" class="container-fluid text-secondary font-text text-center">
 	<div class="row mx-4 mt-4">
-		<div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-self-start">
+		<div class="col-lg-3 col-md-4 col-sm-6 d-flex flex-column justify-content-center align-self-start">
 			<a href="" class="text-decoration-none text-reset">
 				<img src="{{ asset('images/small-icon1.svg') }}" style="width: 25%;" class="img-fluid mt-3" alt="">
 				<p style="color:darkgray; margin-top: 10px;" class="mt-3">امکان پرداخت در محل</p>
 			</a>
 		</div>
-		<div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-self-start">
+		<div class="col-lg-3 col-md-4 col-sm-6 d-flex flex-column justify-content-center align-self-start">
 			<a href="" class="text-decoration-none text-reset">
 				<img src="{{ asset('images/small-icon2.svg') }}" style="width: 25%;" class="img-fluid mt-3" alt="">
 				<p style="color:darkgray; margin-top: 10px;" class="mt-3">7 روز هفته، 24 ساعته </p>
 			</a>
 		</div>
-		<div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-self-start">
+		<div class="col-lg-3 col-md-4 col-sm-6 d-flex flex-column justify-content-center align-self-start">
 			<a href="" class="text-decoration-none text-reset">
 				<img src="{{ asset('images/small-icon4.svg') }}" style="width: 25%;" class="img-fluid mt-3" alt="">
 				<p style="color:darkgray; margin-top: 10px;" class="mt-3"> 7 روز ضمانت بازگشت کالا</p>
 			</a>
 		</div>
-		<div class="col-lg-3 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-self-start">
+		<div class="col-lg-3 col-md-4 col-sm-6 d-flex flex-column justify-content-center align-self-start">
 			<a href="" class="text-decoration-none text-reset">
 				<img src="{{ asset('images/small-icon5.svg') }}" style="width: 25%;" class="img-fluid mt-3" alt="">
 				<p style="color:darkgray; margin-top: 10px;" class="mt-3">ضمانت اصل بودن کالا</p>

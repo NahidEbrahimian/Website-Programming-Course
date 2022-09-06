@@ -65,7 +65,7 @@ Route::get('/client/user_profile', [UserController::class, 'profile'])->middlewa
 
 Route::post('/send-rating', [StarController::class, 'send_rating'])->middleware("auth");
 
-// Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
-//     \UniSharp\LaravelFilemanager\Lfm::routes();
-// });
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 // Route

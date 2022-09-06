@@ -104,7 +104,7 @@
 				</div>
 				<div class="col-lg-3 col-md-6 col-sm-12">
 					<div style="float: right;" class="agileinfo_single_left">
-						<img id="example" src="{{ url($product->images->first()->image) }}" alt=" " class="img-responsive">
+						<img id="example" src="{{ $product->images->first()->image }}" alt=" " class="img-responsive">
 					</div>
 				</div>
 			</div>

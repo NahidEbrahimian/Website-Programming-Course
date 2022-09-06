@@ -1,3 +1,10 @@
+
+### Index Page
+
+![screencapture-127-0-0-1-8000-2022-09-06-23_59_58](https://user-images.githubusercontent.com/82975802/188722478-ff5becf5-b906-4591-9745-186f6a5e3bba.png)
+
+---
+
 ### Cart Page
 
 ![screencapture-127-0-0-1-8000-cart-2022-09-04-23_06_22](https://user-images.githubusercontent.com/82975802/188328589-0fe45518-8d9f-419c-b131-3ddb3083b513.png)
@@ -36,9 +43,5 @@
 
 ![screencapture-127-0-0-1-8000-admin-users-2022-08-02-18_01_42](https://user-images.githubusercontent.com/82975802/183064845-266663ea-2b4d-4c4c-86ad-a346fc6253ac.png)
 
----
 
-### Index Page
-
-![screencapture-127-0-0-1-8000-2022-08-05-15_33_28](https://user-images.githubusercontent.com/82975802/183064844-2b79b38f-0012-42a7-b344-530c8f8d6a32.png)
 
