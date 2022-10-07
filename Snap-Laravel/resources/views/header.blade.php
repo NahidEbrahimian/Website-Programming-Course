@@ -18,7 +18,7 @@
                                     <a class="nav-link" href="/">خانه</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">ثبت نام راننده</a>
+                                    <a class="nav-link" href="{{ url('/driver_register') }}">ثبت نام راننده</a>
                                 </li>
                             </ul>
                         </div>

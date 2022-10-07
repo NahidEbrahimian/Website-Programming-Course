@@ -6,7 +6,7 @@
         <div class="col-md-5 col-sm-12 slider_section2 hero_area_register">
             <div class="slider_form">
                 <h4>
-                    فرم ثبت نام
+                    فرم ثبت نام راننده
                 </h4>
                 <form method="post" action="{{ url('/login') }}">
                     <div class="row">
