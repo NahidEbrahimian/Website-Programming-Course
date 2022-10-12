@@ -9,6 +9,14 @@ use Illuminate\Http\Request;
 
 class DriverController extends Controller
 {
+    function login_get(){
+        return view("driver_login");
+    }
+
+    function login_post(Request $request){
+        return view("user_profile");    
+    }
+
     function register_get()
     {
         $colors = Color::all();
@@ -40,7 +48,7 @@ class DriverController extends Controller
         $new_car->color_id = $request["color_id"];
         // $new_car->car_image = $request["car_image"];
         $new_user->cars()->save($new_car);
-        return redirect("/");
+        return redirect("/driver_login");
 
 
     }

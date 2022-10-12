@@ -8,7 +8,7 @@
                 <h4>
                     فرم ثبت نام
                 </h4>
-                <form method="post" action="{{ url('/login') }}">
+                <form method="post" action="{{ url('/register') }}">
                     <div class="row">
                         <div style="margin-top: 10px;" class="col-md-12 col-sm-12">
                             <label class="exampleFormControlTexterea1 " class="form-label">

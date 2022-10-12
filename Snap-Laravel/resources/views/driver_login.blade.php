@@ -21,17 +21,17 @@
             <div class="col-lg-5 col-md-5 text-center mt5">
                 <div class="slider_form">
                     <h4>
-                        درخواست تاکسی
+                       ورود به حساب کاربری
                     </h4>
-                    <form method="post" action="{{ url('/login') }}">
-                        <input name="user_name" type="text" placeholder="شماره موبایل">
+                    <form method="post" action="{{ url('/driver_login') }}">
+                        <input name="user_name" type="text" placeholder="شماره ملی">
                         <input name="password" type="password" placeholder="گذرواژه">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div style="height: 40px;" class="btm_input">
-                            <button>ورود به وب اپلیکیشن</button>
+                            <button>ورود</button>
                         </div>
                     </form>
-                    <a class="text-warning" href="{{ url('/register') }}">عضویت</a>
+                    <a class="text-warning" href="{{ url('/driver_register') }}">ثبت نام راننده</a>
                 </div>
             </div>
         </div>

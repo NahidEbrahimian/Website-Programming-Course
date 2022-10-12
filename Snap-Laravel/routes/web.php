@@ -19,12 +19,16 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/login', [UserController::class, 'login_get']);
+// Route::get('/login', [UserController::class, 'login_get']);
 Route::post('/login', [UserController::class, 'login_post']);
 Route::get('/register', [UserController::class, 'register_get']);
 Route::post('/register', [UserController::class, 'register_post']);
 
-// Route::get('user_login', [DriverController::class, 'login_get']);
-// Route::post('/user_login', [DriverController::class, 'login_post']);
+Route::get('/driver_login', [DriverController::class, 'login_get']);
+Route::post('/driver_login', [DriverController::class, 'login_post']);
 Route::get('/driver_register', [DriverController::class, 'register_get']);
 Route::post('/driver_register', [DriverController::class, 'register_post']);
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});

@@ -18,8 +18,11 @@
                                     <a class="nav-link" href="/">خانه</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/driver_register') }}">ثبت نام راننده</a>
+                                    <a class="nav-link" href="{{ url('/driver_login') }}">ثبت نام | ورود راننده</a>
                                 </li>
+                                <!-- <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/driver_login') }}">ورود به حساب کاربری راننده</a>
+                                </li> -->
                             </ul>
                         </div>
                     </div>
