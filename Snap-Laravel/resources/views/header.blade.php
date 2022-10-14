@@ -16,13 +16,17 @@
                             <ul class="navbar-nav  ">
                                 <li class="nav-item active">
                                     <a class="nav-link" href="/">خانه</a>
+                                </li class="nav-item active">
+                                @auth
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('/logout') }}">خروج از حساب کاربری</a>
                                 </li>
+                                @endauth
+                                @guest
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ url('/driver_login') }}">ثبت نام | ورود راننده</a>
                                 </li>
-                                <!-- <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('/driver_login') }}">ورود به حساب کاربری راننده</a>
-                                </li> -->
+                                @endguest
                             </ul>
                         </div>
                     </div>

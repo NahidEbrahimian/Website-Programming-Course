@@ -9,22 +9,22 @@ use Illuminate\Http\Request;
 
 class DriverController extends Controller
 {
-    function login_get(){
+    function driver_login_get(){
         return view("driver_login");
     }
 
-    function login_post(Request $request){
+    function driver_login_post(Request $request){
         return view("user_profile");    
     }
 
-    function register_get()
+    function driver_register_get()
     {
         $colors = Color::all();
         return view("driver_register")->with([
             "colors" => $colors,
         ]);
     }
-    function register_post(Request $request)
+    function driver_register_post(Request $request)
     {
         $this->validate($request,[
             'password' => 'required|min:6',

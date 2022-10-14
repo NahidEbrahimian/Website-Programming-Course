@@ -7,10 +7,10 @@
             لطفا مبدا را انتخاب کنید
         </div>
         <div id="googleMap" style="width:100%;height:400px;"></div>
-        <!-- <p id="lat-start"></p>
+        <p id="lat-start"></p>
         <p id="lng-start"></p>
         <p id="lat-end"></p>
-        <p id="lng-end"></p> -->
+        <p id="lng-end"></p>
     </div>
 
 @endsection

@@ -13,8 +13,5 @@ class Trip extends Model
     {
         return $this->belongsTo(User::class);
     }
-    public function drivers()
-    {
-        return $this->belongsTo(Driver::class);
-    }
+
 }

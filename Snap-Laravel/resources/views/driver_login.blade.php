@@ -21,7 +21,7 @@
             <div class="col-lg-5 col-md-5 text-center mt5">
                 <div class="slider_form">
                     <h4>
-                       ورود به حساب کاربری
+                       انتخاب سفر
                     </h4>
                     <form method="post" action="{{ url('/driver_login') }}">
                         <input name="user_name" type="text" placeholder="شماره ملی">
