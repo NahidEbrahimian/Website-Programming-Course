@@ -17,7 +17,7 @@ class CartController extends Controller
         ]);
     }
 
-    function get()
+    function user_get()
     {
         $carts = Auth::user()->carts;
         return view('client/cart')->with([
@@ -27,9 +27,8 @@ class CartController extends Controller
 
     function add(Request $request)
     {
+
         $carts = Cart::where("user_id", "=", Auth::id())->where("product_id", "=", $request["product_id"]);
-        // $user_id = $request->session()->get('user_id');  
-        // $count = Star::where('product_id', $request["product_id"]);
         if($carts->count() == 0) 
         {
             $cart = new Cart();
@@ -42,24 +41,39 @@ class CartController extends Controller
 
         else 
         {
-            // $cart = $stars->first();
-            // $cart->score = $request["score"];
-            // $cart->update();
-            // $db->query("DELETE FROM likes WHERE post_id = $post_id AND user_id = $user_id");
-            // echo "0";
             return "شما قبلا این کالا را به سبد خرید خود اضافه کرده اید";
         }
-        // return "ok";
-        // return $request["score"];
     }
 
-    function edit()
+    // function delete_order(Request $request)
+    // {
+    //     $carts = Cart::where("id", "=", $request["cart_id"])->where("user_id", "=", Auth::id());
+    //     $cart = $carts->first();
+    //     $cart->delete();
+
+    //     $new_counts = Auth::user()->carts;
+    //     return $new_counts;
+    // }
+
+    function add_count(Request $request)
     {
-
+        $carts = Cart::where("id", "=", $request["cart_id"])->where("user_id", "=", Auth::id());
+        $cart = $carts->first();
+        $cart->count = $cart->count + 1;
+        $cart->update();
+        return $cart->count;
     }
 
-    function delete()
+    function minus_count(Request $request)
     {
-        
+        $carts = Cart::where("id", "=", $request["cart_id"])->where("user_id", "=", Auth::id());
+        $cart = $carts->first();
+        if($cart->count > 1){
+            $cart->count = $cart->count - 1;
+            $cart->update();
+        }
+        return $cart->count;
     }
-}
+
+    }
+

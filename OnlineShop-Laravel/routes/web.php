@@ -49,10 +49,14 @@ Route::get('/admin/users', [UserController::class, 'get_all'])->middleware("auth
 
 Route::get('/admin/carts', [CartController::class, 'get_all'])->middleware("auth");
 Route::post('/add-to-cart', [CartController::class, 'add'])->middleware("auth");
-Route::get('/cart', [CartController::class, 'get'])->middleware("auth");
+Route::get('/cart', [CartController::class, 'user_get'])->middleware("auth");
+Route::get('/delete-cart/{id}', [CartController::class, 'delete'])->middleware("auth");
+Route::post('/minus-count-cart', [CartController::class, 'minus_count'])->middleware("auth");
+Route::post('/add-count-cart', [CartController::class, 'add_count'])->middleware("auth");
+// Route::post('/delete-order', [CartController::class, 'delete'])->middleware("auth");
 
 Route::get('/admin/comments', [CommentController::class, 'get_all'])->middleware("auth");
-Route::get('/admin/comments/delete/{id}', [CommentController::class, 'delete'])->middleware("auth");
+Route::get('/admin/comments/delete/{id}', [CommentController::class, 'delete_order'])->middleware("auth");
 
 Route::get('/client/login', [UserController::class, 'login_get']);
 Route::post('/client/login', [UserController::class, 'login_post']);

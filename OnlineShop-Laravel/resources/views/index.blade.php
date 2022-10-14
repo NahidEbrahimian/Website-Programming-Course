@@ -68,7 +68,7 @@
 			<div class="agile_top_brands_grids">
 				@foreach($products as $product)
 				@if($product['price_off'] > 0)
-				<div style="float: right;" class="col-lg-3 col-md-4 col-sm-12 top_brand_left-1 agile_top_brands_grids">
+				<div style="float: right;" class="col-lg-3 col-md-6 col-sm-12 top_brand_left-1 agile_top_brands_grids">
 					<div class="hover14 column">
 						<div class="agile_top_brand_left_grid">
 							@if($product['price_off'] > 0)
@@ -163,7 +163,7 @@
 		<h3>جدید ترین کالاها</h3>
 		<div style="margin-top: 10px;" class="row">
 			@foreach($products as $product)
-			<div style="float: right;" class="col-lg-3 col-md-4 col-sm-12 top_brand_left-1 agile_top_brands_grids">
+			<div style="float: right;" class="col-lg-3 col-md- 6col-sm-12 top_brand_left-1 agile_top_brands_grids">
 				<div class="hover14 column">
 					<div style="height: 400px;" class="agile_top_brand_left_grid">
 						@if($product['price_off'] > 0)

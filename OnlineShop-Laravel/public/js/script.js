@@ -41,17 +41,24 @@ function add_rating(received_score, product_id, csrf_token)
     })
     .then(result => result.text())
     .then(result => {
-        // if (result == 1){
+        console.log(parseInt(result));
+        if (parseInt(result) != 0){ // شرط باید اصلاح بشه
             // color
+            for (var i = 0; i < 3; i++)
+            {
+                stars[i].classList.remove("gray-star");
+                stars[i].classList.add("warning-star");
+            }
+            for (var i = 3; i < 5; i++)
+            {
+                stars[i].classList.add("gray-star");
+                stars[i].classList.remove("warning-star");
+            }
             alert("امتیاز شما با موفقیت ثبت شد.");
-            // for (var i = 0; i < rate; i++)
-            // {
-            //     stars[i].classList.remove("gray-star");
-            //     stars[i].classList.add("warning-star");
-            // }
-        // }
-    // }).catch(error => {
-    //     console.log(error)
+    }
+    else{
+        alert("برای ثبت امتیاز وارد حساب کاربری خود شوید.");
+    }
     });
 }
 
@@ -91,16 +98,73 @@ function add_to_cart(product_id, csrf_token)
     })
     .then(result => result.text())
     .then(result => {
-        // if (result == 1){
-            // color
             alert(result);
-            // for (var i = 0; i < rate; i++)
-            // {
-            //     stars[i].classList.remove("gray-star");
-            //     stars[i].classList.add("warning-star");
-            // }
-        // }
-    // }).catch(error => {
-    //     console.log(error)
+    });
+}
+
+
+function add_count(cart_id, csrf_token){
+    var count = document.getElementById("count"-cart_id);
+    var json_data = {
+        cart_id: cart_id,
+    };
+
+    fetch("/add-count-cart", {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "X-Requested-With": "XMLHttpRequest",
+            "X-CSRF-Token": csrf_token,
+        },
+        body: JSON.stringify(json_data),
+    })
+    .then(result => result.text())
+    .then(result => {
+            count.innerHTML = result;
+    });
+}
+
+function minus_count(cart_id, csrf_token){
+    var count = document.getElementById("count"-cart_id);
+    var json_data = {
+        cart_id: cart_id,
+    };
+
+    fetch("/minus-count-cart", {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "X-Requested-With": "XMLHttpRequest",
+            "X-CSRF-Token": csrf_token,
+        },
+        body: JSON.stringify(json_data),
+    })
+    .then(result => result.text())
+    .then(result => {
+            count.innerHTML = result;
+    });
+}
+
+function delete_order(cart_id, csrf_token){
+    var count = document.getElementById("cart_count");
+    var json_data = {
+        cart_id: cart_id,
+    };
+
+    fetch("/delete-order", {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "X-Requested-With": "XMLHttpRequest",
+            "X-CSRF-Token": csrf_token,
+        },
+        body: JSON.stringify(json_data),
+    })
+    .then(result => result.text())
+    .then(result => {
+            count.innerHTML = result;
     });
 }

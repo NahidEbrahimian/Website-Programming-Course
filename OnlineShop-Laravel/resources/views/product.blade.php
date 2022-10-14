@@ -6,14 +6,14 @@
 <div class="breadcrumbs">
 	<div class="container">
 		<ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
-			<li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>خانه</a></li>
+			<li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>خانه</a></li>
 			<li class="active">کالاهای دیجیتال</li>
 		</ol>
 	</div>
 </div>
 <!-- //breadcrumbs -->
 <div class="products">
-	<div class="container te-right">
+	<div class="container">
 		<div class="agileinfo_single">
 			<div class="row">
 				<div class="col-lg-3 col-md-6 col-sm-12">
@@ -53,11 +53,9 @@
 						<hr>
 						<div class="row">
 							<div class="col-12">
-								<form action="#" method="post">
-									<button style="width: 100%; height: 40px; margin-top: 25px; background-color: #fe9126; border: none; border-radius: 3px;" type="submit" onclick='add_to_cart({{ $product->id }}, "{{ csrf_token() }}")'> 
-									افزودن به سبد خرید
-									</button>
-								</form>
+								<button style="width: 100%; height: 40px; margin-top: 25px; background-color: #fe9126; border: none; border-radius: 3px;" onclick='add_to_cart({{ $product->id }}, "{{ csrf_token() }}")'> 
+								افزودن به سبد خرید
+								</button>
 							</div>
 						</div>
 					</div>
@@ -144,7 +142,7 @@
 
 <hr>
 
-<!-- <div class="container">
+<div class="container">
 	<a style="border-color:none;" id="patient-btn" onclick="comments()" type="submit" class="btn">دیدگاه کاربران</a>
 	<a style="border-color:none; " id="doctor-btn" onclick="send_comment()" type="submit" class="btn">ثبت دیدگاه</a>
 	<div id="comments" style="margin-top: 10px; display: block;">
@@ -181,6 +179,6 @@
 			<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(5)" onclick="add(5)"></i>
 		</div>
 	</div> -->
-<!-- </div> -->
+<!-- </div>
 
 @endsection
