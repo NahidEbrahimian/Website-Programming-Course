@@ -42,7 +42,7 @@
 					<td class="invert">
 						<div class="rem">
 							<!-- <div class="close1" onclick='delete_order({{ $cart->id }}, "{{ csrf_token() }}")'> </div> -->
-							<a class="button" href="{{ url("/delete-cart/$cart->id") }}"></a>
+							<a class="close1" href="{{ url("/delete-cart/$cart->id") }}"></a>
 						</div>
 					</td>
 				</tr>

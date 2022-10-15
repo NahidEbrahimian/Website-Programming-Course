@@ -581,7 +581,7 @@ p.w3l-ad {
     margin-bottom: 13px;
 }
 i.warning-star {
-    color: #f8e80c;
+    color: #f8e80c !important;
 }
 i.gray-star {
     color: #e2dddd;

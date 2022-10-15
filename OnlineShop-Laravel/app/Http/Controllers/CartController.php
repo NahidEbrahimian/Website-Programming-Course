@@ -45,15 +45,16 @@ class CartController extends Controller
         }
     }
 
-    // function delete_order(Request $request)
-    // {
-    //     $carts = Cart::where("id", "=", $request["cart_id"])->where("user_id", "=", Auth::id());
-    //     $cart = $carts->first();
-    //     $cart->delete();
+    function delete_order($id)
+    {
+        $carts = Cart::where("id", "=", $id)->where("user_id", "=", Auth::id());
+        $cart = $carts->first();
+        $cart->delete();
 
-    //     $new_counts = Auth::user()->carts;
-    //     return $new_counts;
-    // }
+        $new_counts = Auth::user()->carts;
+        // return $new_counts;
+        return redirect("/cart");
+    }
 
     function add_count(Request $request)
     {

@@ -110,6 +110,37 @@
 		</div>
 	</div>
 </div>
+<hr class="mb-5">
+
+<div class="container-fluid px-5 mt-5">
+	<a style="border-color:none;" id="patient-btn" onclick="comments()" type="submit" class="btn">دیدگاه کاربران</a>
+	<a style="border-color:none; " id="doctor-btn" onclick="send_comment()" type="submit" class="btn">ثبت دیدگاه</a>
+	<div id="comments" style="margin-top: 10px; display: block;">
+		<ul class="list-group list-group-flush">
+			@foreach($product->comments as $comment)
+			<li class="list-group-item text-right"  style="margin: 5px;">
+				<div class="row">
+					<small class="text-muted">{{$comment->user->name}} | {{$comment->created_at}} </small>
+				</div>
+				<div class="d-flex my-2" dir="rtl">
+					<div class=" row">
+						<i class="fa fa-star warning-star rating" aria-hidden="true"></i>
+						<i class="fa fa-star warning-star rating" aria-hidden="true"></i>
+						<i class="fa fa-star warning-star rating" aria-hidden="true"></i>
+						<i class="fa fa-star warning-star rating" aria-hidden="true"></i>
+						<i class="fa fa-star warning-star rating" aria-hidden="true"></i>
+						<span style="font-size: 14px; color: gray;">({{ $product->stars->first()->score }})</span>
+					</div>
+				</div>
+				<div style="margin-top: 5px;" class="row">
+					<p class="my-2">{{$comment->text}}</p>
+				</div>
+			</li>
+			@endforeach
+		</ul>
+	</div>
+</div>
+
 <hr>
 <div style="margin-top: 40px; margin-bottom: 40px;" class="container-fluid text-secondary font-text text-center">
 	<div class="row mx-4 mt-4">
@@ -140,36 +171,8 @@
 	</div>
 </div>
 
-<hr>
 
-<div class="container">
-	<a style="border-color:none;" id="patient-btn" onclick="comments()" type="submit" class="btn">دیدگاه کاربران</a>
-	<a style="border-color:none; " id="doctor-btn" onclick="send_comment()" type="submit" class="btn">ثبت دیدگاه</a>
-	<div id="comments" style="margin-top: 10px; display: block;">
-		<ul class="list-group list-group-flush">
-			@foreach($product->comments as $comment)
-			<li class="list-group-item text-right px-0">
-				<div class="row">
-					<small class="text-muted">{{$comment->user->name}} | {{$comment->created_at}} </small>
-				</div>
-				<div class="d-flex my-2" dir="rtl">
-					<div class=" row">
-						<i class="fa fa-star warning-star rating" aria-hidden="true"></i>
-						<i class="fa fa-star warning-star rating" aria-hidden="true"></i>
-						<i class="fa fa-star warning-star rating" aria-hidden="true"></i>
-						<i class="fa fa-star warning-star rating" aria-hidden="true"></i>
-						<i class="fa fa-star warning-star rating" aria-hidden="true"></i>
-						<span style="font-size: 14px; color: gray;">({{ $product->stars->first()->score }})</span>
-					</div>
-				</div>
-				<div style="margin-top: 5px;" class="row">
-					<p class="my-2">{{$comment->text}}</p>
-				</div>
-			</li>
-			@endforeach
-		</ul>
-	</div> -->
-
+@endsection
 	<!-- <div id="send-comment" style="margin-top: 10px; display: None;">
 		<div class="stars" dir="rtl" onmouseout="clear_rate()">
 			<i class="fa fa-star gray-star rating" aria-hidden="true" onmouseover="draw_rating(1)" onclick="add(1)"></i>
@@ -181,4 +184,3 @@
 	</div> -->
 <!-- </div>
 
-@endsection

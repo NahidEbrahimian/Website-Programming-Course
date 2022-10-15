@@ -1,30 +1,24 @@
 var stars = document.getElementsByClassName("rating");
 
-function draw_rating(rate)
-{
-    for (var i = 0; i < rate; i++)
-    {
+function draw_rating(rate) {
+    for (var i = 0; i < rate; i++) {
         stars[i].classList.remove("gray-star");
         stars[i].classList.add("warning-star");
     }
-    for (var i = rate; i < 5; i++)
-    {
+    for (var i = rate; i < 5; i++) {
         stars[i].classList.add("gray-star");
         stars[i].classList.remove("warning-star");
     }
 }
 
-function clear_rate()
-{
-    for (var i = 0; i < 5; i++)
-    {
+function clear_rate() {
+    for (var i = 0; i < 5; i++) {
         stars[i].classList.add("gray-star");
         stars[i].classList.remove("warning-star");
     }
 }
-function add_rating(received_score, product_id, csrf_token)
-{
-      var json_data = {
+function add_rating(received_score, product_id, csrf_token) {
+    var json_data = {
         score: received_score,
         product_id: product_id,
     };
@@ -39,31 +33,25 @@ function add_rating(received_score, product_id, csrf_token)
         },
         body: JSON.stringify(json_data),
     })
-    .then(result => result.text())
-    .then(result => {
-        console.log(parseInt(result));
-        if (parseInt(result) != 0){ // شرط باید اصلاح بشه
-            // color
-            for (var i = 0; i < 3; i++)
-            {
-                stars[i].classList.remove("gray-star");
-                stars[i].classList.add("warning-star");
+        .then(result => result.text())
+        .then(result => {
+            console.log(parseInt(result));
+            if (isNaN(result)) {
+                alert("برای ثبت امتیاز باید وارد حساب کاربری خود شوید.");
+
             }
-            for (var i = 3; i < 5; i++)
-            {
-                stars[i].classList.add("gray-star");
-                stars[i].classList.remove("warning-star");
+            else {
+                // color
+                for (var i = 0; i < result; i++) {
+                    stars[i].classList.remove("gray-star");
+                    stars[i].style.color = "#f8e80c";
+                }
+                alert("امتیاز شما با موفقیت ثبت شد.");
             }
-            alert("امتیاز شما با موفقیت ثبت شد.");
-    }
-    else{
-        alert("برای ثبت امتیاز وارد حساب کاربری خود شوید.");
-    }
-    });
+        });
 }
 
-function comments()
-{
+function comments() {
     var comment = document.getElementById("comments");
     var send_comment = document.getElementById("send-comment");
 
@@ -71,8 +59,7 @@ function comments()
     send_comment.style.display = "None";
 }
 
-function send_comment()
-{
+function send_comment() {
     var comment = document.getElementById("comments");
     var send_comment = document.getElementById("send-comment");
 
@@ -80,9 +67,8 @@ function send_comment()
     comment.style.display = "None";
 }
 
-function add_to_cart(product_id, csrf_token)
-{
-      var json_data = {
+function add_to_cart(product_id, csrf_token) {
+    var json_data = {
         product_id: product_id,
     };
 
@@ -96,15 +82,15 @@ function add_to_cart(product_id, csrf_token)
         },
         body: JSON.stringify(json_data),
     })
-    .then(result => result.text())
-    .then(result => {
+        .then(result => result.text())
+        .then(result => {
             alert(result);
-    });
+        });
 }
 
 
-function add_count(cart_id, csrf_token){
-    var count = document.getElementById("count"-cart_id);
+function add_count(cart_id, csrf_token) {
+    var count = document.getElementById("count" - cart_id);
     var json_data = {
         cart_id: cart_id,
     };
@@ -119,14 +105,14 @@ function add_count(cart_id, csrf_token){
         },
         body: JSON.stringify(json_data),
     })
-    .then(result => result.text())
-    .then(result => {
+        .then(result => result.text())
+        .then(result => {
             count.innerHTML = result;
-    });
+        });
 }
 
-function minus_count(cart_id, csrf_token){
-    var count = document.getElementById("count"-cart_id);
+function minus_count(cart_id, csrf_token) {
+    var count = document.getElementById("count" - cart_id);
     var json_data = {
         cart_id: cart_id,
     };
@@ -141,13 +127,13 @@ function minus_count(cart_id, csrf_token){
         },
         body: JSON.stringify(json_data),
     })
-    .then(result => result.text())
-    .then(result => {
+        .then(result => result.text())
+        .then(result => {
             count.innerHTML = result;
-    });
+        });
 }
 
-function delete_order(cart_id, csrf_token){
+function delete_order(cart_id, csrf_token) {
     var count = document.getElementById("cart_count");
     var json_data = {
         cart_id: cart_id,
@@ -163,8 +149,8 @@ function delete_order(cart_id, csrf_token){
         },
         body: JSON.stringify(json_data),
     })
-    .then(result => result.text())
-    .then(result => {
+        .then(result => result.text())
+        .then(result => {
             count.innerHTML = result;
-    });
+        });
 }
