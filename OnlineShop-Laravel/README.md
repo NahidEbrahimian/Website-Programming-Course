@@ -7,13 +7,16 @@
 
 ### Cart Page
 
-![screencapture-127-0-0-1-8000-cart-2022-09-04-23_06_22](https://user-images.githubusercontent.com/82975802/188328589-0fe45518-8d9f-419c-b131-3ddb3083b513.png)
+![cart.png](https://github.com/NahidEbrahimian/Website-Programming-Course/blob/main/OnlineShop-Laravel/public/images/screen%20captures/cart1.png)
+
+
+![cart2.png](https://github.com/NahidEbrahimian/Website-Programming-Course/blob/main/OnlineShop-Laravel/public/images/screen%20captures/cart2.png)
 
 ---
 
 ### Product Page
 
-![screencapture-127-0-0-1-8000-product-1-2022-08-17-23_06_44](https://user-images.githubusercontent.com/82975802/185217255-f6801f3c-8747-4f66-aabd-a1f1fe5ff2fc.png)
+![product.png](https://github.com/NahidEbrahimian/Website-Programming-Course/blob/main/OnlineShop-Laravel/public/images/screen%20captures/product.png)
 
 ---
 
