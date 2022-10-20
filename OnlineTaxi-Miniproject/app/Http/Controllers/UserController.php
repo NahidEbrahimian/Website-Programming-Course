@@ -9,17 +9,21 @@ use App\Models\Car;
 
 class UserController extends Controller
 {
-    function login_post(Request $request){
+    function login_post(Request $request)
+    {
         if(Auth::attempt(["phone_number"=>$request['user_name'], "password"=>$request['password'], "role"=>"0"])){
             $phone_number = $request['user_name'];
             $user_id = User::where("phone_number", $phone_number)->first()->id;
-            return view("user_profile");
+            return redirect("/user_profile");
         }
         else{
             return redirect("/");
         }
     }
-
+    function user_profile()
+    {
+        return view("user_profile");
+    }
     function register_get()
     {
         return view("user_register");

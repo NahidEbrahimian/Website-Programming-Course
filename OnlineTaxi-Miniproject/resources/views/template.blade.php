@@ -8,7 +8,7 @@
     <meta name="auther" content="0">
     <link href="{{ asset('/css/bootstrap.rtl.css') }}" type="text/css" rel="stylesheet">
     <link href="{{ asset('/css/style.css') }}" type="text/css" rel="stylesheet">
-    <title>اسنپ</title>
+    <title>تاکسی آنلاین</title>
 </head>
 
 <body>

@@ -339,32 +339,32 @@
 
 
   
-.slider_section2 .slider_form {
+.slider_section3 .slider_form2 {
     width: 100%;
-    padding: 25px;
-    background-color: #282828;
+    /* padding: 25px; */
+    background-color: #f7c621;
     border-radius: 10px;
     margin: auto;
   }
-  .slider_form {
+  .slider_form2 {
     /* width: 400px; */
     padding: 25px;
-    background-color: #282828;
+    background-color: #f7c621;
     border-radius: 10px;
     margin: auto;
   }
-  .slider_section2 .slider_form h4 {
+  .slider_section3 .slider_form2 h4 {
     font-weight: bold;
     text-align: center;
     color: #ffffff;
     margin-bottom: 20px;
   }
   
-  .slider_section2 .slider_form form {
+  .slider_section3 .slider_form2 form {
     margin: 15px 0;
   }
   
-  .slider_section2 .slider_form form input {
+  .slider_section3 .slider_form2 form input {
     width: 100%;
     height: 40px;
     border: none;
@@ -373,19 +373,19 @@
     padding-left: 15px;
   }
   
-  .slider_section2 .slider_form form .btm_input {
+  .slider_section3 .slider_form2 form .btm_input {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
   }
   
-  .slider_section2 .slider_form form .btm_input input {
+  .slider_section3 .slider_form2 form .btm_input input {
     width: calc(95% - 116px);
     margin: 0;
     margin-right: 10px;
   }
   
-  .slider_section2 .slider_form form .btm_input button {
+  .slider_section3 .slider_form2 form .btm_input button {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
@@ -395,6 +395,63 @@
     background-color: #f7c621;
     color: #ffffff;
   }
+
+   
+.slider_section3 .slider_form2 {
+  width: 100%;
+  /* padding: 25px; */
+  background-color: #282828;
+  border-radius: 10px;
+  margin: auto;
+}
+.slider_form2 {
+  /* padding: 25px; */
+  background-color: #282828;
+  border-radius: 10px;
+  margin: auto;
+}
+.slider_section3 .slider_form2 h4 {
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.slider_section3 .slider_form2 form {
+  margin: 15px 0;
+}
+
+.slider_section3 .slider_form2 form input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  margin-bottom: 15px;
+  padding-left: 15px;
+}
+
+.slider_section3 .slider_form2 form .btm_input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slider_section3 .slider_form2 form .btm_input input {
+  width: calc(95% - 116px);
+  margin: 0;
+  margin-right: 10px;
+}
+
+.slider_section3 .slider_form2 form .btm_input button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 116px;
+  border: none;
+  outline: none;
+  background-color: #f7c621;
+  color: #ffffff;
+}
 
   .form-check {
     display: block;

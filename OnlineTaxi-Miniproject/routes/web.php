@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 // Route::get('/login', [UserController::class, 'login_get']);
 Route::post('/login', [UserController::class, 'login_post']);
+Route::get('/user_profile', [UserController::class, 'user_profile']);
 Route::get('/register', [UserController::class, 'register_get']);
 Route::post('/register', [UserController::class, 'register_post']);
 
@@ -30,6 +31,9 @@ Route::get('/driver_register', [UserController::class, 'driver_register_get']);
 Route::post('/driver_register', [UserController::class, 'driver_register_post']);
 
 Route::get('/logout', [UserController::class, 'logout']);
+
+Route::post('/get_taxi', [UserController::class, 'get_taxi']);
+// Route::get('/user_profile', [UserController::class, 'user_profile']);
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
