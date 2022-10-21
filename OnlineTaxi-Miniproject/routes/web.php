@@ -32,7 +32,7 @@ Route::post('/driver_register', [UserController::class, 'driver_register_post'])
 
 Route::get('/logout', [UserController::class, 'logout']);
 
-Route::post('/get_taxi', [UserController::class, 'get_taxi']);
+Route::post('/request_taxi', [UserController::class, 'request_taxi']);
 // Route::get('/user_profile', [UserController::class, 'user_profile']);
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {

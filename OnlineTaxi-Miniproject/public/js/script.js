@@ -40,12 +40,12 @@ if (navigator.geolocation)
         marker_start.setMap(map);
 
         google.maps.event.addListener(marker_start, 'click', function () {
-            // var tag_p_lat = document.getElementById("lat-start");
-            // var tag_p_lng = document.getElementById("lng-start");
+            var tag_input_lat = document.getElementById("lat-start");
+            var tag_input_lng = document.getElementById("lng-start");
 
             var start_location = marker_start.getPosition();
-            // tag_p_lat.innerHTML = start_location.lat();
-            // tag_p_lng.innerHTML = start_location.lng();
+            tag_input_lat.value = start_location.lat();
+            tag_input_lng.value = start_location.lng();
 
             if (flag == false){
                 flag = true;
@@ -60,17 +60,19 @@ if (navigator.geolocation)
                 marker_end.setMap(map);
     
                 google.maps.event.addListener(marker_end, 'click', function () {
-                    // var tag_p_lat = document.getElementById("lat-end");
-                    // var tag_p_lng = document.getElementById("lng-end");
+                    var tag_input_lat = document.getElementById("lat-end");
+                    var tag_input_lng = document.getElementById("lng-end");
+                    var tag_input_price = document.getElementById("price");
     
                     var end_location = marker_end.getPosition();
-                    // tag_p_lat.innerHTML = end_location.lat();
-                    // tag_p_lng.innerHTML = end_location.lng();
+                    tag_input_lat.value = end_location.lat();
+                    tag_input_lng.value = end_location.lng();
 
                     var distance = calculate_distance(start_location, end_location);
                     var price = Math.round(distance * 2000);
 
-                    message.innerHTML = "درخواست سفر شا ثبت شد. هزینه سفر" + price + "تومان";
+                    tag_input_price.value = price + "تومان";
+                    message.innerHTML = "درخواست سفر شما ثبت شد. هزینه سفر" + price + "تومان";
                     message.classList.remove("alert-success");
                     message.classList.add("alert-warning");
                     show_notification();

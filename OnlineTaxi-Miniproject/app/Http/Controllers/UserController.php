@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Color;
 use App\Models\Car;
+use App\Models\Taxi_request;
 
 class UserController extends Controller
 {
@@ -104,4 +105,17 @@ class UserController extends Controller
         return redirect("/");
     }
     
+    function request_taxi(Request $request)
+    {
+        $new_request = new Taxi_request();
+        $new_request->user_id = Auth::id();
+        $new_request->lat_start = $request['lat_start'];
+        $new_request->lng_start = $request['lng_start'];
+        $new_request->lat_end = $request['lat_end'];
+        $new_request->lng_end = $request['lng_end'];
+        $new_request->price = $request['price'];
+
+        $new_request->save();
+        return redirect("/user_profile");
+    }
 }
