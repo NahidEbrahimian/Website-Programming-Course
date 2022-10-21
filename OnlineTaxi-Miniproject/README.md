@@ -6,9 +6,9 @@
 
 ![register.png](https://github.com/NahidEbrahimian/Website-Programming-Course/blob/main/OnlineTaxi-Miniproject/public/images/screen%20captures/register.png)
 
-### User Page
+### Request Taxi
 
-![user_page.png](https://github.com/NahidEbrahimian/Website-Programming-Course/blob/main/OnlineTaxi-Miniproject/public/images/screen%20captures/user_page.png)
+![request_taxi.png](https://github.com/NahidEbrahimian/Website-Programming-Course/blob/main/OnlineTaxi-Miniproject/public/images/screen%20captures/request_taxi.png)
 
 ---
 
