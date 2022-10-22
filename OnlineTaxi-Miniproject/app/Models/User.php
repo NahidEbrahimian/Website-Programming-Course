@@ -50,8 +50,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Car::class);
     }
-    public function Taxi_request()
+    public function taxi_requests()
     {
-        return $this->hasMany(Taxi_request::class);
+        return $this->belongsTo(Taxi_request::class);
     }
+
 }

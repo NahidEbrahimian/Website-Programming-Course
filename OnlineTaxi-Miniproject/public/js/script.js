@@ -2,6 +2,20 @@ var map;
 var lat = 36.3141306;
 var lng = 59.549162;
 var flag = false;
+// var active_drivers = drivers;
+// var active_drivers_positions = [[36.32381351414994, 59.54072602929689], [36.3326645, 59.5146335]];
+
+function marker(car_position)
+{
+    console.log(car_position);
+    var marker_ = new google.maps.Marker({
+        position: car_position,
+        draggable: true,
+        animation: google.maps.Animation.BOUNCE,
+        
+    });
+    marker_.setMap(map);
+}       
 
 function calculate_distance(start, end)
 {
@@ -26,6 +40,17 @@ function myMap()
 if (navigator.geolocation) 
 {
     navigator.geolocation.getCurrentPosition(function (position) {
+        // Show active drivers
+        // for (i=0; i<active_drivers_positions.length; ++i) {
+        //     marker(active_drivers_positions[i]);
+        //     // console.log(active_drivers_positions[i]);
+        //     // ... do something with s ...
+        //   }
+        // for(driver_position in active_drivers_positions)
+        // {
+        //     marker(driver_position);
+        //     console.log(driver_position);
+        // }
         lat = position.coords.latitude;
         lng = position.coords.longitude;
 
@@ -71,11 +96,12 @@ if (navigator.geolocation)
                     var distance = calculate_distance(start_location, end_location);
                     var price = Math.round(distance * 2000);
 
-                    tag_input_price.value = price + "تومان";
-                    message.innerHTML = "درخواست سفر شما ثبت شد. هزینه سفر" + price + "تومان";
-                    message.classList.remove("alert-success");
-                    message.classList.add("alert-warning");
-                    show_notification();
+                    tag_input_price.value = price + "هزار تومان";
+                    message.innerHTML = " هزینه سفر" + price + "هزار تومان." + "برای تایید سفر درخواست تاکسی را بزنید.";
+                    // message.innerHTML = "درخواست سفر شما ثبت شد. هزینه سفر" + price + "هزار تومان";
+                    // message.classList.remove("alert-success");
+                    // message.classList.add("alert-warning");
+                    // show_notification();
                 });
             }
         });

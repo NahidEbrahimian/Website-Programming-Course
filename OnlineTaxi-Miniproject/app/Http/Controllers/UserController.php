@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Color;
 use App\Models\Car;
 use App\Models\Taxi_request;
+use App\Models\Active_driver;
 
 class UserController extends Controller
 {
@@ -23,7 +24,10 @@ class UserController extends Controller
     }
     function user_profile()
     {
-        return view("user_profile");
+        $drivers = User::where("role", "=", "1")->where("active", "=", "1");
+        return view("user_profile")->with([
+            "drivers" => $drivers
+        ]);
     }
     function register_get()
     {
@@ -57,13 +61,21 @@ class UserController extends Controller
         if(Auth::attempt(["national_number"=>$request['user_name'], "password"=>$request['password'], "role"=>"1"])){
             $national_number = $request['user_name'];
             $user_id = User::where("national_number", $national_number)->first()->id;
-            return view("driver_profile"); 
+            
+            return redirect("/driver_profile");
         }
         else{
             return redirect("driver_login");
         }
     }
-
+    function driver_profile()
+    {
+        $drivers = User::where("role", "=", "1")->where("active", "=", "1");
+        $requests = Taxi_request::all();
+        return view("driver_profile")->with([
+            "requests" => $requests,
+        ]); 
+    }
     function driver_register_get()
     {
         $colors = Color::all();
@@ -116,6 +128,7 @@ class UserController extends Controller
         $new_request->price = $request['price'];
 
         $new_request->save();
-        return redirect("/user_profile");
+        // return redirect("/user_profile");
     }
+
 }

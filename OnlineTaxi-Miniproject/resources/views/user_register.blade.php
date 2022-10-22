@@ -3,7 +3,7 @@
 
 <div style="margin-top: 80px;" class="container">
     <div class="row justify-content-center">
-        <div class="col-md-5 col-sm-12 slider_section2 hero_area_register">
+        <div class="col-md-5 col-sm-12 slider_section2">
             <div class="slider_form">
                 <h4>
                     فرم ثبت نام
