@@ -109,3 +109,25 @@ if (navigator.geolocation)
 } else {
     allert("Geolocation is not supported by this browser.");
 }
+
+function accept_request(request_id, csrf_token) {
+    var message = document.getElementById("ُmessage");
+    var json_data = {
+        request_id: request_id,
+    };
+
+    fetch("/accept-request", {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "X-Requested-With": "XMLHttpRequest",
+            "X-CSRF-Token": csrf_token,
+        },
+        body: JSON.stringify(json_data),
+    })
+        .then(result => result.text())
+        .then(result => {
+            message.innerHTML = "درخواست شما ثبت گردید.";
+        });
+}

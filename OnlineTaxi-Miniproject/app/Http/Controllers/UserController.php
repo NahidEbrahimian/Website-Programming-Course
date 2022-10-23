@@ -70,7 +70,8 @@ class UserController extends Controller
     }
     function driver_profile()
     {
-        $drivers = User::where("role", "=", "1")->where("active", "=", "1");
+        // $drivers = User::where("role", "=", "1")->where("active", "=", "1");
+        // $requests = Taxi_request::where("accept", "=", "0");
         $requests = Taxi_request::all();
         return view("driver_profile")->with([
             "requests" => $requests,

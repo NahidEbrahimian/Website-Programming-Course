@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DriverController;
-use App\Http\Controllers\TriprController;
+use App\Http\Controllers\TripController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +36,8 @@ Route::get('/logout', [UserController::class, 'logout']);
 
 Route::post('/request_taxi', [UserController::class, 'request_taxi']);
 // Route::get('/user_profile', [UserController::class, 'user_profile']);
-Route::post('/accept_request', [TripController::class, 'accept_request']);
+// Route::post('/accept_request', [TripController::class, 'accept_request']);
+Route::post('/accept-request', [TripController::class, 'accept_request']);
 
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
