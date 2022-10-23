@@ -20,5 +20,9 @@
 
 ![driver-register.png](https://github.com/NahidEbrahimian/Website-Programming-Course/blob/main/OnlineTaxi-Miniproject/public/images/screen%20captures/driver-register.png)
 
+### Accept Request
+
+![accept_request.png](https://github.com/NahidEbrahimian/Website-Programming-Course/blob/main/OnlineTaxi-Miniproject/public/images/screen%20captures/accept_request.png
+)
 
 
