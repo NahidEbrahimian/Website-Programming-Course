@@ -1,1 +1,35 @@
-
+$("#thumbnail1").click(function(){
+    $("#slide1").addClass('active');
+    $("#slide2").removeClass('active');
+    $("#slide3").removeClass('active');
+    $("#slide4").removeClass('active');
+    $("#slide5").removeClass('active');
+});
+$("#thumbnail2").click(function(){
+    $("#slide1").removeClass('active');
+    $("#slide2").addClass('active');
+    $("#slide3").removeClass('active');
+    $("#slide4").removeClass('active');
+    $("#slide5").removeClass('active');
+});
+$("#thumbnail3").click(function(){
+    $("#slide1").removeClass('active');
+    $("#slide2").removeClass('active');
+    $("#slide3").addClass('active');
+    $("#slide4").removeClass('active');
+    $("#slide5").removeClass('active');
+});
+$("#thumbnail4").click(function(){
+    $("#slide1").removeClass('active');
+    $("#slide2").removeClass('active');
+    $("#slide3").removeClass('active');
+    $("#slide4").addClass('active');
+    $("#slide5").removeClass('active');
+});
+$("#thumbnail5").click(function(){
+    $("#slide1").removeClass('active');
+    $("#slide2").removeClass('active');
+    $("#slide3").removeClass('active');
+    $("#slide4").removeClass('active');
+    $("#slide5").addClass('active');
+});
